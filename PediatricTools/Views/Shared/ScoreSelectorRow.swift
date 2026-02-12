@@ -1,12 +1,13 @@
 import SwiftUI
 
-/// A reusable row for scoring criteria with 0–N score buttons.
-/// Used by Apgar and PEWS calculators.
+/// A reusable row for scoring criteria with minScore–maxScore score buttons.
+/// Used by Apgar, PEWS, FLACC, GCS, and PRAM calculators.
 struct ScoreSelectorRow: View {
     let nameKey: String
     let maxScore: Int
     let descriptions: [Int: String]
     @Binding var selectedScore: Int
+    var minScore: Int = 0
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -14,7 +15,7 @@ struct ScoreSelectorRow: View {
                 .font(.subheadline.weight(.semibold))
 
             HStack(spacing: 8) {
-                ForEach(0...maxScore, id: \.self) { score in
+                ForEach(minScore...maxScore, id: \.self) { score in
                     Button {
                         selectedScore = score
                     } label: {
