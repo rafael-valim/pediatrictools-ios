@@ -38,8 +38,14 @@ Views use `@State` exclusively — no view models, no Combine, no ObservableObje
 ### Navigation
 `HomeView` uses `NavigationStack` with a `List` of `NavigationLink`. Each tool is registered as a `ToolItem` in the `tools` array. The view rebuilds when language changes via `.id(language)`.
 
+### Settings & Preferences
+Four `@AppStorage` preferences: `"appearance"` (system/light/dark), `"language"` (system/en/pt-BR/es/fr), `"portraitLock"` (bool), `"disclaimerAccepted"` (bool). Orientation lock is applied via `AppDelegate.orientationLock` and skipped during UI tests when `-UITesting` is present in launch arguments.
+
+### Tip Jar (StoreKit 2)
+`TipJarManager` uses `@Observable` (the only exception to the @State-only pattern). Three product IDs: `com.pediatrictools.app.tip.{small,medium,large}`. Supporter status is persisted in `UserDefaults`. The StoreKit config file is `Resources/TipJar.storekit`.
+
 ### Localization
-Four languages: **en** (source), **pt-BR**, **es**, **fr**. All strings go through `Localizable.xcstrings` (Xcode String Catalog). Use `LocalizedStringKey` (not `String(localized:)`) so SwiftUI text views react to in-app locale changes via `.environment(\.locale)`. Keys use snake_case: `"apgar_title"`, `"ballard_posture_0"`.
+Four languages: **en** (source), **pt-BR**, **es**, **fr**. All strings go through `Localizable.xcstrings` (Xcode String Catalog). Use `LocalizedStringKey` (not `String(localized:)`) so SwiftUI text views react to in-app locale changes via `.environment(\.locale)`. Keys use snake_case: `"apgar_title"`, `"ballard_posture_0"`. Language is applied at the root view via a `LocaleModifier` that sets `.environment(\.locale)`.
 
 ## Adding a New Tool
 

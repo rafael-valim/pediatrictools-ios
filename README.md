@@ -1,6 +1,6 @@
 # Pediatric Tools
 
-A native iOS app providing essential pediatric clinical calculators for healthcare professionals. Built with SwiftUI, fully localized in English and Brazilian Portuguese (PT-BR), with no external dependencies.
+A native iOS app providing essential pediatric clinical calculators for healthcare professionals. Built entirely with SwiftUI, localized in four languages, with zero external dependencies.
 
 ## Features
 
@@ -19,6 +19,26 @@ The app includes 11 evidence-based clinical tools:
 | **Dehydration** | Fluid deficit and 24h replacement plan based on weight and dehydration severity |
 | **FENa Calculator** | Fractional Excretion of Sodium to differentiate prerenal vs intrinsic renal failure |
 | **ETT Size** | Endotracheal tube sizing by age or neonatal weight, with depth and suction catheter |
+
+## App Settings
+
+The app includes a **Settings** screen (gear icon in the toolbar) with the following preferences, all persisted via `@AppStorage`:
+
+| Setting | Options | Default |
+|---------|---------|---------|
+| **Appearance** | System / Light / Dark | System |
+| **Language** | System / English / Português (BR) / Español / Français | System |
+| **Portrait Lock** | On / Off | Off |
+
+On first launch, the app shows a **medical disclaimer** alert that must be accepted before use. This preference is also stored via `@AppStorage`.
+
+### Tip Jar
+
+The Settings screen includes a **Tip Jar** powered by StoreKit 2 (configured in `TipJar.storekit`). It offers three tip tiers (small, medium, large). Users who tip receive a **Supporter badge** displayed on the About screen. The `TipJarManager` uses Swift's `@Observable` macro and listens for transaction updates in the background.
+
+### About Screen
+
+Displays the app icon, version, build number, and an optional Supporter badge. Includes a **References** section listing the evidence-based source for each of the 11 clinical tools.
 
 ## Requirements
 
@@ -42,7 +62,8 @@ PediatricTools/
 │   ├── GrowthPercentile.swift
 │   ├── HollidaySegar.swift
 │   ├── PediatricDosage.swift
-│   └── PEWSScore.swift
+│   ├── PEWSScore.swift
+│   └── TipJarManager.swift         # StoreKit 2 in-app purchase manager (@Observable)
 ├── Views/
 │   ├── HomeView.swift               # Main navigation list
 │   ├── Shared/                      # Reusable UI components
@@ -61,11 +82,13 @@ PediatricTools/
 │   ├── IVFluid/
 │   ├── PEWS/
 │   └── Settings/
-│       ├── SettingsView.swift     # Appearance, language, and about link
-│       └── AboutView.swift        # App info and clinical references
+│       ├── SettingsView.swift     # Appearance, language, portrait lock
+│       ├── AboutView.swift        # App info, supporter badge, clinical references
+│       └── TipJarView.swift       # StoreKit 2 tip jar UI
 └── Resources/
     ├── Assets.xcassets
-    └── Localizable.xcstrings        # String catalog (EN + PT-BR)
+    ├── Localizable.xcstrings        # String catalog (EN, PT-BR, ES, FR)
+    └── TipJar.storekit             # StoreKit 2 configuration for testing
 
 PediatricToolsTests/                 # Unit tests for all 11 calculators
 PediatricToolsUITests/               # UI screenshot tests for every tool
@@ -75,9 +98,12 @@ PediatricToolsUITests/               # UI screenshot tests for every tool
 
 - **Models** are pure `enum` namespaces with `static` functions — no instances, no side effects, easily testable
 - **Views** use `@State` only — no view models, no Combine, no external state management
+- **TipJarManager** is the sole exception: it uses `@Observable` for StoreKit 2 integration
 - **Shared components** (`NumberInputRow`, `ResultBar`, `ScoreSelectorRow`) are reused across all tools
 - **Navigation** uses `NavigationStack` with a `List` of `NavigationLink` items
-- **Zero external dependencies** — the entire app uses only Apple frameworks
+- **Settings persistence** uses `@AppStorage` for all user preferences
+- **Orientation control** via `AppDelegate` — supports portrait lock toggle; automatically disabled during UI tests via `-UITesting` launch argument
+- **Zero external dependencies** — the entire app uses only Apple frameworks (SwiftUI, UIKit, StoreKit)
 
 ## Input Validation
 
@@ -97,16 +123,21 @@ All `Form`-based views use `.scrollDismissesKeyboard(.interactively)` so the key
 
 ## Localization
 
-The app uses Xcode String Catalogs (`Localizable.xcstrings`) with two languages:
+The app uses Xcode String Catalogs (`Localizable.xcstrings`) with four languages:
 - **English (en)** — development language
 - **Brazilian Portuguese (pt-BR)**
+- **Spanish (es)**
+- **French (fr)**
 
-All user-facing strings use localization keys (e.g., `"ballard_score_title"`) resolved via `LocalizedStringKey` so they react to in-app locale changes.
+Users can switch languages in-app via the Settings screen. The language preference is applied using a `LocaleModifier` that sets `.environment(\.locale)` on the root view, so all SwiftUI text views react immediately without restarting the app.
+
+All user-facing strings use localization keys (e.g., `"ballard_score_title"`) resolved via `LocalizedStringKey`.
 
 To add a new language:
 1. Open `Localizable.xcstrings` in Xcode
 2. Click the **+** button in the language sidebar
 3. Translate all entries for the new locale
+4. Add the new language option to the language picker in `SettingsView.swift`
 
 ## Testing
 
@@ -117,7 +148,7 @@ The `PediatricToolsTests` target contains 11 test files — one per calculator m
 ```bash
 xcodebuild test \
   -scheme PediatricTools \
-  -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
   -only-testing:PediatricToolsTests
 ```
 
@@ -186,7 +217,7 @@ The auto-detect logic queries the GitHub API for online self-hosted runners. If 
    - Use `NumberInputRow` for numeric inputs (with appropriate `range`)
    - Use `ResultBar` for bottom result display
    - Add `.scrollDismissesKeyboard(.interactively)` on the `Form`
-3. **Add localization keys** to `Localizable.xcstrings` for both EN and PT-BR
+3. **Add localization keys** to `Localizable.xcstrings` for all 4 languages (EN, PT-BR, ES, FR)
 4. **Register the tool** in `HomeView.swift` by adding a new `ToolItem` to the `tools` array
 5. **Write unit tests** in `PediatricToolsTests/` covering the model logic
 6. **Write UI screenshot tests** in `PediatricToolsUITests/` capturing empty and filled states
@@ -215,7 +246,7 @@ When working on this codebase, follow these conventions:
 - **Models:** Pure `enum` namespaces with `static` functions — no instances, no side effects
 - **Shared components:** Reuse `NumberInputRow`, `ResultBar`, and `ScoreSelectorRow` across tools
 - **Settings persistence:** Use `@AppStorage` for user preferences
-- **New localization keys:** Add entries to `Localizable.xcstrings` for both EN and PT-BR
+- **New localization keys:** Add entries to `Localizable.xcstrings` for all 4 languages (EN, PT-BR, ES, FR)
 - **New files:** Register in `project.pbxproj` (PBXBuildFile, PBXFileReference, PBXGroup, PBXSourcesBuildPhase)
 
 ### After Code Changes
