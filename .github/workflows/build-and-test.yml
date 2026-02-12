@@ -50,8 +50,9 @@ jobs:
           # Note: the runners API needs admin-level access. If the token lacks
           # permission (403) or the call fails for any reason, default to self-hosted.
           ONLINE=$(gh api repos/${{ github.repository }}/actions/runners \
-            --jq '[.runners[] | select(.status == "online")] | length' 2>/dev/null || echo "")
-          if [ -z "$ONLINE" ]; then
+            --jq '[.runners[] | select(.status == "online")] | length' 2>/dev/null || true)
+
+          if ! [[ "$ONLINE" =~ ^[0-9]+$ ]]; then
             echo "runner=self-hosted" >> "$GITHUB_OUTPUT"
             echo "Could not query runners API — defaulting to self-hosted"
           elif [ "$ONLINE" -gt 0 ]; then
