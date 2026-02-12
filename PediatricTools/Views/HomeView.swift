@@ -25,6 +25,15 @@ struct HomeView: View {
         ToolItem(id: "ett", titleKey: "ett_title", subtitleKey: "ett_subtitle", icon: "lungs", destination: AnyView(ETTView())),
     ]
 
+    private func localizedString(_ key: String) -> String {
+        guard language != "system",
+              let path = Bundle.main.path(forResource: language, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return NSLocalizedString(key, comment: "")
+        }
+        return NSLocalizedString(key, bundle: bundle, comment: "")
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -55,7 +64,7 @@ struct HomeView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            .navigationTitle("app_title")
+            .navigationTitle(localizedString("app_title"))
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
