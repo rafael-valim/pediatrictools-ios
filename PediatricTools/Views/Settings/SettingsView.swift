@@ -4,6 +4,7 @@ struct SettingsView: View {
     @AppStorage("appearance") private var appearance = "system"
     @AppStorage("language") private var language = "system"
     @AppStorage("portraitLock") private var portraitLock = false
+    @Environment(TipJarManager.self) private var tipJarManager
 
     var body: some View {
         Form {
@@ -34,6 +35,21 @@ struct SettingsView: View {
                 Toggle("settings_portrait_lock", isOn: $portraitLock)
             } header: {
                 Text("settings_orientation_section")
+            }
+
+            Section {
+                NavigationLink {
+                    TipJarView()
+                } label: {
+                    Label("settings_support", systemImage: "heart.fill")
+                }
+                Button {
+                    Task { await tipJarManager.checkExistingPurchases() }
+                } label: {
+                    Label("tipjar_restore", systemImage: "arrow.clockwise")
+                }
+            } header: {
+                Text("settings_support_section")
             }
 
             Section {

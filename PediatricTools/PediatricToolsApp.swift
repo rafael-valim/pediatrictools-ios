@@ -8,6 +8,7 @@ struct PediatricToolsApp: App {
     @AppStorage("disclaimerAccepted") private var disclaimerAccepted = false
     @AppStorage("portraitLock") private var portraitLock = false
     @State private var showDisclaimer = false
+    @State private var tipJarManager = TipJarManager()
 
     private var colorScheme: ColorScheme? {
         switch appearance {
@@ -30,6 +31,7 @@ struct PediatricToolsApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .environment(tipJarManager)
                 .preferredColorScheme(colorScheme)
                 .modifier(LocaleModifier(locale: locale))
                 .alert("disclaimer_title", isPresented: $showDisclaimer) {

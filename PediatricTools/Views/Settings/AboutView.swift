@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct AboutView: View {
+    @AppStorage("isSupporter") private var isSupporter = false
+
     private var appVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     }
@@ -16,8 +18,18 @@ struct AboutView: View {
                     Image(systemName: "stethoscope")
                         .font(.system(size: 48))
                         .foregroundStyle(.accent)
-                    Text("app_title")
-                        .font(.title2.weight(.bold))
+                    HStack(spacing: 6) {
+                        Text("app_title")
+                            .font(.title2.weight(.bold))
+                        if isSupporter {
+                            Label("about_supporter_badge", systemImage: "heart.fill")
+                                .font(.caption.weight(.semibold))
+                                .foregroundStyle(.white)
+                                .padding(.horizontal, 8)
+                                .padding(.vertical, 3)
+                                .background(.pink, in: Capsule())
+                        }
+                    }
                     Text("about_version \(appVersion) (\(buildNumber))")
                         .font(.caption)
                         .foregroundStyle(.secondary)
