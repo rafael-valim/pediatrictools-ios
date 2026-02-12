@@ -68,6 +68,10 @@ jobs:
     needs: check-runner
     runs-on: ${{ needs.check-runner.outputs.runner }}
     steps:
+      - name: Clean workspace (self-hosted)
+        run: rm -rf .git
+        if: ${{ !startsWith(runner.name, 'GitHub Actions') }}
+
       - uses: actions/checkout@v4
 
       - name: Select latest Xcode
