@@ -1,0 +1,57 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-tests:
+    name: Unit Tests
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+
+      - name: Run unit tests
+        run: |
+          xcodebuild test \
+            -project PediatricTools.xcodeproj \
+            -scheme PediatricTools \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -only-testing:PediatricToolsTests \
+            -disable-concurrent-destination-testing \
+            -parallel-testing-enabled NO
+
+  screenshots:
+    name: Screenshots
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+
+      - name: Take screenshots
+        run: scripts/take-screenshots.sh --device "iPhone 16 Pro"
+
+      - name: Upload screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: Screenshots/
+
+      - name: Upload xcresult
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots-xcresult
+          path: .build/screenshots.xcresult
