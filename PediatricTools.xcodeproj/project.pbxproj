@@ -15,6 +15,29 @@
 		AA000006 /* BallardResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000006 /* BallardResultView.swift */; };
 		AA000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB000007 /* Assets.xcassets */; };
 		AA000008 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB000008 /* Localizable.xcstrings */; };
+		AA100001 /* PediatricDosage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100001 /* PediatricDosage.swift */; };
+		AA100002 /* HollidaySegar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100002 /* HollidaySegar.swift */; };
+		AA100003 /* BSACalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100003 /* BSACalculator.swift */; };
+		AA100004 /* CorrectedAgeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100004 /* CorrectedAgeCalculator.swift */; };
+		AA100005 /* ApgarScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100005 /* ApgarScore.swift */; };
+		AA100006 /* PEWSScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100006 /* PEWSScore.swift */; };
+		AA100007 /* GrowthPercentile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100007 /* GrowthPercentile.swift */; };
+		AA100008 /* DehydrationCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100008 /* DehydrationCalculator.swift */; };
+		AA100009 /* FENaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100009 /* FENaCalculator.swift */; };
+		AA100010 /* ETTCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100010 /* ETTCalculator.swift */; };
+		AA200001 /* NumberInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200001 /* NumberInputRow.swift */; };
+		AA200002 /* ScoreSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200002 /* ScoreSelectorRow.swift */; };
+		AA200003 /* ResultBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200003 /* ResultBar.swift */; };
+		AA300001 /* DosageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300001 /* DosageView.swift */; };
+		AA300002 /* IVFluidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300002 /* IVFluidView.swift */; };
+		AA300003 /* BSAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300003 /* BSAView.swift */; };
+		AA300004 /* CorrectedAgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300004 /* CorrectedAgeView.swift */; };
+		AA300005 /* ApgarScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300005 /* ApgarScoreView.swift */; };
+		AA300006 /* PEWSScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300006 /* PEWSScoreView.swift */; };
+		AA300007 /* GrowthPercentileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300007 /* GrowthPercentileView.swift */; };
+		AA300008 /* DehydrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300008 /* DehydrationView.swift */; };
+		AA300009 /* FENaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300009 /* FENaView.swift */; };
+		AA300010 /* ETTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300010 /* ETTView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +50,29 @@
 		AB000007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB000008 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AC000001 /* PediatricTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PediatricTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB100001 /* PediatricDosage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediatricDosage.swift; sourceTree = "<group>"; };
+		AB100002 /* HollidaySegar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HollidaySegar.swift; sourceTree = "<group>"; };
+		AB100003 /* BSACalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSACalculator.swift; sourceTree = "<group>"; };
+		AB100004 /* CorrectedAgeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectedAgeCalculator.swift; sourceTree = "<group>"; };
+		AB100005 /* ApgarScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApgarScore.swift; sourceTree = "<group>"; };
+		AB100006 /* PEWSScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEWSScore.swift; sourceTree = "<group>"; };
+		AB100007 /* GrowthPercentile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthPercentile.swift; sourceTree = "<group>"; };
+		AB100008 /* DehydrationCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DehydrationCalculator.swift; sourceTree = "<group>"; };
+		AB100009 /* FENaCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FENaCalculator.swift; sourceTree = "<group>"; };
+		AB100010 /* ETTCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTCalculator.swift; sourceTree = "<group>"; };
+		AB200001 /* NumberInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputRow.swift; sourceTree = "<group>"; };
+		AB200002 /* ScoreSelectorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSelectorRow.swift; sourceTree = "<group>"; };
+		AB200003 /* ResultBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBar.swift; sourceTree = "<group>"; };
+		AB300001 /* DosageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageView.swift; sourceTree = "<group>"; };
+		AB300002 /* IVFluidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVFluidView.swift; sourceTree = "<group>"; };
+		AB300003 /* BSAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAView.swift; sourceTree = "<group>"; };
+		AB300004 /* CorrectedAgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectedAgeView.swift; sourceTree = "<group>"; };
+		AB300005 /* ApgarScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApgarScoreView.swift; sourceTree = "<group>"; };
+		AB300006 /* PEWSScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEWSScoreView.swift; sourceTree = "<group>"; };
+		AB300007 /* GrowthPercentileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthPercentileView.swift; sourceTree = "<group>"; };
+		AB300008 /* DehydrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DehydrationView.swift; sourceTree = "<group>"; };
+		AB300009 /* FENaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FENaView.swift; sourceTree = "<group>"; };
+		AB300010 /* ETTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +109,16 @@
 			isa = PBXGroup;
 			children = (
 				AB000002 /* BallardScore.swift */,
+				AB100001 /* PediatricDosage.swift */,
+				AB100002 /* HollidaySegar.swift */,
+				AB100003 /* BSACalculator.swift */,
+				AB100004 /* CorrectedAgeCalculator.swift */,
+				AB100005 /* ApgarScore.swift */,
+				AB100006 /* PEWSScore.swift */,
+				AB100007 /* GrowthPercentile.swift */,
+				AB100008 /* DehydrationCalculator.swift */,
+				AB100009 /* FENaCalculator.swift */,
+				AB100010 /* ETTCalculator.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -71,7 +127,18 @@
 			isa = PBXGroup;
 			children = (
 				AB000003 /* HomeView.swift */,
+				AE100001 /* Shared */,
 				AE000005 /* Ballard */,
+				AE100002 /* Dosage */,
+				AE100003 /* IVFluid */,
+				AE100004 /* BSA */,
+				AE100005 /* CorrectedAge */,
+				AE100006 /* Apgar */,
+				AE100007 /* PEWS */,
+				AE100008 /* Growth */,
+				AE100009 /* Dehydration */,
+				AE100010 /* FENa */,
+				AE100011 /* ETT */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -101,6 +168,96 @@
 				AC000001 /* PediatricTools.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		AE100001 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				AB200001 /* NumberInputRow.swift */,
+				AB200002 /* ScoreSelectorRow.swift */,
+				AB200003 /* ResultBar.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		AE100002 /* Dosage */ = {
+			isa = PBXGroup;
+			children = (
+				AB300001 /* DosageView.swift */,
+			);
+			path = Dosage;
+			sourceTree = "<group>";
+		};
+		AE100003 /* IVFluid */ = {
+			isa = PBXGroup;
+			children = (
+				AB300002 /* IVFluidView.swift */,
+			);
+			path = IVFluid;
+			sourceTree = "<group>";
+		};
+		AE100004 /* BSA */ = {
+			isa = PBXGroup;
+			children = (
+				AB300003 /* BSAView.swift */,
+			);
+			path = BSA;
+			sourceTree = "<group>";
+		};
+		AE100005 /* CorrectedAge */ = {
+			isa = PBXGroup;
+			children = (
+				AB300004 /* CorrectedAgeView.swift */,
+			);
+			path = CorrectedAge;
+			sourceTree = "<group>";
+		};
+		AE100006 /* Apgar */ = {
+			isa = PBXGroup;
+			children = (
+				AB300005 /* ApgarScoreView.swift */,
+			);
+			path = Apgar;
+			sourceTree = "<group>";
+		};
+		AE100007 /* PEWS */ = {
+			isa = PBXGroup;
+			children = (
+				AB300006 /* PEWSScoreView.swift */,
+			);
+			path = PEWS;
+			sourceTree = "<group>";
+		};
+		AE100008 /* Growth */ = {
+			isa = PBXGroup;
+			children = (
+				AB300007 /* GrowthPercentileView.swift */,
+			);
+			path = Growth;
+			sourceTree = "<group>";
+		};
+		AE100009 /* Dehydration */ = {
+			isa = PBXGroup;
+			children = (
+				AB300008 /* DehydrationView.swift */,
+			);
+			path = Dehydration;
+			sourceTree = "<group>";
+		};
+		AE100010 /* FENa */ = {
+			isa = PBXGroup;
+			children = (
+				AB300009 /* FENaView.swift */,
+			);
+			path = FENa;
+			sourceTree = "<group>";
+		};
+		AE100011 /* ETT */ = {
+			isa = PBXGroup;
+			children = (
+				AB300010 /* ETTView.swift */,
+			);
+			path = ETT;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +336,29 @@
 				AA000004 /* BallardScoreView.swift in Sources */,
 				AA000005 /* BallardCriterionRow.swift in Sources */,
 				AA000006 /* BallardResultView.swift in Sources */,
+				AA100001 /* PediatricDosage.swift in Sources */,
+				AA100002 /* HollidaySegar.swift in Sources */,
+				AA100003 /* BSACalculator.swift in Sources */,
+				AA100004 /* CorrectedAgeCalculator.swift in Sources */,
+				AA100005 /* ApgarScore.swift in Sources */,
+				AA100006 /* PEWSScore.swift in Sources */,
+				AA100007 /* GrowthPercentile.swift in Sources */,
+				AA100008 /* DehydrationCalculator.swift in Sources */,
+				AA100009 /* FENaCalculator.swift in Sources */,
+				AA100010 /* ETTCalculator.swift in Sources */,
+				AA200001 /* NumberInputRow.swift in Sources */,
+				AA200002 /* ScoreSelectorRow.swift in Sources */,
+				AA200003 /* ResultBar.swift in Sources */,
+				AA300001 /* DosageView.swift in Sources */,
+				AA300002 /* IVFluidView.swift in Sources */,
+				AA300003 /* BSAView.swift in Sources */,
+				AA300004 /* CorrectedAgeView.swift in Sources */,
+				AA300005 /* ApgarScoreView.swift in Sources */,
+				AA300006 /* PEWSScoreView.swift in Sources */,
+				AA300007 /* GrowthPercentileView.swift in Sources */,
+				AA300008 /* DehydrationView.swift in Sources */,
+				AA300009 /* FENaView.swift in Sources */,
+				AA300010 /* ETTView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +569,7 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
 	};
 	rootObject = AI000001 /* Project object */;
 }

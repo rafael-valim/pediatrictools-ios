@@ -1,0 +1,46 @@
+import SwiftUI
+
+/// A reusable row for scoring criteria with 0–N score buttons.
+/// Used by Apgar and PEWS calculators.
+struct ScoreSelectorRow: View {
+    let nameKey: String
+    let maxScore: Int
+    let descriptions: [Int: String]
+    @Binding var selectedScore: Int
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(String(localized: String.LocalizationValue(nameKey)))
+                .font(.subheadline.weight(.semibold))
+
+            HStack(spacing: 8) {
+                ForEach(0...maxScore, id: \.self) { score in
+                    Button {
+                        selectedScore = score
+                    } label: {
+                        VStack(spacing: 2) {
+                            Text("\(score)")
+                                .font(.caption.weight(.bold))
+
+                            if let descKey = descriptions[score] {
+                                Text(String(localized: String.LocalizationValue(descKey)))
+                                    .font(.system(size: 9))
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(3)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 6)
+                        .background(
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(selectedScore == score ? Color.accentColor : Color(.systemGray5))
+                        )
+                        .foregroundStyle(selectedScore == score ? .white : .primary)
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
+        .padding(.vertical, 4)
+    }
+}
