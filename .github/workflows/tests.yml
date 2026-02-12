@@ -17,15 +17,35 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+      - name: Select latest Xcode
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
+          echo "Using $XCODE_PATH"
+          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          xcodebuild -version
+
+      - name: Resolve simulator
+        id: sim
+        run: |
+          DEVICE=$(xcrun simctl list devices available -j \
+            | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          for runtime in sorted(data['devices'].keys(), reverse=True):
+              for d in data['devices'][runtime]:
+                  if 'iPhone' in d['name'] and 'Pro' in d['name'] and 'Max' not in d['name'] and d['isAvailable']:
+                      print(d['name']); sys.exit(0)
+          sys.exit(1)
+          ")
+          echo "device=$DEVICE" >> "$GITHUB_OUTPUT"
+          echo "Resolved simulator: $DEVICE"
 
       - name: Run unit tests
         run: |
           xcodebuild test \
             -project PediatricTools.xcodeproj \
             -scheme PediatricTools \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Pro' \
+            -destination 'platform=iOS Simulator,name=${{ steps.sim.outputs.device }}' \
             -only-testing:PediatricToolsTests \
             -disable-concurrent-destination-testing \
             -parallel-testing-enabled NO
@@ -36,11 +56,31 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_16.2.app/Contents/Developer
+      - name: Select latest Xcode
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
+          echo "Using $XCODE_PATH"
+          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          xcodebuild -version
+
+      - name: Resolve simulator
+        id: sim
+        run: |
+          DEVICE=$(xcrun simctl list devices available -j \
+            | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          for runtime in sorted(data['devices'].keys(), reverse=True):
+              for d in data['devices'][runtime]:
+                  if 'iPhone' in d['name'] and 'Pro' in d['name'] and 'Max' not in d['name'] and d['isAvailable']:
+                      print(d['name']); sys.exit(0)
+          sys.exit(1)
+          ")
+          echo "device=$DEVICE" >> "$GITHUB_OUTPUT"
+          echo "Resolved simulator: $DEVICE"
 
       - name: Take screenshots
-        run: scripts/take-screenshots.sh --device "iPhone 16 Pro"
+        run: scripts/take-screenshots.sh --device "${{ steps.sim.outputs.device }}"
 
       - name: Upload screenshots
         if: always()
