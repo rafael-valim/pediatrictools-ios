@@ -54,6 +54,7 @@ struct PediatricToolsApp: App {
     }
 
     private func applyOrientationLock(_ locked: Bool) {
+        guard !ProcessInfo.processInfo.arguments.contains("-UITesting") else { return }
         AppDelegate.orientationLock = locked ? .portrait : .allButUpsideDown
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         windowScene.windows.first?.rootViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()

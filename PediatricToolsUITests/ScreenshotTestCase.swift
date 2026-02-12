@@ -7,6 +7,7 @@ class ScreenshotTestCase: XCTestCase {
         super.setUp()
         continueAfterFailure = false
         app = XCUIApplication()
+        app.launchArguments += ["-UITesting", "-disclaimerAccepted", "1"]
         app.launch()
     }
 

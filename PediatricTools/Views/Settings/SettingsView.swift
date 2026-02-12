@@ -33,6 +33,7 @@ struct SettingsView: View {
 
             Section {
                 Toggle("settings_portrait_lock", isOn: $portraitLock)
+                    .accessibilityIdentifier("settings_portrait_lock")
             } header: {
                 Text("settings_orientation_section")
             }
