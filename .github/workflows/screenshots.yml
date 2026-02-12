@@ -20,6 +20,10 @@ on:
         type: string
         default: ''
 
+permissions:
+  contents: read
+  administration: read
+
 concurrency:
   group: screenshots-${{ github.ref }}
   cancel-in-progress: true
