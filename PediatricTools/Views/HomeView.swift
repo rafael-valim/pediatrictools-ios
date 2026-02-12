@@ -9,6 +9,8 @@ private struct ToolItem: Identifiable {
 }
 
 struct HomeView: View {
+    @AppStorage("language") private var language = "system"
+
     private let tools: [ToolItem] = [
         ToolItem(id: "ballard", titleKey: "ballard_score_title", subtitleKey: "ballard_score_subtitle", icon: "calendar.badge.clock", destination: AnyView(BallardScoreView())),
         ToolItem(id: "apgar", titleKey: "apgar_title", subtitleKey: "apgar_subtitle", icon: "heart.text.clipboard", destination: AnyView(ApgarScoreView())),
@@ -64,6 +66,7 @@ struct HomeView: View {
                 }
             }
         }
+        .id(language)
     }
 }
 
