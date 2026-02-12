@@ -23,6 +23,8 @@ struct SettingsView: View {
                     Text("settings_system").tag("system")
                     Text("settings_english").tag("en")
                     Text("settings_portuguese").tag("pt-BR")
+                    Text("settings_spanish").tag("es")
+                    Text("settings_french").tag("fr")
                 }
             } header: {
                 Text("settings_language_section")

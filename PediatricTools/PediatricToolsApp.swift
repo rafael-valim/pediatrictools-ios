@@ -21,6 +21,8 @@ struct PediatricToolsApp: App {
         switch language {
         case "en": return Locale(identifier: "en")
         case "pt-BR": return Locale(identifier: "pt-BR")
+        case "es": return Locale(identifier: "es")
+        case "fr": return Locale(identifier: "fr")
         default: return nil
         }
     }
