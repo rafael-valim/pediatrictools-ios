@@ -1,0 +1,111 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: 'Runner to use'
+        required: true
+        default: 'auto'
+        type: choice
+        options:
+          - auto
+          - self-hosted
+          - macos-15
+      run_screenshots:
+        description: 'Also run screenshot tests'
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-runner:
+    name: Resolve Runner
+    runs-on: ubuntu-latest
+    outputs:
+      runner: ${{ steps.check.outputs.runner }}
+    steps:
+      - name: Resolve runner
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # If runner was explicitly chosen, use it
+          INPUT_RUNNER="${{ inputs.runner }}"
+          if [ -n "$INPUT_RUNNER" ] && [ "$INPUT_RUNNER" != "auto" ]; then
+            echo "runner=$INPUT_RUNNER" >> "$GITHUB_OUTPUT"
+            echo "Using explicitly chosen runner: $INPUT_RUNNER"
+            exit 0
+          fi
+
+          # Auto-detect: check if self-hosted runner is online
+          ONLINE=$(gh api repos/${{ github.repository }}/actions/runners \
+            --jq '[.runners[] | select(.status == "online")] | length')
+          if [ "$ONLINE" -gt 0 ]; then
+            echo "runner=self-hosted" >> "$GITHUB_OUTPUT"
+            echo "Self-hosted runner is online — using self-hosted"
+          else
+            echo "runner=macos-15" >> "$GITHUB_OUTPUT"
+            echo "No self-hosted runner online — falling back to macos-15"
+          fi
+
+  unit-tests:
+    name: Unit Tests
+    needs: check-runner
+    runs-on: ${{ needs.check-runner.outputs.runner }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select latest Xcode
+        run: |
+          XCODE_PATH=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
+          echo "Using $XCODE_PATH"
+          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          xcodebuild -version
+
+      - name: Install xcbeautify
+        run: brew install xcbeautify
+
+      - name: Resolve simulator
+        id: sim
+        run: |
+          DEVICE=$(xcrun simctl list devices available -j \
+            | python3 -c "
+          import json, sys
+          data = json.load(sys.stdin)
+          for runtime in sorted(data['devices'].keys(), reverse=True):
+              for d in data['devices'][runtime]:
+                  if 'iPhone' in d['name'] and 'Pro' in d['name'] and 'Max' not in d['name'] and d['isAvailable']:
+                      print(d['name']); sys.exit(0)
+          sys.exit(1)
+          ")
+          echo "device=$DEVICE" >> "$GITHUB_OUTPUT"
+          echo "Resolved simulator: $DEVICE"
+
+      - name: Run unit tests
+        run: |
+          set -o pipefail
+          xcodebuild test \
+            -project PediatricTools.xcodeproj \
+            -scheme PediatricTools \
+            -destination 'platform=iOS Simulator,name=${{ steps.sim.outputs.device }}' \
+            -only-testing:PediatricToolsTests \
+            -disable-concurrent-destination-testing \
+            -parallel-testing-enabled NO \
+            2>&1 | xcbeautify
+
+  screenshots:
+    name: Screenshots
+    needs: check-runner
+    if: ${{ inputs.run_screenshots == true }}
+    uses: ./.github/workflows/screenshots.yml
+    with:
+      runner: ${{ needs.check-runner.outputs.runner }}

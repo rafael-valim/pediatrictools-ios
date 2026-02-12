@@ -1,71 +1,64 @@
-name: Tests
+name: Screenshots
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
     inputs:
       runner:
         description: 'Runner to use'
         required: true
-        default: 'self-hosted'
+        default: 'auto'
         type: choice
         options:
+          - auto
           - self-hosted
           - macos-15
+  workflow_call:
+    inputs:
+      runner:
+        description: 'Runner label passed from caller workflow'
+        required: false
+        type: string
+        default: ''
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: screenshots-${{ github.ref }}
   cancel-in-progress: true
 
-env:
-  RUNNER: ${{ inputs.runner || 'self-hosted' }}
-
 jobs:
-  unit-tests:
-    name: Unit Tests
-    runs-on: ${{ inputs.runner || 'self-hosted' }}
+  check-runner:
+    name: Resolve Runner
+    runs-on: ubuntu-latest
+    outputs:
+      runner: ${{ steps.check.outputs.runner }}
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Select latest Xcode
+      - name: Resolve runner
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          XCODE_PATH=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
-          echo "Using $XCODE_PATH"
-          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
-          xcodebuild -version
+          # If a runner was passed via workflow_call, use it directly
+          CALL_RUNNER="${{ inputs.runner }}"
+          if [ -n "$CALL_RUNNER" ] && [ "$CALL_RUNNER" != "auto" ] && [ "$CALL_RUNNER" != "" ]; then
+            echo "runner=$CALL_RUNNER" >> "$GITHUB_OUTPUT"
+            echo "Using runner from caller: $CALL_RUNNER"
+            exit 0
+          fi
 
-      - name: Resolve simulator
-        id: sim
-        run: |
-          DEVICE=$(xcrun simctl list devices available -j \
-            | python3 -c "
-          import json, sys
-          data = json.load(sys.stdin)
-          for runtime in sorted(data['devices'].keys(), reverse=True):
-              for d in data['devices'][runtime]:
-                  if 'iPhone' in d['name'] and 'Pro' in d['name'] and 'Max' not in d['name'] and d['isAvailable']:
-                      print(d['name']); sys.exit(0)
-          sys.exit(1)
-          ")
-          echo "device=$DEVICE" >> "$GITHUB_OUTPUT"
-          echo "Resolved simulator: $DEVICE"
-
-      - name: Run unit tests
-        run: |
-          xcodebuild test \
-            -project PediatricTools.xcodeproj \
-            -scheme PediatricTools \
-            -destination 'platform=iOS Simulator,name=${{ steps.sim.outputs.device }}' \
-            -only-testing:PediatricToolsTests \
-            -disable-concurrent-destination-testing \
-            -parallel-testing-enabled NO
+          # Auto-detect: check if self-hosted runner is online
+          ONLINE=$(gh api repos/${{ github.repository }}/actions/runners \
+            --jq '[.runners[] | select(.status == "online")] | length')
+          if [ "$ONLINE" -gt 0 ]; then
+            echo "runner=self-hosted" >> "$GITHUB_OUTPUT"
+            echo "Self-hosted runner is online — using self-hosted"
+          else
+            echo "runner=macos-15" >> "$GITHUB_OUTPUT"
+            echo "No self-hosted runner online — falling back to macos-15"
+          fi
 
   screenshots:
-    name: Screenshots
-    runs-on: ${{ inputs.runner || 'self-hosted' }}
+    name: Take Screenshots
+    needs: check-runner
+    runs-on: ${{ needs.check-runner.outputs.runner }}
     steps:
       - uses: actions/checkout@v4
 

@@ -144,6 +144,41 @@ Screenshots are saved to `Screenshots/` organized by tool name, with the device 
 
 > **AI Agents:** Whenever a code change modifies any view under `Views/`, run `./scripts/take-screenshots.sh` (no flags needed — defaults to iPhone 17 Pro) to regenerate screenshots. Run it only once, on the default device.
 
+## CI/CD
+
+The project uses two GitHub Actions workflows that default to a **self-hosted** macOS runner, with automatic fallback to `macos-15` (GitHub-hosted) when the self-hosted runner is offline.
+
+### Build and Test
+
+**File:** `.github/workflows/build-and-test.yml`
+
+Runs automatically on pushes to `main` and pull requests. Builds the project and runs all unit tests with prettified output via **xcbeautify**.
+
+To manually trigger with screenshots included:
+1. Go to **Actions > Build and Test > Run workflow**
+2. Set **Also run screenshot tests** to `true`
+3. Optionally force a specific runner (`self-hosted` or `macos-15`) instead of the default `auto`
+
+### Screenshots
+
+**File:** `.github/workflows/screenshots.yml`
+
+Captures screenshots of every tool in empty and filled states. Can be triggered in two ways:
+
+- **Standalone:** Go to **Actions > Screenshots > Run workflow**
+- **From Build and Test:** Enable the `run_screenshots` option when manually triggering the build workflow
+
+Screenshots and the `.xcresult` bundle are uploaded as workflow artifacts.
+
+### Runner behavior
+
+| Trigger | Default runner |
+|---------|---------------|
+| Push / PR | Auto-detect (self-hosted, fallback to `macos-15`) |
+| Manual (`workflow_dispatch`) | `auto` — same fallback logic, or choose a specific runner from the dropdown |
+
+The auto-detect logic queries the GitHub API for online self-hosted runners. If none are available, it falls back to `macos-15`.
+
 ## Adding a New Tool
 
 1. **Create the model** in `Models/` — a pure `enum` with `static` calculation functions
