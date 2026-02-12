@@ -64,8 +64,14 @@ struct HomeView: View {
                         .foregroundStyle(.secondary)
                 }
             }
-            .navigationTitle(localizedString("app_title"))
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text(localizedString("app_title"))
+                        .font(.headline)
+                        .minimumScaleFactor(0.7)
+                        .lineLimit(1)
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
                         SettingsView()
