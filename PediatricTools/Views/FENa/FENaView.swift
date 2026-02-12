@@ -22,15 +22,15 @@ struct FENaView: View {
     var body: some View {
         Form {
             Section {
-                NumberInputRow(labelKey: "fena_urine_sodium", unitKey: "unit_meq_l", value: $urineSodiumText)
-                NumberInputRow(labelKey: "fena_plasma_sodium", unitKey: "unit_meq_l", value: $plasmaSodiumText)
+                NumberInputRow(labelKey: "fena_urine_sodium", unitKey: "unit_meq_l", value: $urineSodiumText, range: 0.1...500)
+                NumberInputRow(labelKey: "fena_plasma_sodium", unitKey: "unit_meq_l", value: $plasmaSodiumText, range: 0.1...500)
             } header: {
                 Text("fena_sodium")
             }
 
             Section {
-                NumberInputRow(labelKey: "fena_urine_creatinine", unitKey: "unit_mg_dl", value: $urineCreatinineText)
-                NumberInputRow(labelKey: "fena_plasma_creatinine", unitKey: "unit_mg_dl", value: $plasmaCreatinineText)
+                NumberInputRow(labelKey: "fena_urine_creatinine", unitKey: "unit_mg_dl", value: $urineCreatinineText, range: 0.01...50)
+                NumberInputRow(labelKey: "fena_plasma_creatinine", unitKey: "unit_mg_dl", value: $plasmaCreatinineText, range: 0.01...50)
             } header: {
                 Text("fena_creatinine")
             }
@@ -43,6 +43,7 @@ struct FENaView: View {
                 Text("fena_formula")
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let result {
                 ResultBar {
@@ -55,7 +56,7 @@ struct FENaView: View {
                                 .font(.subheadline.weight(.bold))
                         }
                         Divider().fixedSize(horizontal: false, vertical: true)
-                        Text(String(localized: String.LocalizationValue(result.interpretationKey)))
+                        Text(LocalizedStringKey(result.interpretationKey))
                             .font(.subheadline.weight(.bold))
                             .foregroundStyle(result.fena < 1 ? .orange : result.fena <= 2 ? .yellow : .red)
                     }

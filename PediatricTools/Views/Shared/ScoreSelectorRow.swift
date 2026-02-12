@@ -10,7 +10,7 @@ struct ScoreSelectorRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(String(localized: String.LocalizationValue(nameKey)))
+            Text(LocalizedStringKey(nameKey))
                 .font(.subheadline.weight(.semibold))
 
             HStack(spacing: 8) {
@@ -23,7 +23,7 @@ struct ScoreSelectorRow: View {
                                 .font(.caption.weight(.bold))
 
                             if let descKey = descriptions[score] {
-                                Text(String(localized: String.LocalizationValue(descKey)))
+                                Text(LocalizedStringKey(descKey))
                                     .font(.system(size: 9))
                                     .multilineTextAlignment(.center)
                                     .lineLimit(3)

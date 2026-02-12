@@ -38,7 +38,50 @@
 		AA300008 /* DehydrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300008 /* DehydrationView.swift */; };
 		AA300009 /* FENaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300009 /* FENaView.swift */; };
 		AA300010 /* ETTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300010 /* ETTView.swift */; };
+		AA300011 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300011 /* SettingsView.swift */; };
+		AA300012 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300012 /* AboutView.swift */; };
+		CC000001 /* BallardScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000001 /* BallardScoreTests.swift */; };
+		CC000002 /* ApgarScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000002 /* ApgarScoreTests.swift */; };
+		CC000003 /* PEWSScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000003 /* PEWSScoreTests.swift */; };
+		CC000004 /* HollidaySegarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000004 /* HollidaySegarTests.swift */; };
+		CC000005 /* BSACalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000005 /* BSACalculatorTests.swift */; };
+		CC000006 /* CorrectedAgeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000006 /* CorrectedAgeTests.swift */; };
+		CC000007 /* DehydrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000007 /* DehydrationTests.swift */; };
+		CC000008 /* FENaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000008 /* FENaTests.swift */; };
+		CC000009 /* ETTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000009 /* ETTTests.swift */; };
+		CC000010 /* GrowthPercentileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000010 /* GrowthPercentileTests.swift */; };
+		CC000011 /* PediatricDosageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000011 /* PediatricDosageTests.swift */; };
+		DC000001 /* ScreenshotTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000001 /* ScreenshotTestCase.swift */; };
+		DC000002 /* HomeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000002 /* HomeScreenshots.swift */; };
+		DC000003 /* BallardScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000003 /* BallardScreenshots.swift */; };
+		DC000004 /* ApgarScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000004 /* ApgarScreenshots.swift */; };
+		DC000005 /* PEWSScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000005 /* PEWSScreenshots.swift */; };
+		DC000006 /* DosageScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000006 /* DosageScreenshots.swift */; };
+		DC000007 /* IVFluidScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000007 /* IVFluidScreenshots.swift */; };
+		DC000008 /* BSAScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000008 /* BSAScreenshots.swift */; };
+		DC000009 /* CorrectedAgeScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000009 /* CorrectedAgeScreenshots.swift */; };
+		DC000010 /* GrowthScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000010 /* GrowthScreenshots.swift */; };
+		DC000011 /* DehydrationScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000011 /* DehydrationScreenshots.swift */; };
+		DC000012 /* FENaScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000012 /* FENaScreenshots.swift */; };
+		DC000013 /* ETTScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000013 /* ETTScreenshots.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CN000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AI000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF000001;
+			remoteInfo = PediatricTools;
+		};
+		DN000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AI000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF000001;
+			remoteInfo = PediatricTools;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB000001 /* PediatricToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediatricToolsApp.swift; sourceTree = "<group>"; };
@@ -73,10 +116,52 @@
 		AB300008 /* DehydrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DehydrationView.swift; sourceTree = "<group>"; };
 		AB300009 /* FENaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FENaView.swift; sourceTree = "<group>"; };
 		AB300010 /* ETTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTView.swift; sourceTree = "<group>"; };
+		AB300011 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AB300012 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		CD000001 /* BallardScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallardScoreTests.swift; sourceTree = "<group>"; };
+		CD000002 /* ApgarScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApgarScoreTests.swift; sourceTree = "<group>"; };
+		CD000003 /* PEWSScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEWSScoreTests.swift; sourceTree = "<group>"; };
+		CD000004 /* HollidaySegarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HollidaySegarTests.swift; sourceTree = "<group>"; };
+		CD000005 /* BSACalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSACalculatorTests.swift; sourceTree = "<group>"; };
+		CD000006 /* CorrectedAgeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectedAgeTests.swift; sourceTree = "<group>"; };
+		CD000007 /* DehydrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DehydrationTests.swift; sourceTree = "<group>"; };
+		CD000008 /* FENaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FENaTests.swift; sourceTree = "<group>"; };
+		CD000009 /* ETTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTTests.swift; sourceTree = "<group>"; };
+		CD000010 /* GrowthPercentileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthPercentileTests.swift; sourceTree = "<group>"; };
+		CD000011 /* PediatricDosageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediatricDosageTests.swift; sourceTree = "<group>"; };
+		CE000001 /* PediatricToolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PediatricToolsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD000001 /* ScreenshotTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTestCase.swift; sourceTree = "<group>"; };
+		DD000002 /* HomeScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenshots.swift; sourceTree = "<group>"; };
+		DD000003 /* BallardScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallardScreenshots.swift; sourceTree = "<group>"; };
+		DD000004 /* ApgarScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApgarScreenshots.swift; sourceTree = "<group>"; };
+		DD000005 /* PEWSScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEWSScreenshots.swift; sourceTree = "<group>"; };
+		DD000006 /* DosageScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageScreenshots.swift; sourceTree = "<group>"; };
+		DD000007 /* IVFluidScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVFluidScreenshots.swift; sourceTree = "<group>"; };
+		DD000008 /* BSAScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAScreenshots.swift; sourceTree = "<group>"; };
+		DD000009 /* CorrectedAgeScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectedAgeScreenshots.swift; sourceTree = "<group>"; };
+		DD000010 /* GrowthScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowthScreenshots.swift; sourceTree = "<group>"; };
+		DD000011 /* DehydrationScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DehydrationScreenshots.swift; sourceTree = "<group>"; };
+		DD000012 /* FENaScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FENaScreenshots.swift; sourceTree = "<group>"; };
+		DD000013 /* ETTScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTScreenshots.swift; sourceTree = "<group>"; };
+		DE000001 /* PediatricToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PediatricToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AD000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CF000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DF000001 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -90,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				AE000002 /* PediatricTools */,
+				CG000001 /* PediatricToolsTests */,
+				DG000001 /* PediatricToolsUITests */,
 				AE000010 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,8 +226,18 @@
 				AE100009 /* Dehydration */,
 				AE100010 /* FENa */,
 				AE100011 /* ETT */,
+				AE100012 /* Settings */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AE100012 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AB300011 /* SettingsView.swift */,
+				AB300012 /* AboutView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AE000005 /* Ballard */ = {
@@ -166,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				AC000001 /* PediatricTools.app */,
+				CE000001 /* PediatricToolsTests.xctest */,
+				DE000001 /* PediatricToolsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,6 +359,44 @@
 			path = ETT;
 			sourceTree = "<group>";
 		};
+		CG000001 /* PediatricToolsTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD000001 /* BallardScoreTests.swift */,
+				CD000002 /* ApgarScoreTests.swift */,
+				CD000003 /* PEWSScoreTests.swift */,
+				CD000004 /* HollidaySegarTests.swift */,
+				CD000005 /* BSACalculatorTests.swift */,
+				CD000006 /* CorrectedAgeTests.swift */,
+				CD000007 /* DehydrationTests.swift */,
+				CD000008 /* FENaTests.swift */,
+				CD000009 /* ETTTests.swift */,
+				CD000010 /* GrowthPercentileTests.swift */,
+				CD000011 /* PediatricDosageTests.swift */,
+			);
+			path = PediatricToolsTests;
+			sourceTree = "<group>";
+		};
+		DG000001 /* PediatricToolsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD000001 /* ScreenshotTestCase.swift */,
+				DD000002 /* HomeScreenshots.swift */,
+				DD000003 /* BallardScreenshots.swift */,
+				DD000004 /* ApgarScreenshots.swift */,
+				DD000005 /* PEWSScreenshots.swift */,
+				DD000006 /* DosageScreenshots.swift */,
+				DD000007 /* IVFluidScreenshots.swift */,
+				DD000008 /* BSAScreenshots.swift */,
+				DD000009 /* CorrectedAgeScreenshots.swift */,
+				DD000010 /* GrowthScreenshots.swift */,
+				DD000011 /* DehydrationScreenshots.swift */,
+				DD000012 /* FENaScreenshots.swift */,
+				DD000013 /* ETTScreenshots.swift */,
+			);
+			path = PediatricToolsUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,6 +417,42 @@
 			productReference = AC000001 /* PediatricTools.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CH000001 /* PediatricToolsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL000001 /* Build configuration list for PBXNativeTarget "PediatricToolsTests" */;
+			buildPhases = (
+				CI000001 /* Sources */,
+				CF000001 /* Frameworks */,
+				CJ000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CM000001 /* PBXTargetDependency */,
+			);
+			name = PediatricToolsTests;
+			productName = PediatricToolsTests;
+			productReference = CE000001 /* PediatricToolsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DH000001 /* PediatricToolsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DL000001 /* Build configuration list for PBXNativeTarget "PediatricToolsUITests" */;
+			buildPhases = (
+				DI000001 /* Sources */,
+				DF000001 /* Frameworks */,
+				DJ000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DM000001 /* PBXTargetDependency */,
+			);
+			name = PediatricToolsUITests;
+			productName = PediatricToolsUITests;
+			productReference = DE000001 /* PediatricToolsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,6 +465,14 @@
 				TargetAttributes = {
 					AF000001 = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					CH000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = AF000001;
+					};
+					DH000001 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = AF000001;
 					};
 				};
 			};
@@ -309,6 +490,8 @@
 			projectRoot = "";
 			targets = (
 				AF000001 /* PediatricTools */,
+				CH000001 /* PediatricToolsTests */,
+				DH000001 /* PediatricToolsUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,6 +503,20 @@
 			files = (
 				AA000007 /* Assets.xcassets in Resources */,
 				AA000008 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CJ000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DJ000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,10 +556,63 @@
 				AA300008 /* DehydrationView.swift in Sources */,
 				AA300009 /* FENaView.swift in Sources */,
 				AA300010 /* ETTView.swift in Sources */,
+				AA300011 /* SettingsView.swift in Sources */,
+				AA300012 /* AboutView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CI000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC000001 /* BallardScoreTests.swift in Sources */,
+				CC000002 /* ApgarScoreTests.swift in Sources */,
+				CC000003 /* PEWSScoreTests.swift in Sources */,
+				CC000004 /* HollidaySegarTests.swift in Sources */,
+				CC000005 /* BSACalculatorTests.swift in Sources */,
+				CC000006 /* CorrectedAgeTests.swift in Sources */,
+				CC000007 /* DehydrationTests.swift in Sources */,
+				CC000008 /* FENaTests.swift in Sources */,
+				CC000009 /* ETTTests.swift in Sources */,
+				CC000010 /* GrowthPercentileTests.swift in Sources */,
+				CC000011 /* PediatricDosageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DI000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC000001 /* ScreenshotTestCase.swift in Sources */,
+				DC000002 /* HomeScreenshots.swift in Sources */,
+				DC000003 /* BallardScreenshots.swift in Sources */,
+				DC000004 /* ApgarScreenshots.swift in Sources */,
+				DC000005 /* PEWSScreenshots.swift in Sources */,
+				DC000006 /* DosageScreenshots.swift in Sources */,
+				DC000007 /* IVFluidScreenshots.swift in Sources */,
+				DC000008 /* BSAScreenshots.swift in Sources */,
+				DC000009 /* CorrectedAgeScreenshots.swift in Sources */,
+				DC000010 /* GrowthScreenshots.swift in Sources */,
+				DC000011 /* DehydrationScreenshots.swift in Sources */,
+				DC000012 /* FENaScreenshots.swift in Sources */,
+				DC000013 /* ETTScreenshots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CM000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF000001 /* PediatricTools */;
+			targetProxy = CN000001 /* PBXContainerItemProxy */;
+		};
+		DM000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF000001 /* PediatricTools */;
+			targetProxy = DN000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B3000001 /* Debug */ = {
@@ -547,6 +797,84 @@
 			};
 			name = Release;
 		};
+		CK000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pediatrictools.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PediatricTools.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PediatricTools";
+			};
+			name = Debug;
+		};
+		CK000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pediatrictools.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PediatricTools.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PediatricTools";
+			};
+			name = Release;
+		};
+		DK000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pediatrictools.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PediatricTools;
+			};
+			name = Debug;
+		};
+		DK000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pediatrictools.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PediatricTools;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -564,6 +892,24 @@
 			buildConfigurations = (
 				B3000001 /* Debug */,
 				B3000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CL000001 /* Build configuration list for PBXNativeTarget "PediatricToolsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CK000001 /* Debug */,
+				CK000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DL000001 /* Build configuration list for PBXNativeTarget "PediatricToolsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DK000001 /* Debug */,
+				DK000002 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

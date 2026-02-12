@@ -33,7 +33,7 @@ struct BallardResultView: View {
                 Text("result_gestational_age")
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
-                Text(formattedGestationalAge)
+                formattedGestationalAge
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(.accent)
             }
@@ -45,14 +45,14 @@ struct BallardResultView: View {
         .padding(.horizontal)
     }
 
-    private var formattedGestationalAge: String {
+    private var formattedGestationalAge: Text {
         let weeks = Int(gestationalAge)
         let remainder = gestationalAge - Double(weeks)
         if remainder < 0.01 {
-            return String(localized: "\(weeks) result_weeks")
+            return Text("\(weeks) ") + Text(LocalizedStringKey("result_weeks"))
         }
         let days = Int(round(remainder * 7))
-        return String(localized: "\(weeks) result_weeks_and \(days) result_days")
+        return Text("\(weeks) ") + Text(LocalizedStringKey("result_weeks_and")) + Text(" \(days) ") + Text(LocalizedStringKey("result_days"))
     }
 }
 
@@ -62,7 +62,7 @@ private struct ScoreColumn: View {
 
     var body: some View {
         VStack(spacing: 2) {
-            Text(String(localized: String.LocalizationValue(titleKey)))
+            Text(LocalizedStringKey(titleKey))
                 .font(.caption)
                 .foregroundStyle(.secondary)
             Text("\(score)")

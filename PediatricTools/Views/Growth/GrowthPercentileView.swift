@@ -24,7 +24,7 @@ struct GrowthPercentileView: View {
             Section {
                 Picker(selection: $sex) {
                     ForEach(Sex.allCases) { s in
-                        Text(String(localized: String.LocalizationValue(s.localizedKey))).tag(s)
+                        Text(LocalizedStringKey(s.localizedKey)).tag(s)
                     }
                 } label: {
                     Text("sex_label")
@@ -33,7 +33,7 @@ struct GrowthPercentileView: View {
 
                 Picker(selection: $measurement) {
                     ForEach(GrowthMeasurement.allCases) { m in
-                        Text(String(localized: String.LocalizationValue(m.nameKey))).tag(m)
+                        Text(LocalizedStringKey(m.nameKey)).tag(m)
                     }
                 } label: {
                     Text("growth_measurement")
@@ -41,11 +41,12 @@ struct GrowthPercentileView: View {
             }
 
             Section {
-                NumberInputRow(labelKey: "growth_age_months", unitKey: "unit_months", value: $ageMonthsText)
+                NumberInputRow(labelKey: "growth_age_months", unitKey: "unit_months", value: $ageMonthsText, range: 0...24)
                 NumberInputRow(
                     labelKey: measurement == .weightForAge ? "input_weight" : "input_height",
-                    unitKey: String(localized: String.LocalizationValue(measurement.unitKey)),
-                    value: $valueText
+                    unitKey: measurement.unitKey,
+                    value: $valueText,
+                    range: measurement == .weightForAge ? 0.1...300 : 10...250
                 )
             } header: {
                 Text("growth_input")
@@ -57,6 +58,7 @@ struct GrowthPercentileView: View {
                     .foregroundStyle(.secondary)
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let result {
                 ResultBar {

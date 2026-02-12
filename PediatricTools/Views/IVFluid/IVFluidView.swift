@@ -13,7 +13,7 @@ struct IVFluidView: View {
     var body: some View {
         Form {
             Section {
-                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText)
+                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText, range: 0.1...300)
             }
 
             Section {
@@ -42,6 +42,7 @@ struct IVFluidView: View {
                 }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let result {
                 ResultBar {
@@ -78,7 +79,7 @@ struct IVFluidView: View {
 
     private func row(_ key: String, value: String) -> some View {
         HStack {
-            Text(String(localized: String.LocalizationValue(key)))
+            Text(LocalizedStringKey(key))
             Spacer()
             Text(value)
                 .fontWeight(.medium)

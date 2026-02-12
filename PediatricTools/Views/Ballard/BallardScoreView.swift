@@ -19,7 +19,7 @@ struct BallardScoreView: View {
             Section {
                 Picker(selection: $sex) {
                     ForEach(Sex.allCases) { s in
-                        Text(String(localized: String.LocalizationValue(s.localizedKey)))
+                        Text(LocalizedStringKey(s.localizedKey))
                             .tag(s)
                     }
                 } label: {
@@ -57,6 +57,7 @@ struct BallardScoreView: View {
                 Text("section_physical")
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             BallardResultView(
                 neuromuscularScore: neuromuscularTotal,

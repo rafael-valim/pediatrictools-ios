@@ -19,7 +19,7 @@ struct DosageView: View {
     var body: some View {
         Form {
             Section {
-                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText)
+                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText, range: 0.1...300)
             }
 
             Section {
@@ -30,9 +30,9 @@ struct DosageView: View {
                     } label: {
                         HStack {
                             VStack(alignment: .leading) {
-                                Text(String(localized: String.LocalizationValue(med.nameKey)))
+                                Text(LocalizedStringKey(med.nameKey))
                                     .font(.subheadline.weight(.medium))
-                                Text("\(formatNumber(med.dosePerKg))–\(formatNumber(med.maxDosePerKg)) mg/kg  \(String(localized: String.LocalizationValue(med.frequencyKey)))")
+                                (Text("\(formatNumber(med.dosePerKg))–\(formatNumber(med.maxDosePerKg)) mg/kg  ") + Text(LocalizedStringKey(med.frequencyKey)))
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
@@ -56,7 +56,7 @@ struct DosageView: View {
                             selectedConcentration = conc
                         } label: {
                             HStack {
-                                Text(String(localized: String.LocalizationValue(conc.labelKey)))
+                                Text(LocalizedStringKey(conc.labelKey))
                                 Spacer()
                                 if selectedConcentration?.id == conc.id {
                                     Image(systemName: "checkmark")
@@ -71,15 +71,16 @@ struct DosageView: View {
                 }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let result, let med = selectedMedication {
                 ResultBar {
                     if result.lowDoseMg == result.highDoseMg {
-                        Text("\(formatNumber(result.lowDoseMg)) mg \(String(localized: String.LocalizationValue(med.frequencyKey)))")
+                        (Text("\(formatNumber(result.lowDoseMg)) mg ") + Text(LocalizedStringKey(med.frequencyKey)))
                             .font(.subheadline.weight(.bold))
                             .foregroundStyle(.accent)
                     } else {
-                        Text("\(formatNumber(result.lowDoseMg))–\(formatNumber(result.highDoseMg)) mg \(String(localized: String.LocalizationValue(med.frequencyKey)))")
+                        (Text("\(formatNumber(result.lowDoseMg))–\(formatNumber(result.highDoseMg)) mg ") + Text(LocalizedStringKey(med.frequencyKey)))
                             .font(.subheadline.weight(.bold))
                             .foregroundStyle(.accent)
                     }
@@ -90,11 +91,11 @@ struct DosageView: View {
                     }
                     if let vol = result.volumeMl, let volHigh = result.volumeHighMl {
                         if vol == volHigh {
-                            Text(String(localized: "dosage_volume \(formatNumber(vol))"))
+                            Text("dosage_volume \(formatNumber(vol))")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         } else {
-                            Text(String(localized: "dosage_volume_range \(formatNumber(vol)) \(formatNumber(volHigh))"))
+                            Text("dosage_volume_range \(formatNumber(vol)) \(formatNumber(volHigh))")
                                 .font(.caption)
                                 .foregroundStyle(.secondary)
                         }

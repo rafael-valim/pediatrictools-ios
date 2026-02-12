@@ -19,13 +19,13 @@ struct DehydrationView: View {
     var body: some View {
         Form {
             Section {
-                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText)
+                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText, range: 0.1...300)
             }
 
             Section {
                 Picker(selection: $severity) {
                     ForEach(DehydrationSeverity.allCases) { s in
-                        Text("\(String(localized: String.LocalizationValue(s.nameKey))) (\(s.percentRange))")
+                        Text("\(Text(LocalizedStringKey(s.nameKey))) (\(s.percentRange))")
                             .tag(s)
                     }
                 } label: {
@@ -33,7 +33,7 @@ struct DehydrationView: View {
                 }
                 .onChange(of: severity) { customPercent = "" }
 
-                NumberInputRow(labelKey: "dehydration_custom_percent", unitKey: "unit_percent", value: $customPercent, placeholder: String(format: "%.1f", severity.defaultPercent))
+                NumberInputRow(labelKey: "dehydration_custom_percent", unitKey: "unit_percent", value: $customPercent, placeholder: String(format: "%.1f", severity.defaultPercent), range: 0.1...20)
             } header: {
                 Text("dehydration_assessment")
             }
@@ -48,6 +48,7 @@ struct DehydrationView: View {
                 }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let result {
                 ResultBar {
@@ -87,7 +88,7 @@ struct DehydrationView: View {
 
     private func row(_ key: String, value: String) -> some View {
         HStack {
-            Text(String(localized: String.LocalizationValue(key)))
+            Text(LocalizedStringKey(key))
             Spacer()
             Text(value).fontWeight(.medium)
         }

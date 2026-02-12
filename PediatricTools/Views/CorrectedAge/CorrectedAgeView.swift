@@ -18,19 +18,19 @@ struct CorrectedAgeView: View {
         Form {
             Section {
                 DatePicker(
-                    String(localized: String.LocalizationValue("corrected_birth_date")),
+                    "corrected_birth_date",
                     selection: $birthDate,
                     in: ...Date(),
                     displayedComponents: .date
                 )
 
-                Picker(String(localized: String.LocalizationValue("corrected_ga_weeks")), selection: $gestationalWeeks) {
+                Picker("corrected_ga_weeks", selection: $gestationalWeeks) {
                     ForEach(22...42, id: \.self) { week in
                         Text("\(week)").tag(week)
                     }
                 }
 
-                Picker(String(localized: String.LocalizationValue("corrected_ga_days")), selection: $gestationalDays) {
+                Picker("corrected_ga_days", selection: $gestationalDays) {
                     ForEach(0...6, id: \.self) { day in
                         Text("\(day)").tag(day)
                     }
@@ -40,20 +40,27 @@ struct CorrectedAgeView: View {
             }
 
             Section {
-                row("corrected_chrono_age", value: "\(result.chronologicalAgeWeeks)w \(result.chronologicalAgeDays)d")
-                row("corrected_prematurity", value: "\(result.prematurityWeeks) \(String(localized: String.LocalizationValue("unit_weeks")))")
-                row("corrected_result", value: "\(result.correctedAgeWeeks)w \(result.correctedAgeDays)d")
+                row("corrected_chrono_age") {
+                    Text("\(result.chronologicalAgeWeeks)w \(result.chronologicalAgeDays)d")
+                }
+                row("corrected_prematurity") {
+                    Text("\(result.prematurityWeeks) ") + Text(LocalizedStringKey("unit_weeks"))
+                }
+                row("corrected_result") {
+                    Text("\(result.correctedAgeWeeks)w \(result.correctedAgeDays)d")
+                }
             } header: {
                 Text("corrected_results")
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             ResultBar {
                 HStack(spacing: 4) {
                     Text("corrected_age_label")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                    Text("\(result.correctedAgeWeeks) \(String(localized: String.LocalizationValue("unit_weeks"))), \(result.correctedAgeDays) \(String(localized: String.LocalizationValue("unit_days")))")
+                    (Text("\(result.correctedAgeWeeks) ") + Text(LocalizedStringKey("unit_weeks")) + Text(", \(result.correctedAgeDays) ") + Text(LocalizedStringKey("unit_days")))
                         .font(.subheadline.weight(.bold))
                         .foregroundStyle(.accent)
                 }
@@ -64,11 +71,11 @@ struct CorrectedAgeView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    private func row(_ key: String, value: String) -> some View {
+    private func row(_ key: String, @ViewBuilder value: () -> Text) -> some View {
         HStack {
-            Text(String(localized: String.LocalizationValue(key)))
+            Text(LocalizedStringKey(key))
             Spacer()
-            Text(value).fontWeight(.medium)
+            value().fontWeight(.medium)
         }
     }
 }

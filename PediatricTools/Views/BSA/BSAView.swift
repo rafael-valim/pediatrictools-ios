@@ -15,8 +15,8 @@ struct BSAView: View {
     var body: some View {
         Form {
             Section {
-                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText)
-                NumberInputRow(labelKey: "input_height", unitKey: "unit_cm", value: $heightText)
+                NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText, range: 0.1...300)
+                NumberInputRow(labelKey: "input_height", unitKey: "unit_cm", value: $heightText, range: 10...250)
             }
 
             Section {
@@ -27,6 +27,7 @@ struct BSAView: View {
                 Text("bsa_formula")
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let bsa {
                 ResultBar {

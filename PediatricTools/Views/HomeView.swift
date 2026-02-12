@@ -25,26 +25,44 @@ struct HomeView: View {
 
     var body: some View {
         NavigationStack {
-            List(tools) { tool in
-                NavigationLink {
-                    tool.destination
-                } label: {
-                    Label {
-                        VStack(alignment: .leading) {
-                            Text(String(localized: String.LocalizationValue(tool.titleKey)))
-                                .font(.headline)
-                            Text(String(localized: String.LocalizationValue(tool.subtitleKey)))
-                                .font(.subheadline)
-                                .foregroundStyle(.secondary)
+            List {
+                ForEach(tools) { tool in
+                    NavigationLink {
+                        tool.destination
+                    } label: {
+                        Label {
+                            VStack(alignment: .leading) {
+                                Text(LocalizedStringKey(tool.titleKey))
+                                    .font(.headline)
+                                Text(LocalizedStringKey(tool.subtitleKey))
+                                    .font(.subheadline)
+                                    .foregroundStyle(.secondary)
+                            }
+                        } icon: {
+                            Image(systemName: tool.icon)
+                                .foregroundStyle(.accent)
+                                .font(.title2)
                         }
-                    } icon: {
-                        Image(systemName: tool.icon)
-                            .foregroundStyle(.accent)
-                            .font(.title2)
                     }
+                    .accessibilityIdentifier(tool.id)
+                }
+
+                Section {
+                    Text("disclaimer_home_label")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
                 }
             }
             .navigationTitle("app_title")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    NavigationLink {
+                        SettingsView()
+                    } label: {
+                        Image(systemName: "gearshape")
+                    }
+                }
+            }
         }
     }
 }

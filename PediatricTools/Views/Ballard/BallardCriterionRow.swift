@@ -6,7 +6,7 @@ struct BallardCriterionRow: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(String(localized: String.LocalizationValue(criterion.localizedKey)))
+            Text(LocalizedStringKey(criterion.localizedKey))
                 .font(.subheadline.weight(.semibold))
 
             ScrollView(.horizontal, showsIndicators: false) {
@@ -21,7 +21,7 @@ struct BallardCriterionRow: View {
                                     .frame(minWidth: 28)
 
                                 if let descKey = criterion.descriptionKeys[score] {
-                                    Text(String(localized: String.LocalizationValue(descKey)))
+                                    Text(LocalizedStringKey(descKey))
                                         .font(.system(size: 9))
                                         .multilineTextAlignment(.center)
                                         .lineLimit(3)

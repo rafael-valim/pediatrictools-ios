@@ -34,7 +34,7 @@ struct ETTView: View {
             Section {
                 Picker(selection: $mode) {
                     ForEach(ETTMode.allCases) { m in
-                        Text(String(localized: String.LocalizationValue(m.nameKey))).tag(m)
+                        Text(LocalizedStringKey(m.nameKey)).tag(m)
                     }
                 } label: {
                     Text("ett_mode")
@@ -45,9 +45,9 @@ struct ETTView: View {
             Section {
                 switch mode {
                 case .ageBased:
-                    NumberInputRow(labelKey: "ett_age_years", unitKey: "unit_years", value: $ageYearsText)
+                    NumberInputRow(labelKey: "ett_age_years", unitKey: "unit_years", value: $ageYearsText, range: 0.1...18)
                 case .neonatal:
-                    NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText)
+                    NumberInputRow(labelKey: "input_weight", unitKey: "unit_kg", value: $weightText, range: 0.1...300)
                 }
             } header: {
                 Text("ett_input")
@@ -65,6 +65,7 @@ struct ETTView: View {
                 }
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             if let result {
                 ResultBar {
@@ -112,7 +113,7 @@ struct ETTView: View {
 
     private func row(_ key: String, value: String) -> some View {
         HStack {
-            Text(String(localized: String.LocalizationValue(key)))
+            Text(LocalizedStringKey(key))
             Spacer()
             Text(value).fontWeight(.medium)
         }

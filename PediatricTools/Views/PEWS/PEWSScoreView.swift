@@ -22,6 +22,7 @@ struct PEWSScoreView: View {
                 Text("pews_criteria")
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             ResultBar {
                 HStack(spacing: 16) {
@@ -33,7 +34,7 @@ struct PEWSScoreView: View {
                             .font(.subheadline.weight(.bold))
                     }
                     Divider().fixedSize(horizontal: false, vertical: true)
-                    Text(String(localized: String.LocalizationValue(PEWSCalculator.interpretation(score: total))))
+                    Text(LocalizedStringKey(PEWSCalculator.interpretation(score: total)))
                         .font(.subheadline.weight(.bold))
                         .foregroundStyle(total <= 2 ? .green : total <= 4 ? .orange : .red)
                 }

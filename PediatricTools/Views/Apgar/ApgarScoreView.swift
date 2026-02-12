@@ -22,6 +22,7 @@ struct ApgarScoreView: View {
                 Text("apgar_criteria")
             }
         }
+        .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {
             ResultBar {
                 HStack(spacing: 16) {
@@ -33,7 +34,7 @@ struct ApgarScoreView: View {
                             .font(.subheadline.weight(.bold))
                     }
                     Divider().fixedSize(horizontal: false, vertical: true)
-                    Text(String(localized: String.LocalizationValue(ApgarCalculator.interpretation(score: total))))
+                    Text(LocalizedStringKey(ApgarCalculator.interpretation(score: total)))
                         .font(.subheadline.weight(.bold))
                         .foregroundStyle(total >= 7 ? .green : total >= 4 ? .orange : .red)
                 }
