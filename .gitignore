@@ -61,11 +61,5 @@ fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
 
-# Screenshot tests output
-Screenshots/
-
-# Local scripts
-scripts/
-
 # macOS
 .DS_Store
