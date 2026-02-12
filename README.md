@@ -59,7 +59,10 @@ PediatricTools/
 │   ├── FENa/
 │   ├── Growth/
 │   ├── IVFluid/
-│   └── PEWS/
+│   ├── PEWS/
+│   └── Settings/
+│       ├── SettingsView.swift     # Appearance, language, and about link
+│       └── AboutView.swift        # App info and clinical references
 └── Resources/
     ├── Assets.xcassets
     └── Localizable.xcstrings        # String catalog (EN + PT-BR)
@@ -98,7 +101,7 @@ The app uses Xcode String Catalogs (`Localizable.xcstrings`) with two languages:
 - **English (en)** — development language
 - **Brazilian Portuguese (pt-BR)**
 
-All user-facing strings use localization keys (e.g., `"ballard_score_title"`) resolved via `String(localized:)`.
+All user-facing strings use localization keys (e.g., `"ballard_score_title"`) resolved via `LocalizedStringKey` so they react to in-app locale changes.
 
 To add a new language:
 1. Open `Localizable.xcstrings` in Xcode
@@ -153,6 +156,36 @@ Screenshots are saved to `Screenshots/` organized by tool name, with the device 
 5. **Write unit tests** in `PediatricToolsTests/` covering the model logic
 6. **Write UI screenshot tests** in `PediatricToolsUITests/` capturing empty and filled states
 7. **Update `project.pbxproj`** to include the new files in the appropriate targets
+
+## Contributing Guidelines (for AI Agents)
+
+When working on this codebase, follow these conventions:
+
+### Git Workflow
+
+- **Commit frequently** — do not bundle all changes into a single large commit
+- **Break large changes into smaller, focused commits** — each commit should represent a single logical change and be independently reviewable
+- Examples of how to split a large feature:
+  1. Refactoring/preparation changes (e.g., converting localization patterns)
+  2. New files and models
+  3. Wiring up new features to the app root
+  4. UI changes (toolbar, navigation links, etc.)
+- Write clear commit messages that explain **why** the change was made, not just what changed
+- Use imperative mood in commit subjects (e.g., "Add settings screen" not "Added settings screen")
+
+### Code Conventions
+
+- **Localization:** Use `LocalizedStringKey` (not `String(localized:)`) so that SwiftUI text views react to in-app locale changes via `.environment(\.locale)`
+- **Views:** Use `@State` only — no view models, no Combine, no external state management
+- **Models:** Pure `enum` namespaces with `static` functions — no instances, no side effects
+- **Shared components:** Reuse `NumberInputRow`, `ResultBar`, and `ScoreSelectorRow` across tools
+- **Settings persistence:** Use `@AppStorage` for user preferences
+- **New localization keys:** Add entries to `Localizable.xcstrings` for both EN and PT-BR
+- **New files:** Register in `project.pbxproj` (PBXBuildFile, PBXFileReference, PBXGroup, PBXSourcesBuildPhase)
+
+### After Code Changes
+
+> Whenever a code change modifies any view under `Views/`, run `./scripts/take-screenshots.sh` (no flags needed — defaults to iPhone 17 Pro) to regenerate screenshots. Run it only once, on the default device.
 
 ## License
 
