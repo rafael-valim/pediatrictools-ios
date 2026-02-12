@@ -23,6 +23,15 @@ struct HomeView: View {
         ToolItem(id: "dehydration", titleKey: "dehydration_title", subtitleKey: "dehydration_subtitle", icon: "drop.triangle", destination: AnyView(DehydrationView())),
         ToolItem(id: "fena", titleKey: "fena_title", subtitleKey: "fena_subtitle", icon: "testtube.2", destination: AnyView(FENaView())),
         ToolItem(id: "ett", titleKey: "ett_title", subtitleKey: "ett_subtitle", icon: "lungs", destination: AnyView(ETTView())),
+        ToolItem(id: "flacc", titleKey: "flacc_title", subtitleKey: "flacc_subtitle", icon: "hand.raised", destination: AnyView(FLACCScoreView())),
+        ToolItem(id: "gcs", titleKey: "gcs_title", subtitleKey: "gcs_subtitle", icon: "brain.head.profile", destination: AnyView(GCSView())),
+        ToolItem(id: "gfr", titleKey: "gfr_title", subtitleKey: "gfr_subtitle", icon: "cross.vial", destination: AnyView(GFRView())),
+        ToolItem(id: "qtc", titleKey: "qtc_title", subtitleKey: "qtc_subtitle", icon: "waveform.path.ecg.rectangle", destination: AnyView(QTcView())),
+        ToolItem(id: "pram", titleKey: "pram_title", subtitleKey: "pram_subtitle", icon: "lungs.fill", destination: AnyView(PRAMScoreView())),
+        ToolItem(id: "bp", titleKey: "bp_title", subtitleKey: "bp_subtitle", icon: "heart.circle", destination: AnyView(BPView())),
+        ToolItem(id: "bilirubin", titleKey: "bili_title", subtitleKey: "bili_subtitle", icon: "sun.max", destination: AnyView(BilirubinView())),
+        ToolItem(id: "pecarn", titleKey: "pecarn_title", subtitleKey: "pecarn_subtitle", icon: "cross.case", destination: AnyView(PECARNView())),
+        ToolItem(id: "phoenix", titleKey: "phoenix_title", subtitleKey: "phoenix_subtitle", icon: "staroflife", destination: AnyView(PhoenixSepsisView())),
     ]
 
     private func localizedString(_ key: String) -> String {

@@ -70,6 +70,42 @@
 		AA100011 /* TipJarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100011 /* TipJarManager.swift */; };
 		AA300013 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300013 /* TipJarView.swift */; };
 		AA500001 /* TipJar.storekit in Resources */ = {isa = PBXBuildFile; fileRef = AB500001 /* TipJar.storekit */; };
+		AA100012 /* FLACCScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100012 /* FLACCScore.swift */; };
+		AA100013 /* GlasgowComaScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100013 /* GlasgowComaScale.swift */; };
+		AA100014 /* SchwartzGFR.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100014 /* SchwartzGFR.swift */; };
+		AA100015 /* QTcCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100015 /* QTcCalculator.swift */; };
+		AA100016 /* PRAMScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100016 /* PRAMScore.swift */; };
+		AA100017 /* BPPercentile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100017 /* BPPercentile.swift */; };
+		AA100018 /* BilirubinCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100018 /* BilirubinCalculator.swift */; };
+		AA100019 /* PECARNRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100019 /* PECARNRule.swift */; };
+		AA100020 /* PhoenixSepsis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100020 /* PhoenixSepsis.swift */; };
+		AA300014 /* FLACCScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300014 /* FLACCScoreView.swift */; };
+		AA300015 /* GCSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300015 /* GCSView.swift */; };
+		AA300016 /* GFRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300016 /* GFRView.swift */; };
+		AA300017 /* QTcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300017 /* QTcView.swift */; };
+		AA300018 /* PRAMScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300018 /* PRAMScoreView.swift */; };
+		AA300019 /* BPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300019 /* BPView.swift */; };
+		AA300020 /* BilirubinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300020 /* BilirubinView.swift */; };
+		AA300021 /* PECARNView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300021 /* PECARNView.swift */; };
+		AA300022 /* PhoenixSepsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300022 /* PhoenixSepsisView.swift */; };
+		CC000013 /* FLACCScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000013 /* FLACCScoreTests.swift */; };
+		CC000014 /* GCSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000014 /* GCSTests.swift */; };
+		CC000015 /* SchwartzGFRTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000015 /* SchwartzGFRTests.swift */; };
+		CC000016 /* QTcCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000016 /* QTcCalculatorTests.swift */; };
+		CC000017 /* PRAMScoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000017 /* PRAMScoreTests.swift */; };
+		CC000018 /* BPPercentileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000018 /* BPPercentileTests.swift */; };
+		CC000019 /* BilirubinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000019 /* BilirubinTests.swift */; };
+		CC000020 /* PECARNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000020 /* PECARNTests.swift */; };
+		CC000021 /* PhoenixSepsisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000021 /* PhoenixSepsisTests.swift */; };
+		DC000015 /* FLACCScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000015 /* FLACCScreenshots.swift */; };
+		DC000016 /* GCSScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000016 /* GCSScreenshots.swift */; };
+		DC000017 /* GFRScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000017 /* GFRScreenshots.swift */; };
+		DC000018 /* QTcScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000018 /* QTcScreenshots.swift */; };
+		DC000019 /* PRAMScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000019 /* PRAMScreenshots.swift */; };
+		DC000020 /* BPScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000020 /* BPScreenshots.swift */; };
+		DC000021 /* BilirubinScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000021 /* BilirubinScreenshots.swift */; };
+		DC000022 /* PECARNScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000022 /* PECARNScreenshots.swift */; };
+		DC000023 /* PhoenixScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000023 /* PhoenixScreenshots.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +192,42 @@
 		AB100011 /* TipJarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarManager.swift; sourceTree = "<group>"; };
 		AB300013 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		AB500001 /* TipJar.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TipJar.storekit; sourceTree = "<group>"; };
+		AB100012 /* FLACCScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCScore.swift; sourceTree = "<group>"; };
+		AB100013 /* GlasgowComaScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlasgowComaScale.swift; sourceTree = "<group>"; };
+		AB100014 /* SchwartzGFR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchwartzGFR.swift; sourceTree = "<group>"; };
+		AB100015 /* QTcCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTcCalculator.swift; sourceTree = "<group>"; };
+		AB100016 /* PRAMScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAMScore.swift; sourceTree = "<group>"; };
+		AB100017 /* BPPercentile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPPercentile.swift; sourceTree = "<group>"; };
+		AB100018 /* BilirubinCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinCalculator.swift; sourceTree = "<group>"; };
+		AB100019 /* PECARNRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNRule.swift; sourceTree = "<group>"; };
+		AB100020 /* PhoenixSepsis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixSepsis.swift; sourceTree = "<group>"; };
+		AB300014 /* FLACCScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCScoreView.swift; sourceTree = "<group>"; };
+		AB300015 /* GCSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSView.swift; sourceTree = "<group>"; };
+		AB300016 /* GFRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRView.swift; sourceTree = "<group>"; };
+		AB300017 /* QTcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTcView.swift; sourceTree = "<group>"; };
+		AB300018 /* PRAMScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAMScoreView.swift; sourceTree = "<group>"; };
+		AB300019 /* BPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPView.swift; sourceTree = "<group>"; };
+		AB300020 /* BilirubinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinView.swift; sourceTree = "<group>"; };
+		AB300021 /* PECARNView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNView.swift; sourceTree = "<group>"; };
+		AB300022 /* PhoenixSepsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixSepsisView.swift; sourceTree = "<group>"; };
+		CD000013 /* FLACCScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCScoreTests.swift; sourceTree = "<group>"; };
+		CD000014 /* GCSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSTests.swift; sourceTree = "<group>"; };
+		CD000015 /* SchwartzGFRTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchwartzGFRTests.swift; sourceTree = "<group>"; };
+		CD000016 /* QTcCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTcCalculatorTests.swift; sourceTree = "<group>"; };
+		CD000017 /* PRAMScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAMScoreTests.swift; sourceTree = "<group>"; };
+		CD000018 /* BPPercentileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPPercentileTests.swift; sourceTree = "<group>"; };
+		CD000019 /* BilirubinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinTests.swift; sourceTree = "<group>"; };
+		CD000020 /* PECARNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNTests.swift; sourceTree = "<group>"; };
+		CD000021 /* PhoenixSepsisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixSepsisTests.swift; sourceTree = "<group>"; };
+		DD000015 /* FLACCScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCScreenshots.swift; sourceTree = "<group>"; };
+		DD000016 /* GCSScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSScreenshots.swift; sourceTree = "<group>"; };
+		DD000017 /* GFRScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRScreenshots.swift; sourceTree = "<group>"; };
+		DD000018 /* QTcScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QTcScreenshots.swift; sourceTree = "<group>"; };
+		DD000019 /* PRAMScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRAMScreenshots.swift; sourceTree = "<group>"; };
+		DD000020 /* BPScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPScreenshots.swift; sourceTree = "<group>"; };
+		DD000021 /* BilirubinScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinScreenshots.swift; sourceTree = "<group>"; };
+		DD000022 /* PECARNScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNScreenshots.swift; sourceTree = "<group>"; };
+		DD000023 /* PhoenixScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixScreenshots.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +292,15 @@
 				AB100009 /* FENaCalculator.swift */,
 				AB100010 /* ETTCalculator.swift */,
 				AB100011 /* TipJarManager.swift */,
+				AB100012 /* FLACCScore.swift */,
+				AB100013 /* GlasgowComaScale.swift */,
+				AB100014 /* SchwartzGFR.swift */,
+				AB100015 /* QTcCalculator.swift */,
+				AB100016 /* PRAMScore.swift */,
+				AB100017 /* BPPercentile.swift */,
+				AB100018 /* BilirubinCalculator.swift */,
+				AB100019 /* PECARNRule.swift */,
+				AB100020 /* PhoenixSepsis.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +322,15 @@
 				AE100010 /* FENa */,
 				AE100011 /* ETT */,
 				AE100012 /* Settings */,
+				AE100013 /* FLACC */,
+				AE100014 /* GCS */,
+				AE100015 /* GFR */,
+				AE100016 /* QTc */,
+				AE100017 /* PRAM */,
+				AE100018 /* BP */,
+				AE100019 /* Bilirubin */,
+				AE100020 /* PECARN */,
+				AE100021 /* Phoenix */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -375,6 +465,78 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		AE100013 /* FLACC */ = {
+			isa = PBXGroup;
+			children = (
+				AB300014 /* FLACCScoreView.swift */,
+			);
+			path = FLACC;
+			sourceTree = "<group>";
+		};
+		AE100014 /* GCS */ = {
+			isa = PBXGroup;
+			children = (
+				AB300015 /* GCSView.swift */,
+			);
+			path = GCS;
+			sourceTree = "<group>";
+		};
+		AE100015 /* GFR */ = {
+			isa = PBXGroup;
+			children = (
+				AB300016 /* GFRView.swift */,
+			);
+			path = GFR;
+			sourceTree = "<group>";
+		};
+		AE100016 /* QTc */ = {
+			isa = PBXGroup;
+			children = (
+				AB300017 /* QTcView.swift */,
+			);
+			path = QTc;
+			sourceTree = "<group>";
+		};
+		AE100017 /* PRAM */ = {
+			isa = PBXGroup;
+			children = (
+				AB300018 /* PRAMScoreView.swift */,
+			);
+			path = PRAM;
+			sourceTree = "<group>";
+		};
+		AE100018 /* BP */ = {
+			isa = PBXGroup;
+			children = (
+				AB300019 /* BPView.swift */,
+			);
+			path = BP;
+			sourceTree = "<group>";
+		};
+		AE100019 /* Bilirubin */ = {
+			isa = PBXGroup;
+			children = (
+				AB300020 /* BilirubinView.swift */,
+			);
+			path = Bilirubin;
+			sourceTree = "<group>";
+		};
+		AE100020 /* PECARN */ = {
+			isa = PBXGroup;
+			children = (
+				AB300021 /* PECARNView.swift */,
+			);
+			path = PECARN;
+			sourceTree = "<group>";
+		};
+		AE100021 /* Phoenix */ = {
+			isa = PBXGroup;
+			children = (
+				AB300022 /* PhoenixSepsisView.swift */,
+			);
+			path = Phoenix;
+			sourceTree = "<group>";
+		};
 		CG000001 /* PediatricToolsTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +552,15 @@
 				CD000010 /* GrowthPercentileTests.swift */,
 				CD000011 /* PediatricDosageTests.swift */,
 				CD000012 /* AppDelegateTests.swift */,
+				CD000013 /* FLACCScoreTests.swift */,
+				CD000014 /* GCSTests.swift */,
+				CD000015 /* SchwartzGFRTests.swift */,
+				CD000016 /* QTcCalculatorTests.swift */,
+				CD000017 /* PRAMScoreTests.swift */,
+				CD000018 /* BPPercentileTests.swift */,
+				CD000019 /* BilirubinTests.swift */,
+				CD000020 /* PECARNTests.swift */,
+				CD000021 /* PhoenixSepsisTests.swift */,
 			);
 			path = PediatricToolsTests;
 			sourceTree = "<group>";
@@ -411,6 +582,15 @@
 				DD000012 /* FENaScreenshots.swift */,
 				DD000013 /* ETTScreenshots.swift */,
 				DD000014 /* SettingsScreenshots.swift */,
+				DD000015 /* FLACCScreenshots.swift */,
+				DD000016 /* GCSScreenshots.swift */,
+				DD000017 /* GFRScreenshots.swift */,
+				DD000018 /* QTcScreenshots.swift */,
+				DD000019 /* PRAMScreenshots.swift */,
+				DD000020 /* BPScreenshots.swift */,
+				DD000021 /* BilirubinScreenshots.swift */,
+				DD000022 /* PECARNScreenshots.swift */,
+				DD000023 /* PhoenixScreenshots.swift */,
 			);
 			path = PediatricToolsUITests;
 			sourceTree = "<group>";
@@ -582,6 +762,24 @@
 				AA300012 /* AboutView.swift in Sources */,
 				AA100011 /* TipJarManager.swift in Sources */,
 				AA300013 /* TipJarView.swift in Sources */,
+				AA100012 /* FLACCScore.swift in Sources */,
+				AA100013 /* GlasgowComaScale.swift in Sources */,
+				AA100014 /* SchwartzGFR.swift in Sources */,
+				AA100015 /* QTcCalculator.swift in Sources */,
+				AA100016 /* PRAMScore.swift in Sources */,
+				AA100017 /* BPPercentile.swift in Sources */,
+				AA100018 /* BilirubinCalculator.swift in Sources */,
+				AA100019 /* PECARNRule.swift in Sources */,
+				AA100020 /* PhoenixSepsis.swift in Sources */,
+				AA300014 /* FLACCScoreView.swift in Sources */,
+				AA300015 /* GCSView.swift in Sources */,
+				AA300016 /* GFRView.swift in Sources */,
+				AA300017 /* QTcView.swift in Sources */,
+				AA300018 /* PRAMScoreView.swift in Sources */,
+				AA300019 /* BPView.swift in Sources */,
+				AA300020 /* BilirubinView.swift in Sources */,
+				AA300021 /* PECARNView.swift in Sources */,
+				AA300022 /* PhoenixSepsisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,6 +799,15 @@
 				CC000010 /* GrowthPercentileTests.swift in Sources */,
 				CC000011 /* PediatricDosageTests.swift in Sources */,
 				CC000012 /* AppDelegateTests.swift in Sources */,
+				CC000013 /* FLACCScoreTests.swift in Sources */,
+				CC000014 /* GCSTests.swift in Sources */,
+				CC000015 /* SchwartzGFRTests.swift in Sources */,
+				CC000016 /* QTcCalculatorTests.swift in Sources */,
+				CC000017 /* PRAMScoreTests.swift in Sources */,
+				CC000018 /* BPPercentileTests.swift in Sources */,
+				CC000019 /* BilirubinTests.swift in Sources */,
+				CC000020 /* PECARNTests.swift in Sources */,
+				CC000021 /* PhoenixSepsisTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,6 +829,15 @@
 				DC000012 /* FENaScreenshots.swift in Sources */,
 				DC000013 /* ETTScreenshots.swift in Sources */,
 				DC000014 /* SettingsScreenshots.swift in Sources */,
+				DC000015 /* FLACCScreenshots.swift in Sources */,
+				DC000016 /* GCSScreenshots.swift in Sources */,
+				DC000017 /* GFRScreenshots.swift in Sources */,
+				DC000018 /* QTcScreenshots.swift in Sources */,
+				DC000019 /* PRAMScreenshots.swift in Sources */,
+				DC000020 /* BPScreenshots.swift in Sources */,
+				DC000021 /* BilirubinScreenshots.swift in Sources */,
+				DC000022 /* PECARNScreenshots.swift in Sources */,
+				DC000023 /* PhoenixScreenshots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
