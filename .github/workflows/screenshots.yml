@@ -71,8 +71,15 @@ jobs:
       - name: Select latest Xcode
         run: |
           XCODE_PATH=$(ls -d /Applications/Xcode*.app 2>/dev/null | sort -V | tail -1)
-          echo "Using $XCODE_PATH"
-          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          DESIRED="$XCODE_PATH/Contents/Developer"
+          CURRENT=$(xcode-select -p 2>/dev/null || true)
+          if [ "$CURRENT" != "$DESIRED" ]; then
+            sudo xcode-select -s "$DESIRED"
+            echo "Switched Xcode to $XCODE_PATH"
+          else
+            echo "Xcode already set to $XCODE_PATH"
+          fi
+          xcodebuild -version
           xcodebuild -version
 
       - name: Resolve simulator
