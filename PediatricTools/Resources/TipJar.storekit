@@ -1,0 +1,160 @@
+{
+  "identifier" : "8A2F4B6C-1D3E-4A5F-9B7C-2E8D0F1A3B5C",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "F1A2B3C4-D5E6-7890-ABCD-EF1234567890",
+      "localizations" : [
+        {
+          "description" : "A small tip to support development.",
+          "displayName" : "Small Tip",
+          "locale" : "en"
+        },
+        {
+          "description" : "Uma pequena gorjeta para apoiar o desenvolvimento.",
+          "displayName" : "Gorjeta Pequena",
+          "locale" : "pt-BR"
+        },
+        {
+          "description" : "Una pequeña propina para apoyar el desarrollo.",
+          "displayName" : "Propina Pequeña",
+          "locale" : "es"
+        },
+        {
+          "description" : "Un petit pourboire pour soutenir le développement.",
+          "displayName" : "Petit Pourboire",
+          "locale" : "fr"
+        }
+      ],
+      "productID" : "com.pediatrictools.app.tip.small",
+      "referenceName" : "Small Tip",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "A2B3C4D5-E6F7-8901-BCDE-F12345678901",
+      "localizations" : [
+        {
+          "description" : "A medium tip to support development.",
+          "displayName" : "Medium Tip",
+          "locale" : "en"
+        },
+        {
+          "description" : "Uma gorjeta média para apoiar o desenvolvimento.",
+          "displayName" : "Gorjeta Média",
+          "locale" : "pt-BR"
+        },
+        {
+          "description" : "Una propina mediana para apoyar el desarrollo.",
+          "displayName" : "Propina Mediana",
+          "locale" : "es"
+        },
+        {
+          "description" : "Un pourboire moyen pour soutenir le développement.",
+          "displayName" : "Pourboire Moyen",
+          "locale" : "fr"
+        }
+      ],
+      "productID" : "com.pediatrictools.app.tip.medium",
+      "referenceName" : "Medium Tip",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "B3C4D5E6-F789-0123-CDEF-123456789012",
+      "localizations" : [
+        {
+          "description" : "A large tip to support development.",
+          "displayName" : "Large Tip",
+          "locale" : "en"
+        },
+        {
+          "description" : "Uma gorjeta grande para apoiar o desenvolvimento.",
+          "displayName" : "Gorjeta Grande",
+          "locale" : "pt-BR"
+        },
+        {
+          "description" : "Una gran propina para apoyar el desarrollo.",
+          "displayName" : "Propina Grande",
+          "locale" : "es"
+        },
+        {
+          "description" : "Un gros pourboire pour soutenir le développement.",
+          "displayName" : "Gros Pourboire",
+          "locale" : "fr"
+        }
+      ],
+      "productID" : "com.pediatrictools.app.tip.large",
+      "referenceName" : "Large Tip",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "D4E5F6A7-B890-1234-5678-9ABCDEF01234",
+    "_developerTeamID" : "CJXZNY36RV",
+    "_failTransactionsEnabled" : false,
+    "_lastVerificationError" : "",
+    "_locale" : "en",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Transaction Listener"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

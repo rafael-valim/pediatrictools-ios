@@ -67,6 +67,9 @@
 		DC000013 /* ETTScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000013 /* ETTScreenshots.swift */; };
 		DC000014 /* SettingsScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000014 /* SettingsScreenshots.swift */; };
 		CC000012 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000012 /* AppDelegateTests.swift */; };
+		AA100011 /* TipJarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100011 /* TipJarManager.swift */; };
+		AA300013 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300013 /* TipJarView.swift */; };
+		AA500001 /* TipJar.storekit in Resources */ = {isa = PBXBuildFile; fileRef = AB500001 /* TipJar.storekit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +153,9 @@
 		DD000014 /* SettingsScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenshots.swift; sourceTree = "<group>"; };
 		CD000012 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		DE000001 /* PediatricToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PediatricToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB100011 /* TipJarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarManager.swift; sourceTree = "<group>"; };
+		AB300013 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		AB500001 /* TipJar.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = TipJar.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +219,7 @@
 				AB100008 /* DehydrationCalculator.swift */,
 				AB100009 /* FENaCalculator.swift */,
 				AB100010 /* ETTCalculator.swift */,
+				AB100011 /* TipJarManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 			children = (
 				AB000007 /* Assets.xcassets */,
 				AB000008 /* Localizable.xcstrings */,
+				AB500001 /* TipJar.storekit */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -362,6 +370,7 @@
 			children = (
 				AB300011 /* SettingsView.swift */,
 				AB300012 /* AboutView.swift */,
+				AB300013 /* TipJarView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -514,6 +523,7 @@
 			files = (
 				AA000007 /* Assets.xcassets in Resources */,
 				AA000008 /* Localizable.xcstrings in Resources */,
+				AA500001 /* TipJar.storekit in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,6 +580,8 @@
 				AA300010 /* ETTView.swift in Sources */,
 				AA300011 /* SettingsView.swift in Sources */,
 				AA300012 /* AboutView.swift in Sources */,
+				AA100011 /* TipJarManager.swift in Sources */,
+				AA300013 /* TipJarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
