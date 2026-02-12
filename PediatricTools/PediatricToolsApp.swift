@@ -2,9 +2,11 @@ import SwiftUI
 
 @main
 struct PediatricToolsApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("appearance") private var appearance = "system"
     @AppStorage("language") private var language = "system"
     @AppStorage("disclaimerAccepted") private var disclaimerAccepted = false
+    @AppStorage("portraitLock") private var portraitLock = false
     @State private var showDisclaimer = false
 
     private var colorScheme: ColorScheme? {
@@ -39,7 +41,20 @@ struct PediatricToolsApp: App {
                     if !disclaimerAccepted {
                         showDisclaimer = true
                     }
+                    applyOrientationLock(portraitLock)
                 }
+                .onChange(of: portraitLock) { _, newValue in
+                    applyOrientationLock(newValue)
+                }
+        }
+    }
+
+    private func applyOrientationLock(_ locked: Bool) {
+        AppDelegate.orientationLock = locked ? .portrait : .allButUpsideDown
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+        windowScene.windows.first?.rootViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()
+        if locked {
+            windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
         }
     }
 }

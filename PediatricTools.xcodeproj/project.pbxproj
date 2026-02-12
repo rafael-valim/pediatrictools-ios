@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA000001 /* PediatricToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000001 /* PediatricToolsApp.swift */; };
+		AA400001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB400001 /* AppDelegate.swift */; };
 		AA000002 /* BallardScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000002 /* BallardScore.swift */; };
 		AA000003 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000003 /* HomeView.swift */; };
 		AA000004 /* BallardScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB000004 /* BallardScoreView.swift */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		AB000001 /* PediatricToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediatricToolsApp.swift; sourceTree = "<group>"; };
+		AB400001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB000002 /* BallardScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallardScore.swift; sourceTree = "<group>"; };
 		AB000003 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AB000004 /* BallardScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallardScoreView.swift; sourceTree = "<group>"; };
@@ -92,7 +94,6 @@
 		AB000006 /* BallardResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallardResultView.swift; sourceTree = "<group>"; };
 		AB000007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB000008 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		AC000001 /* PediatricTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PediatricTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB100001 /* PediatricDosage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediatricDosage.swift; sourceTree = "<group>"; };
 		AB100002 /* HollidaySegar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HollidaySegar.swift; sourceTree = "<group>"; };
 		AB100003 /* BSACalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSACalculator.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		AB300010 /* ETTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTView.swift; sourceTree = "<group>"; };
 		AB300011 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AB300012 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		AC000001 /* PediatricTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PediatricTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD000001 /* BallardScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallardScoreTests.swift; sourceTree = "<group>"; };
 		CD000002 /* ApgarScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApgarScoreTests.swift; sourceTree = "<group>"; };
 		CD000003 /* PEWSScoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEWSScoreTests.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				AB000001 /* PediatricToolsApp.swift */,
+				AB400001 /* AppDelegate.swift */,
 				AE000003 /* Models */,
 				AE000004 /* Views */,
 				AE000006 /* Resources */,
@@ -229,15 +232,6 @@
 				AE100012 /* Settings */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		AE100012 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				AB300011 /* SettingsView.swift */,
-				AB300012 /* AboutView.swift */,
-			);
-			path = Settings;
 			sourceTree = "<group>";
 		};
 		AE000005 /* Ballard */ = {
@@ -357,6 +351,15 @@
 				AB300010 /* ETTView.swift */,
 			);
 			path = ETT;
+			sourceTree = "<group>";
+		};
+		AE100012 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AB300011 /* SettingsView.swift */,
+				AB300012 /* AboutView.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		CG000001 /* PediatricToolsTests */ = {
@@ -528,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA000001 /* PediatricToolsApp.swift in Sources */,
+				AA400001 /* AppDelegate.swift in Sources */,
 				AA000002 /* BallardScore.swift in Sources */,
 				AA000003 /* HomeView.swift in Sources */,
 				AA000004 /* BallardScoreView.swift in Sources */,
@@ -741,6 +745,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = CJXZNY36RV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pediatric Tools";
@@ -773,6 +778,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = CJXZNY36RV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Pediatric Tools";
@@ -915,7 +921,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
 	};
 	rootObject = AI000001 /* Project object */;
 }

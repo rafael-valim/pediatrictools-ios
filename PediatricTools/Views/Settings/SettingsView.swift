@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("appearance") private var appearance = "system"
     @AppStorage("language") private var language = "system"
+    @AppStorage("portraitLock") private var portraitLock = false
 
     var body: some View {
         Form {
@@ -25,6 +26,12 @@ struct SettingsView: View {
                 }
             } header: {
                 Text("settings_language_section")
+            }
+
+            Section {
+                Toggle("settings_portrait_lock", isOn: $portraitLock)
+            } header: {
+                Text("settings_orientation_section")
             }
 
             Section {
