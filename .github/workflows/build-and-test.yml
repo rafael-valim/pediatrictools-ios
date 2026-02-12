@@ -78,7 +78,7 @@ jobs:
           xcodebuild -version
 
       - name: Install xcbeautify
-        run: brew install xcbeautify
+        run: arch -arm64 brew install xcbeautify
 
       - name: Resolve simulator
         id: sim
