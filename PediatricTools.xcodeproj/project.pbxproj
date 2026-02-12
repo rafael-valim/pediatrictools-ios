@@ -65,6 +65,8 @@
 		DC000011 /* DehydrationScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000011 /* DehydrationScreenshots.swift */; };
 		DC000012 /* FENaScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000012 /* FENaScreenshots.swift */; };
 		DC000013 /* ETTScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000013 /* ETTScreenshots.swift */; };
+		DC000014 /* SettingsScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000014 /* SettingsScreenshots.swift */; };
+		CC000012 /* AppDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000012 /* AppDelegateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,8 @@
 		DD000011 /* DehydrationScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DehydrationScreenshots.swift; sourceTree = "<group>"; };
 		DD000012 /* FENaScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FENaScreenshots.swift; sourceTree = "<group>"; };
 		DD000013 /* ETTScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTScreenshots.swift; sourceTree = "<group>"; };
+		DD000014 /* SettingsScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenshots.swift; sourceTree = "<group>"; };
+		CD000012 /* AppDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateTests.swift; sourceTree = "<group>"; };
 		DE000001 /* PediatricToolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PediatricToolsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -376,6 +380,7 @@
 				CD000009 /* ETTTests.swift */,
 				CD000010 /* GrowthPercentileTests.swift */,
 				CD000011 /* PediatricDosageTests.swift */,
+				CD000012 /* AppDelegateTests.swift */,
 			);
 			path = PediatricToolsTests;
 			sourceTree = "<group>";
@@ -396,6 +401,7 @@
 				DD000011 /* DehydrationScreenshots.swift */,
 				DD000012 /* FENaScreenshots.swift */,
 				DD000013 /* ETTScreenshots.swift */,
+				DD000014 /* SettingsScreenshots.swift */,
 			);
 			path = PediatricToolsUITests;
 			sourceTree = "<group>";
@@ -486,6 +492,8 @@
 			knownRegions = (
 				en,
 				"pt-BR",
+				es,
+				fr,
 			);
 			mainGroup = AE000001;
 			productRefGroup = AE000010 /* Products */;
@@ -580,6 +588,7 @@
 				CC000009 /* ETTTests.swift in Sources */,
 				CC000010 /* GrowthPercentileTests.swift in Sources */,
 				CC000011 /* PediatricDosageTests.swift in Sources */,
+				CC000012 /* AppDelegateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,6 +609,7 @@
 				DC000011 /* DehydrationScreenshots.swift in Sources */,
 				DC000012 /* FENaScreenshots.swift in Sources */,
 				DC000013 /* ETTScreenshots.swift in Sources */,
+				DC000014 /* SettingsScreenshots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
