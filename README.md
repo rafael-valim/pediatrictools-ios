@@ -150,7 +150,8 @@ fastlane/                            # App Store submission automation
 scripts/
 ├── take-screenshots.sh              # UI test screenshots (single device)
 ├── take-appstore-screenshots.sh     # App Store screenshots (iPhone + iPad)
-└── show-metadata.sh                 # Print local metadata per locale
+├── show-metadata.sh                 # Print local metadata per locale
+└── store-credentials.sh             # Store ASC API credentials in macOS Keychain
 
 Gemfile                              # Fastlane dependency
 ```
@@ -247,17 +248,24 @@ The project includes a fully automated App Store submission pipeline powered by 
    bundle install
    ```
 
-2. **Create an App Store Connect API key:**
+2. **Store App Store Connect API credentials in macOS Keychain (recommended):**
    - Go to [App Store Connect](https://appstoreconnect.apple.com/) > Users and Access > Integrations > App Store Connect API
    - Generate a key with **Admin** or **App Manager** role
    - Download the `.p8` file and note the **Key ID** and **Issuer ID**
-   - Set environment variables:
+   - Run the one-time setup script:
+     ```bash
+     ./scripts/store-credentials.sh
+     ```
+     This prompts for Key ID, Issuer ID, and the path to your `.p8` file, then stores all three securely in macOS Keychain (service: `pediatrictools-fastlane`). You can safely delete the `.p8` file afterward.
+
+   - **Alternative (CI/environment variables):** If Keychain is not available (e.g., CI runners), set environment variables instead:
      ```bash
      export APP_STORE_CONNECT_API_KEY_KEY_ID="your-key-id"
      export APP_STORE_CONNECT_API_KEY_ISSUER_ID="your-issuer-id"
      export APP_STORE_CONNECT_API_KEY_KEY="$(cat path/to/AuthKey.p8)"
      ```
-   - Alternatively, place the `.p8` file in `fastlane/` (gitignored automatically)
+
+   Fastlane reads from Keychain first, falling back to environment variables automatically.
 
 ### App Store Metadata
 
