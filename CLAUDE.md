@@ -51,7 +51,7 @@ Views use `@State` exclusively — no view models, no Combine, no ObservableObje
 Four `@AppStorage` preferences: `"appearance"` (system/light/dark), `"language"` (system/en/pt-BR/es/fr), `"portraitLock"` (bool), `"disclaimerAccepted"` (bool). Orientation lock is applied via `AppDelegate.orientationLock` and skipped during UI tests when `-UITesting` is present in launch arguments.
 
 ### Tip Jar (StoreKit 2)
-`TipJarManager` uses `@Observable` (the only exception to the @State-only pattern). Three product IDs: `com.pediatrictools.app.tip.{small,medium,large}`. Supporter status is persisted in `UserDefaults`. The StoreKit config file is `Resources/TipJar.storekit`.
+`TipJarManager` uses `@Observable` (the only exception to the @State-only pattern). Three product IDs: `com.RV.pediatrictools.app.tip.{small,medium,large}`. Supporter status is persisted in `UserDefaults`. The StoreKit config file is `Resources/TipJar.storekit`.
 
 ### Privacy Manifest
 `Resources/PrivacyInfo.xcprivacy` declares UserDefaults access (CA92.1), no tracking, no data collection. Required by Apple since 2024.
@@ -86,7 +86,7 @@ Each screenshot test captures **empty** and **filled** states.
 The project uses Fastlane for App Store automation. Key files:
 
 - **`Gemfile`** — Fastlane dependency (`bundle install` to set up)
-- **`fastlane/Appfile`** — app identifier (`com.pediatrictools.app`) + team ID (`CJXZNY36RV`)
+- **`fastlane/Appfile`** — app identifier (`com.RV.pediatrictools.app`) + team ID (`CJXZNY36RV`)
 - **`fastlane/Fastfile`** — lanes: `screenshots`, `build`, `setup_iap`, `release`
 - **`fastlane/Deliverfile`** — deliver configuration (category, pricing, metadata paths)
 - **`fastlane/iap_products.json`** — 3 IAP products with localizations in 4 languages

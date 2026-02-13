@@ -30,7 +30,7 @@
           "locale" : "fr"
         }
       ],
-      "productID" : "com.pediatrictools.app.tip.small",
+      "productID" : "com.RV.pediatrictools.app.tip.small",
       "referenceName" : "Small Tip",
       "type" : "NonConsumable"
     },
@@ -60,7 +60,7 @@
           "locale" : "fr"
         }
       ],
-      "productID" : "com.pediatrictools.app.tip.medium",
+      "productID" : "com.RV.pediatrictools.app.tip.medium",
       "referenceName" : "Medium Tip",
       "type" : "NonConsumable"
     },
@@ -90,7 +90,7 @@
           "locale" : "fr"
         }
       ],
-      "productID" : "com.pediatrictools.app.tip.large",
+      "productID" : "com.RV.pediatrictools.app.tip.large",
       "referenceName" : "Large Tip",
       "type" : "NonConsumable"
     }

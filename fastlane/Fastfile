@@ -24,7 +24,12 @@ platform :ios do
       output_directory: "./build",
       output_name: "PediatricTools.ipa",
       clean: true,
-      include_bitcode: false
+      include_bitcode: false,
+      export_options: {
+        signingStyle: "automatic",
+        teamID: "CJXZNY36RV"
+      },
+      xcargs: "-allowProvisioningUpdates"
     )
   end
 
@@ -45,7 +50,7 @@ platform :ios do
     products = JSON.parse(File.read("../fastlane/iap_products.json"))
 
     # Get the app ID from App Store Connect
-    app = Spaceship::ConnectAPI::App.find("com.pediatrictools.app")
+    app = Spaceship::ConnectAPI::App.find("com.RV.pediatrictools.app")
     UI.user_error!("App not found in App Store Connect. Register it first.") unless app
 
     products.each do |product|

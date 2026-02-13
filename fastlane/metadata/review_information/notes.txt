@@ -1,7 +1,0 @@
-Pediatric Tools is a free clinical calculator app for pediatric healthcare professionals.
-
-The app contains 20+ evidence-based medical calculators (Apgar, Ballard, PEWS, GCS, drug dosage, IV fluids, growth percentiles, etc.). All calculations run locally on the device — no network requests are made, no accounts are needed, and no data is collected.
-
-The optional "Tip Jar" (Settings > Tip Jar) offers 3 non-consumable in-app purchases ($0.99, $1.99, $4.99) as voluntary support. No features are gated behind these purchases.
-
-To test: Simply open the app, select any tool from the home screen, enter sample values, and view the calculated result. No login or special configuration is required.

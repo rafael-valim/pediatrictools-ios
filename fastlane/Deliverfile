@@ -1,7 +1,7 @@
 # Deliverfile — configuration for `fastlane deliver`
 
 # App metadata
-app_identifier("com.pediatrictools.app")
+app_identifier("com.RV.pediatrictools.app")
 team_id("CJXZNY36RV")
 
 # Metadata and screenshots paths
@@ -14,19 +14,10 @@ automatic_release(false)
 phased_release(true)
 
 # Skip binary upload when only updating metadata
-# (override with --skip_binary_upload false)
 skip_binary_upload(true)
 
-# Price tier (free app)
-price_tier(0)
+# Skip precheck (IAP validation requires Apple ID login, not API key)
+run_precheck_before_submit(false)
 
-# App category
-primary_category("MedicalReference")
-
-# App rating — no objectionable content
-app_rating_config_path("./fastlane/rating_config.json")
-
-# Copyright
-copyright("2025 Pediatric Tools")
-
-# Trade representative contact information is not needed for individual developers
+# Category, price tier, rating, and copyright are set manually in App Store Connect
+# (Fastlane's App Store Connect API has compatibility issues with these fields)

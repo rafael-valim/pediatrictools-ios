@@ -1,6 +1,6 @@
 [
   {
-    "productId": "com.pediatrictools.app.tip.small",
+    "productId": "com.RV.pediatrictools.app.tip.small",
     "referenceName": "Small Tip",
     "type": "NON_CONSUMABLE",
     "price": "0.99",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "productId": "com.pediatrictools.app.tip.medium",
+    "productId": "com.RV.pediatrictools.app.tip.medium",
     "referenceName": "Medium Tip",
     "type": "NON_CONSUMABLE",
     "price": "1.99",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "productId": "com.pediatrictools.app.tip.large",
+    "productId": "com.RV.pediatrictools.app.tip.large",
     "referenceName": "Large Tip",
     "type": "NON_CONSUMABLE",
     "price": "4.99",

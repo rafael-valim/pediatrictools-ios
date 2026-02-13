@@ -5,9 +5,9 @@ import StoreKit
 final class TipJarManager {
 
     static let productIDs: [String] = [
-        "com.pediatrictools.app.tip.small",
-        "com.pediatrictools.app.tip.medium",
-        "com.pediatrictools.app.tip.large",
+        "com.RV.pediatrictools.app.tip.small",
+        "com.RV.pediatrictools.app.tip.medium",
+        "com.RV.pediatrictools.app.tip.large",
     ]
 
     private(set) var products: [Product] = []
