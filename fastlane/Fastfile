@@ -1,5 +1,21 @@
 default_platform(:ios)
 
+# Read a credential from macOS Keychain, falling back to an environment variable.
+def keychain_or_env(account, env_var)
+  value = `security find-generic-password -s "pediatrictools-fastlane" -a "#{account}" -w 2>/dev/null`.strip
+  value.empty? ? ENV[env_var] : value
+end
+
+# Build an App Store Connect API key from Keychain (preferred) or environment variables.
+def load_api_key
+  app_store_connect_api_key(
+    key_id: keychain_or_env("key_id", "APP_STORE_CONNECT_API_KEY_KEY_ID"),
+    issuer_id: keychain_or_env("issuer_id", "APP_STORE_CONNECT_API_KEY_ISSUER_ID"),
+    key_content: keychain_or_env("key_content", "APP_STORE_CONNECT_API_KEY_KEY"),
+    is_key_content_base64: false
+  )
+end
+
 platform :ios do
 
   desc "Generate App Store screenshots on iPhone and iPad"
@@ -9,12 +25,7 @@ platform :ios do
 
   desc "Build the app for App Store distribution"
   lane :build do
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: false
-    )
+    api_key = load_api_key
 
     build_app(
       scheme: "PediatricTools",
@@ -34,12 +45,7 @@ platform :ios do
 
   desc "Upload metadata to App Store Connect"
   lane :upload_metadata do
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: false
-    )
+    api_key = load_api_key
 
     deliver(
       api_key: api_key,
@@ -53,12 +59,7 @@ platform :ios do
 
   desc "Upload screenshots to App Store Connect"
   lane :upload_screenshots do
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: false
-    )
+    api_key = load_api_key
 
     deliver(
       api_key: api_key,
@@ -72,12 +73,7 @@ platform :ios do
 
   desc "Upload an existing .ipa to TestFlight"
   lane :upload_binary do
-    api_key = app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
-      key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-      is_key_content_base64: false
-    )
+    api_key = load_api_key
 
     upload_to_testflight(
       api_key: api_key,
@@ -97,12 +93,7 @@ platform :ios do
     build
     upload_binary
     deliver(
-      api_key: app_store_connect_api_key(
-        key_id: ENV["APP_STORE_CONNECT_API_KEY_KEY_ID"],
-        issuer_id: ENV["APP_STORE_CONNECT_API_KEY_ISSUER_ID"],
-        key_content: ENV["APP_STORE_CONNECT_API_KEY_KEY"],
-        is_key_content_base64: false
-      ),
+      api_key: load_api_key,
       skip_binary_upload: true,
       skip_metadata: false,
       skip_screenshots: false,

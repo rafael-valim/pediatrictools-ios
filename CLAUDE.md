@@ -99,8 +99,13 @@ The project uses Fastlane for App Store automation. Key files:
 - **`fastlane/metadata/{en-US,pt-BR,es-MX,fr-FR}/`** — App Store metadata text files
 - **`scripts/take-appstore-screenshots.sh`** — generates screenshots on iPhone 17 Pro Max + iPad Pro 13"
 - **`scripts/show-metadata.sh`** — prints all local metadata per locale
+- **`scripts/store-credentials.sh`** — one-time setup to store API credentials in macOS Keychain
 
-App Store Connect API credentials are read from environment variables (never hardcoded):
+App Store Connect API credentials are read from **macOS Keychain** (preferred) with fallback to environment variables. To set up Keychain storage, run:
+```bash
+./scripts/store-credentials.sh
+```
+This stores Key ID, Issuer ID, and P8 key content under the Keychain service `pediatrictools-fastlane`. Environment variables still work as a fallback (e.g., for CI):
 - `APP_STORE_CONNECT_API_KEY_KEY_ID`
 - `APP_STORE_CONNECT_API_KEY_ISSUER_ID`
 - `APP_STORE_CONNECT_API_KEY_KEY`
