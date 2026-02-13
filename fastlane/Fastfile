@@ -74,6 +74,7 @@ platform :ios do
       skip_binary_upload: true,
       skip_screenshots: false,
       skip_metadata: true,
+      overwrite_screenshots: true,
       force: true,
       precheck_include_in_app_purchases: false
     )
