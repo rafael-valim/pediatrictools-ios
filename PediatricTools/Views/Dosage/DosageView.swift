@@ -107,6 +107,7 @@ struct DosageView: View {
         }
         .navigationTitle("dosage_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "dosage"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

@@ -43,6 +43,7 @@ struct ApgarScoreView: View {
         }
         .navigationTitle("apgar_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "apgar"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { scores = [:] }

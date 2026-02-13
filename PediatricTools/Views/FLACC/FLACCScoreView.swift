@@ -43,6 +43,7 @@ struct FLACCScoreView: View {
         }
         .navigationTitle("flacc_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "flacc"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { scores = [:] }

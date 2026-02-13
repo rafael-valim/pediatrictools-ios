@@ -43,6 +43,7 @@ struct PEWSScoreView: View {
         }
         .navigationTitle("pews_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "pews"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { scores = [:] }

@@ -46,6 +46,7 @@ struct BSAView: View {
         }
         .navigationTitle("bsa_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "bsa"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

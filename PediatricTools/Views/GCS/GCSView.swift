@@ -64,6 +64,7 @@ struct GCSView: View {
         }
         .navigationTitle("gcs_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "gcs"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { scores = [:] }

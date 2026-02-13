@@ -64,6 +64,7 @@ struct PECARNView: View {
         }
         .navigationTitle("pecarn_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "pecarn"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { positiveCriteria = [] }

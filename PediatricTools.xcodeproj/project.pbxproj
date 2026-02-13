@@ -30,6 +30,8 @@
 		AA200002 /* ScoreSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200002 /* ScoreSelectorRow.swift */; };
 		AA200003 /* ResultBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200003 /* ResultBar.swift */; };
 		AA200004 /* KeyboardDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200004 /* KeyboardDoneButton.swift */; };
+		AA200005 /* ToolInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200005 /* ToolInfoView.swift */; };
+		AA200006 /* ToolInfoToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200006 /* ToolInfoToolbar.swift */; };
 		AA300001 /* DosageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300001 /* DosageView.swift */; };
 		AA300002 /* IVFluidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300002 /* IVFluidView.swift */; };
 		AA300003 /* BSAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300003 /* BSAView.swift */; };
@@ -80,6 +82,7 @@
 		AA100018 /* BilirubinCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100018 /* BilirubinCalculator.swift */; };
 		AA100019 /* PECARNRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100019 /* PECARNRule.swift */; };
 		AA100020 /* PhoenixSepsis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100020 /* PhoenixSepsis.swift */; };
+		AA100021 /* ToolInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB100021 /* ToolInfo.swift */; };
 		AA300014 /* FLACCScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300014 /* FLACCScoreView.swift */; };
 		AA300015 /* GCSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300015 /* GCSView.swift */; };
 		AA300016 /* GFRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300016 /* GFRView.swift */; };
@@ -151,6 +154,8 @@
 		AB200002 /* ScoreSelectorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSelectorRow.swift; sourceTree = "<group>"; };
 		AB200003 /* ResultBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBar.swift; sourceTree = "<group>"; };
 		AB200004 /* KeyboardDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDoneButton.swift; sourceTree = "<group>"; };
+		AB200005 /* ToolInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfoView.swift; sourceTree = "<group>"; };
+		AB200006 /* ToolInfoToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfoToolbar.swift; sourceTree = "<group>"; };
 		AB300001 /* DosageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageView.swift; sourceTree = "<group>"; };
 		AB300002 /* IVFluidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVFluidView.swift; sourceTree = "<group>"; };
 		AB300003 /* BSAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAView.swift; sourceTree = "<group>"; };
@@ -204,6 +209,7 @@
 		AB100018 /* BilirubinCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinCalculator.swift; sourceTree = "<group>"; };
 		AB100019 /* PECARNRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNRule.swift; sourceTree = "<group>"; };
 		AB100020 /* PhoenixSepsis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixSepsis.swift; sourceTree = "<group>"; };
+		AB100021 /* ToolInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfo.swift; sourceTree = "<group>"; };
 		AB300014 /* FLACCScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCScoreView.swift; sourceTree = "<group>"; };
 		AB300015 /* GCSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSView.swift; sourceTree = "<group>"; };
 		AB300016 /* GFRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRView.swift; sourceTree = "<group>"; };
@@ -305,6 +311,7 @@
 				AB100018 /* BilirubinCalculator.swift */,
 				AB100019 /* PECARNRule.swift */,
 				AB100020 /* PhoenixSepsis.swift */,
+				AB100021 /* ToolInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -377,6 +384,8 @@
 				AB200002 /* ScoreSelectorRow.swift */,
 				AB200003 /* ResultBar.swift */,
 				AB200004 /* KeyboardDoneButton.swift */,
+				AB200005 /* ToolInfoView.swift */,
+				AB200006 /* ToolInfoToolbar.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -756,6 +765,8 @@
 				AA200002 /* ScoreSelectorRow.swift in Sources */,
 				AA200003 /* ResultBar.swift in Sources */,
 				AA200004 /* KeyboardDoneButton.swift in Sources */,
+				AA200005 /* ToolInfoView.swift in Sources */,
+				AA200006 /* ToolInfoToolbar.swift in Sources */,
 				AA300001 /* DosageView.swift in Sources */,
 				AA300002 /* IVFluidView.swift in Sources */,
 				AA300003 /* BSAView.swift in Sources */,
@@ -779,6 +790,7 @@
 				AA100018 /* BilirubinCalculator.swift in Sources */,
 				AA100019 /* PECARNRule.swift in Sources */,
 				AA100020 /* PhoenixSepsis.swift in Sources */,
+				AA100021 /* ToolInfo.swift in Sources */,
 				AA300014 /* FLACCScoreView.swift in Sources */,
 				AA300015 /* GCSView.swift in Sources */,
 				AA300016 /* GFRView.swift in Sources */,

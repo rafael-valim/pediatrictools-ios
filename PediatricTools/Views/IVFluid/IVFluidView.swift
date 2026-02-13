@@ -71,6 +71,7 @@ struct IVFluidView: View {
         }
         .navigationTitle("ivfluid_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "ivfluid"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { weightText = "" }

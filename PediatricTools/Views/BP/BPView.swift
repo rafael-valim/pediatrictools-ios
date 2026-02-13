@@ -83,6 +83,7 @@ struct BPView: View {
         }
         .navigationTitle("bp_title")
         .navigationBarTitleDisplayMode(.inline)
+        .modifier(ToolInfoToolbar(toolID: "bp"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {
