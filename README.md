@@ -138,20 +138,19 @@ docs/                                # GitHub Pages (live at rafael-valim.github
 
 fastlane/                            # App Store submission automation
 ├── Appfile                          # App identifier + team ID
-├── Fastfile                         # Lanes: screenshots, build, setup_iap, release
+├── Fastfile                         # Lanes: screenshots, build, upload_metadata, upload_screenshots, upload_binary, build_and_upload, release
 ├── Deliverfile                      # deliver configuration
 ├── iap_products.json                # IAP product definitions with localizations
-├── rating_config.json               # App content rating
 └── metadata/                        # App Store metadata (4 locales)
     ├── en-US/                       # name, subtitle, description, keywords, etc.
     ├── pt-BR/
     ├── es-MX/
-    ├── fr-FR/
-    └── review_information/          # Notes for Apple reviewers
+    └── fr-FR/
 
 scripts/
 ├── take-screenshots.sh              # UI test screenshots (single device)
-└── take-appstore-screenshots.sh     # App Store screenshots (iPhone + iPad)
+├── take-appstore-screenshots.sh     # App Store screenshots (iPhone + iPad)
+└── show-metadata.sh                 # Print local metadata per locale
 
 Gemfile                              # Fastlane dependency
 ```
@@ -260,11 +259,6 @@ The project includes a fully automated App Store submission pipeline powered by 
      ```
    - Alternatively, place the `.p8` file in `fastlane/` (gitignored automatically)
 
-3. **Register the app in App Store Connect** (if not already done):
-   ```bash
-   bundle exec fastlane produce
-   ```
-
 ### App Store Metadata
 
 Metadata for all 4 locales lives in `fastlane/metadata/`:
@@ -282,8 +276,6 @@ fastlane/metadata/
 │   ├── release_notes.txt
 │   ├── privacy_url.txt
 │   └── support_url.txt
-└── review_information/
-    └── notes.txt             # Instructions for Apple reviewers
 ```
 
 To update metadata, edit the text files directly. Fastlane's `deliver` reads them automatically during upload.
@@ -303,22 +295,24 @@ This script:
 
 ### In-App Purchases
 
-IAP product definitions are in `fastlane/iap_products.json` (3 tip jar products with localizations in all 4 languages). To create them in App Store Connect:
-
-```bash
-bundle exec fastlane setup_iap
-```
+IAP product definitions are in `fastlane/iap_products.json` (3 tip jar products with localizations in all 4 languages). IAPs must be created manually in App Store Connect (the Spaceship API does not support programmatic IAP creation).
 
 ### Submission Workflow
 
 ```bash
-# Full pipeline (screenshots → build → upload → submit):
+# Full pipeline (build → upload → deliver → submit):
 bundle exec fastlane release
 
-# Or step by step:
+# Individual operations:
 bundle exec fastlane screenshots       # Generate App Store screenshots
 bundle exec fastlane build             # Archive .ipa for App Store
-bundle exec fastlane deliver           # Upload metadata + screenshots + binary
+bundle exec fastlane upload_metadata   # Push metadata to App Store Connect
+bundle exec fastlane upload_screenshots # Upload screenshots to App Store Connect
+bundle exec fastlane upload_binary     # Upload existing .ipa to TestFlight
+bundle exec fastlane build_and_upload  # Build + upload to TestFlight
+
+# View local metadata:
+./scripts/show-metadata.sh
 ```
 
 ### Privacy

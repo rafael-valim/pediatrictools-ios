@@ -26,13 +26,50 @@ declare -A SIZE_LABELS
 SIZE_LABELS["iPhone_17_Pro_Max"]="6.9inch"
 SIZE_LABELS["iPad_Pro_13-inch_(M5)"]="13inch"
 
+# ─── App Store screenshot selection (max 10 per device) ──────────────────────
+# Home + Settings + 8 features: Apgar, Bilirubin, Dosage, Growth, BP, GCS, PEWS, PECARN
+APP_STORE_TESTS=(
+    "PediatricToolsUITests/HomeScreenshots"
+    "PediatricToolsUITests/SettingsScreenshots"
+    "PediatricToolsUITests/ApgarScreenshots"
+    "PediatricToolsUITests/BilirubinScreenshots"
+    "PediatricToolsUITests/DosageScreenshots"
+    "PediatricToolsUITests/GrowthScreenshots"
+    "PediatricToolsUITests/BPScreenshots"
+    "PediatricToolsUITests/GCSScreenshots"
+    "PediatricToolsUITests/PEWSScreenshots"
+    "PediatricToolsUITests/PECARNScreenshots"
+)
+
+# Screenshots to keep for the store (Filled state for tools, Default for Home/Settings)
+APP_STORE_FILES=(
+    "Home/Home_Default"
+    "Settings/Settings_Default"
+    "Apgar/Apgar_Filled"
+    "Bilirubin/Bilirubin_Filled"
+    "Dosage/Dosage_Filled"
+    "Growth/Growth_Filled"
+    "BP/BP_Filled"
+    "GCS/GCS_Filled"
+    "PEWS/PEWS_Filled"
+    "PECARN/PECARN_Filled"
+)
+
 FASTLANE_SCREENSHOTS_DIR="$PROJECT_DIR/fastlane/screenshots/en-US"
+SCREENSHOTS_DIR="$PROJECT_DIR/Screenshots"
 
 # ─── Banner ───────────────────────────────────────────────────────────────────
 echo -e "${BOLD}${CYAN}📸 App Store Screenshot Generator${RESET}"
 echo -e "${CYAN}Devices:    ${RESET}${DEVICES[*]}"
 echo -e "${CYAN}Output:     ${RESET}${FASTLANE_SCREENSHOTS_DIR}"
+echo -e "${CYAN}Limit:      ${RESET}10 screenshots per device"
 echo ""
+
+# Build the -only-testing arguments
+ONLY_TESTING_ARGS=""
+for TEST in "${APP_STORE_TESTS[@]}"; do
+    ONLY_TESTING_ARGS="$ONLY_TESTING_ARGS -only-testing:$TEST"
+done
 
 # ─── Run screenshots on each device ──────────────────────────────────────────
 for DEVICE in "${DEVICES[@]}"; do
@@ -42,13 +79,12 @@ for DEVICE in "${DEVICES[@]}"; do
 done
 
 # ─── Organize into Fastlane structure ─────────────────────────────────────────
-echo -e "${YELLOW}Organizing screenshots for Fastlane...${RESET}"
+echo -e "${YELLOW}Organizing screenshots for Fastlane (10 per device)...${RESET}"
 mkdir -p "$FASTLANE_SCREENSHOTS_DIR"
 
 # Clear old Fastlane screenshots
 rm -f "$FASTLANE_SCREENSHOTS_DIR"/*.png
 
-SCREENSHOTS_DIR="$PROJECT_DIR/Screenshots"
 COUNTER=1
 
 # Process screenshots from each device
@@ -56,17 +92,20 @@ for DEVICE in "${DEVICES[@]}"; do
     DEVICE_SLUG=$(echo "$DEVICE" | tr ' ' '_' | tr -cd 'A-Za-z0-9_()-')
     SIZE_LABEL="${SIZE_LABELS[$DEVICE_SLUG]:-unknown}"
 
-    # Find all screenshots for this device, sorted by name
-    while IFS= read -r file; do
-        BASENAME=$(basename "$file" .png)
-        # Remove the device suffix to get the tool name
-        TOOL_NAME="${BASENAME%_${DEVICE_SLUG}}"
-        # Create sequential name: 01_ToolName_size.png
-        SEQ=$(printf "%02d" "$COUNTER")
-        cp "$file" "$FASTLANE_SCREENSHOTS_DIR/${SEQ}_${TOOL_NAME}_${SIZE_LABEL}.png"
-        echo -e "  ${GREEN}•${RESET} ${SEQ}_${TOOL_NAME}_${SIZE_LABEL}.png"
-        COUNTER=$((COUNTER + 1))
-    done < <(find "$SCREENSHOTS_DIR" -name "*_${DEVICE_SLUG}.png" 2>/dev/null | sort)
+    for FILE_PREFIX in "${APP_STORE_FILES[@]}"; do
+        # Find the screenshot matching this prefix and device
+        MATCH=$(find "$SCREENSHOTS_DIR" -path "*/${FILE_PREFIX}_*${DEVICE_SLUG}.png" 2>/dev/null | head -1)
+        if [[ -n "$MATCH" ]]; then
+            BASENAME=$(basename "$MATCH" .png)
+            TOOL_NAME="${BASENAME%_${DEVICE_SLUG}}"
+            SEQ=$(printf "%02d" "$COUNTER")
+            cp "$MATCH" "$FASTLANE_SCREENSHOTS_DIR/${SEQ}_${TOOL_NAME}_${SIZE_LABEL}.png"
+            echo -e "  ${GREEN}•${RESET} ${SEQ}_${TOOL_NAME}_${SIZE_LABEL}.png"
+            COUNTER=$((COUNTER + 1))
+        else
+            echo -e "  ${YELLOW}⚠${RESET} Not found: ${FILE_PREFIX} for ${DEVICE}"
+        fi
+    done
 done
 
 TOTAL=$((COUNTER - 1))

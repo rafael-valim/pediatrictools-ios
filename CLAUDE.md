@@ -26,8 +26,14 @@ xcodebuild test -scheme PediatricTools -destination 'platform=iOS Simulator,name
 # Fastlane lanes
 bundle exec fastlane screenshots       # App Store screenshots
 bundle exec fastlane build             # Archive .ipa
-bundle exec fastlane setup_iap         # Create IAP products in App Store Connect
-bundle exec fastlane release           # Full pipeline: screenshots → build → upload → submit
+bundle exec fastlane upload_metadata   # Push metadata to App Store Connect
+bundle exec fastlane upload_screenshots # Upload screenshots to App Store Connect
+bundle exec fastlane upload_binary     # Upload existing .ipa to TestFlight
+bundle exec fastlane build_and_upload  # Build + upload to TestFlight
+bundle exec fastlane release           # Full pipeline: build → upload → deliver → submit
+
+# View local metadata
+./scripts/show-metadata.sh
 ```
 
 ## Architecture
@@ -87,12 +93,12 @@ The project uses Fastlane for App Store automation. Key files:
 
 - **`Gemfile`** — Fastlane dependency (`bundle install` to set up)
 - **`fastlane/Appfile`** — app identifier (`com.RV.pediatrictools.app`) + team ID (`CJXZNY36RV`)
-- **`fastlane/Fastfile`** — lanes: `screenshots`, `build`, `setup_iap`, `release`
+- **`fastlane/Fastfile`** — lanes: `screenshots`, `build`, `upload_metadata`, `upload_screenshots`, `upload_binary`, `build_and_upload`, `release`
 - **`fastlane/Deliverfile`** — deliver configuration (category, pricing, metadata paths)
 - **`fastlane/iap_products.json`** — 3 IAP products with localizations in 4 languages
 - **`fastlane/metadata/{en-US,pt-BR,es-MX,fr-FR}/`** — App Store metadata text files
-- **`fastlane/metadata/review_information/notes.txt`** — notes for Apple reviewers
 - **`scripts/take-appstore-screenshots.sh`** — generates screenshots on iPhone 17 Pro Max + iPad Pro 13"
+- **`scripts/show-metadata.sh`** — prints all local metadata per locale
 
 App Store Connect API credentials are read from environment variables (never hardcoded):
 - `APP_STORE_CONNECT_API_KEY_KEY_ID`
