@@ -37,6 +37,10 @@ struct TipJarView: View {
                     Text(error)
                         .foregroundStyle(.red)
                         .font(.subheadline)
+                } else if tipJarManager.products.isEmpty {
+                    Text("tipjar_no_products")
+                        .foregroundStyle(.secondary)
+                        .font(.subheadline)
                 } else {
                     ForEach(tipJarManager.products, id: \.id) { product in
                         Button {

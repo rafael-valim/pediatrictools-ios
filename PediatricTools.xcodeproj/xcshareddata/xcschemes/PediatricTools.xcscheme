@@ -75,7 +75,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <StoreKitConfigurationFileReference
-         identifier = "../../PediatricTools/Resources/TipJar.storekit">
+         identifier = "PediatricTools/Resources/TipJar.storekit">
       </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
