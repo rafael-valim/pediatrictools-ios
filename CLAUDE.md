@@ -23,6 +23,9 @@ xcodebuild test -scheme PediatricTools -destination 'platform=iOS Simulator,name
 # Generate App Store screenshots (iPhone 17 Pro Max + iPad Pro 13")
 ./scripts/take-appstore-screenshots.sh
 
+# Bump build number (required before every App Store Connect submission)
+cd PediatricTools.xcodeproj/.. && agvtool next-version -all
+
 # Fastlane lanes
 bundle exec fastlane screenshots       # App Store screenshots
 bundle exec fastlane build             # Archive .ipa
@@ -88,6 +91,10 @@ Four languages: **en** (source), **pt-BR**, **es**, **fr**. All strings go throu
 Each screenshot test captures **empty** and **filled** states.
 
 ## App Store Submission
+
+**Before every build submission:** bump the build number with `agvtool next-version -all`, then commit.
+
+**App Store screenshots** show 10 screens per device (Home + Settings + 8 features in filled state): Apgar, Bilirubin, Dosage, Growth, BP, GCS, PEWS, PECARN. Regenerate with `./scripts/take-appstore-screenshots.sh` after any view change.
 
 The project uses Fastlane for App Store automation. Key files:
 

@@ -288,7 +288,32 @@ fastlane/metadata/
 
 To update metadata, edit the text files directly. Fastlane's `deliver` reads them automatically during upload.
 
+### Versioning
+
+The app uses two version numbers, both defined in `project.pbxproj` (no static Info.plist — Xcode auto-generates it):
+
+| Setting | Purpose | When to bump |
+|---------|---------|-------------|
+| `MARKETING_VERSION` | User-facing version (e.g., `1.0`) | New App Store release |
+| `CURRENT_PROJECT_VERSION` | Build number (e.g., `2`) | **Every** App Store Connect submission |
+
+Bump the build number before every submission:
+```bash
+agvtool next-version -all    # Increments build number across all targets
+agvtool what-version          # Verify current build number
+```
+
 ### App Store Screenshots
+
+The App Store shows **10 screenshots per device** (Apple's maximum). The selection strategy:
+
+| # | Screen | State |
+|---|--------|-------|
+| 1 | Home | Default |
+| 2-9 | Apgar, Bilirubin, Dosage, Growth, BP, GCS, PEWS, PECARN | Filled |
+| 10 | Settings | Default |
+
+These 8 features were chosen as the most representative clinical tools covering neonatal assessment, medication dosing, growth monitoring, vital signs, emergency scoring, and trauma decision support.
 
 Generate screenshots for both required device sizes (iPhone 6.9" and iPad 13"):
 
@@ -297,9 +322,11 @@ Generate screenshots for both required device sizes (iPhone 6.9" and iPad 13"):
 ```
 
 This script:
-1. Runs the existing UI test suite on **iPhone 17 Pro Max** and **iPad Pro 13-inch (M5)**
-2. Organizes results into `fastlane/screenshots/en-US/` with sequential naming
+1. Runs the UI test suite on **iPhone 17 Pro Max** and **iPad Pro 13-inch (M5)** (one at a time)
+2. Extracts the 10 selected screenshots per device into `fastlane/screenshots/en-US/` with sequential naming
 3. The same screenshots are used for all locales (the app handles localization internally)
+
+Regenerate after any view change, then upload with `bundle exec fastlane upload_screenshots`.
 
 ### In-App Purchases
 
