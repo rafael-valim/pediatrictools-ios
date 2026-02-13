@@ -17,4 +17,31 @@ final class BSAScreenshots: ScreenshotTestCase {
         }
         takeScreenshot(named: "BSA_Filled", subfolder: "BSA")
     }
+
+    func testInteraction() {
+        navigateToTool(id: "bsa")
+        let fields = app.textFields.allElementsBoundByIndex
+        guard fields.count >= 2 else { XCTFail("Expected 2 text fields"); return }
+
+        fields[0].tap()
+        fields[0].typeText("70")
+        fields[1].tap()
+        fields[1].typeText("170")
+
+        // Result should appear with m²
+        let resultText = app.staticTexts.matching(NSPredicate(format: "label CONTAINS 'm²'"))
+        XCTAssertTrue(resultText.firstMatch.waitForExistence(timeout: 2))
+
+        // Tap Reset
+        app.navigationBars.buttons["Reset"].tap()
+
+        // Fields should be cleared - enter new values
+        fields[0].tap()
+        fields[0].typeText("30")
+        fields[1].tap()
+        fields[1].typeText("130")
+
+        // Result should still show
+        XCTAssertTrue(resultText.firstMatch.waitForExistence(timeout: 2))
+    }
 }
