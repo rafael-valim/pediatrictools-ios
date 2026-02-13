@@ -72,6 +72,7 @@ struct DosageView: View {
             }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(KeyboardDoneButton())
         .safeAreaInset(edge: .bottom) {
             if let result, let med = selectedMedication {
                 ResultBar {

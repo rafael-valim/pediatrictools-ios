@@ -39,6 +39,7 @@ struct QTcView: View {
             }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(KeyboardDoneButton())
         .safeAreaInset(edge: .bottom) {
             if let result {
                 ResultBar {

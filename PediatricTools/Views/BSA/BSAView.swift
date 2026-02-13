@@ -28,6 +28,7 @@ struct BSAView: View {
             }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(KeyboardDoneButton())
         .safeAreaInset(edge: .bottom) {
             if let bsa {
                 ResultBar {

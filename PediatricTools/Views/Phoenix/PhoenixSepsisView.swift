@@ -122,6 +122,7 @@ struct PhoenixSepsisView: View {
             }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(KeyboardDoneButton())
         .safeAreaInset(edge: .bottom) {
             ResultBar {
                 HStack(spacing: 16) {

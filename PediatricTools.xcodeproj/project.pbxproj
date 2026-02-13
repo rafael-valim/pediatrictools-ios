@@ -29,6 +29,7 @@
 		AA200001 /* NumberInputRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200001 /* NumberInputRow.swift */; };
 		AA200002 /* ScoreSelectorRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200002 /* ScoreSelectorRow.swift */; };
 		AA200003 /* ResultBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200003 /* ResultBar.swift */; };
+		AA200004 /* KeyboardDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200004 /* KeyboardDoneButton.swift */; };
 		AA300001 /* DosageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300001 /* DosageView.swift */; };
 		AA300002 /* IVFluidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300002 /* IVFluidView.swift */; };
 		AA300003 /* BSAView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300003 /* BSAView.swift */; };
@@ -149,6 +150,7 @@
 		AB200001 /* NumberInputRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberInputRow.swift; sourceTree = "<group>"; };
 		AB200002 /* ScoreSelectorRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSelectorRow.swift; sourceTree = "<group>"; };
 		AB200003 /* ResultBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBar.swift; sourceTree = "<group>"; };
+		AB200004 /* KeyboardDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDoneButton.swift; sourceTree = "<group>"; };
 		AB300001 /* DosageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageView.swift; sourceTree = "<group>"; };
 		AB300002 /* IVFluidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVFluidView.swift; sourceTree = "<group>"; };
 		AB300003 /* BSAView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSAView.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				AB200001 /* NumberInputRow.swift */,
 				AB200002 /* ScoreSelectorRow.swift */,
 				AB200003 /* ResultBar.swift */,
+				AB200004 /* KeyboardDoneButton.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -752,6 +755,7 @@
 				AA200001 /* NumberInputRow.swift in Sources */,
 				AA200002 /* ScoreSelectorRow.swift in Sources */,
 				AA200003 /* ResultBar.swift in Sources */,
+				AA200004 /* KeyboardDoneButton.swift in Sources */,
 				AA300001 /* DosageView.swift in Sources */,
 				AA300002 /* IVFluidView.swift in Sources */,
 				AA300003 /* BSAView.swift in Sources */,

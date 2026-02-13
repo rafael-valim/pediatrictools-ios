@@ -54,6 +54,7 @@ struct CorrectedAgeView: View {
             }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(KeyboardDoneButton())
         .safeAreaInset(edge: .bottom) {
             ResultBar {
                 HStack(spacing: 4) {

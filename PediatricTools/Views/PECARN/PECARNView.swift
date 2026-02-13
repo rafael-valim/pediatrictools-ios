@@ -47,6 +47,7 @@ struct PECARNView: View {
             }
         }
         .scrollDismissesKeyboard(.interactively)
+        .modifier(KeyboardDoneButton())
         .safeAreaInset(edge: .bottom) {
             ResultBar {
                 VStack(spacing: 4) {
