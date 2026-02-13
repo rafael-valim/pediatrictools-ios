@@ -1,9 +1,17 @@
 default_platform(:ios)
 
 # Read a credential from macOS Keychain, falling back to an environment variable.
+# Note: macOS `security -w` returns hex-encoded output for passwords containing
+# newlines (like P8 keys). We detect and decode hex automatically.
 def keychain_or_env(account, env_var)
   value = `security find-generic-password -s "pediatrictools-fastlane" -a "#{account}" -w 2>/dev/null`.strip
-  value.empty? ? ENV[env_var] : value
+  if value.empty?
+    ENV[env_var]
+  elsif value.match?(/\A[0-9a-fA-F]+\z/) && value.length > 40
+    [value].pack("H*")
+  else
+    value
+  end
 end
 
 # Build an App Store Connect API key from Keychain (preferred) or environment variables.
