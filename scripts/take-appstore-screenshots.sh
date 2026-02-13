@@ -22,9 +22,14 @@ DEVICES=(
 )
 
 # ─── Size labels for Fastlane naming ─────────────────────────────────────────
-declare -A SIZE_LABELS
-SIZE_LABELS["iPhone_17_Pro_Max"]="6.9inch"
-SIZE_LABELS["iPad_Pro_13-inch_(M5)"]="13inch"
+# Maps device slug → size label (bash 3 compatible)
+size_label_for() {
+    case "$1" in
+        iPhone_17_Pro_Max)     echo "6.9inch" ;;
+        "iPad_Pro_13-inch_(M5)") echo "13inch" ;;
+        *)                     echo "unknown" ;;
+    esac
+}
 
 # ─── App Store screenshot selection (max 10 per device) ──────────────────────
 # Home + Settings + 8 features: Apgar, Bilirubin, Dosage, Growth, BP, GCS, PEWS, PECARN
@@ -90,7 +95,7 @@ COUNTER=1
 # Process screenshots from each device
 for DEVICE in "${DEVICES[@]}"; do
     DEVICE_SLUG=$(echo "$DEVICE" | tr ' ' '_' | tr -cd 'A-Za-z0-9_()-')
-    SIZE_LABEL="${SIZE_LABELS[$DEVICE_SLUG]:-unknown}"
+    SIZE_LABEL="$(size_label_for "$DEVICE_SLUG")"
 
     for FILE_PREFIX in "${APP_STORE_FILES[@]}"; do
         # Find the screenshot matching this prefix and device
