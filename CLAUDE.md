@@ -117,6 +117,8 @@ This stores Key ID, Issuer ID, and P8 key content under the Keychain service `pe
 - `APP_STORE_CONNECT_API_KEY_ISSUER_ID`
 - `APP_STORE_CONNECT_API_KEY_KEY`
 
+**On a new machine**, credentials can be restored from a separate private credentials repository. If Keychain entries are missing and the user needs to set up credentials, ask them for guidance on locating the credentials repo — do not guess or hardcode its location.
+
 GitHub Pages (privacy policy + support) are served from `docs/` at:
 - https://rafael-valim.github.io/pediatrictools-ios/privacy-policy
 - https://rafael-valim.github.io/pediatrictools-ios/support

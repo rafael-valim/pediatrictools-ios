@@ -267,6 +267,8 @@ The project includes a fully automated App Store submission pipeline powered by 
 
    Fastlane reads from Keychain first, falling back to environment variables automatically.
 
+   **New machine?** Credentials are backed up in a separate private repository with a restore script that imports everything into Keychain automatically.
+
 ### App Store Metadata
 
 Metadata for all 4 locales lives in `fastlane/metadata/`:
