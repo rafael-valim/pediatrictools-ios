@@ -18,6 +18,7 @@ final class DosageScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "dosage")
+        takeScreenshot(named: "Dosage_Interaction_Start", subfolder: "Dosage")
 
         // Enter weight = 10 kg and dismiss keyboard
         let weightField = app.textFields.firstMatch
@@ -37,5 +38,6 @@ final class DosageScreenshots: ScreenshotTestCase {
 
         // Tap Reset
         app.navigationBars.buttons["Reset"].tap()
+        takeScreenshot(named: "Dosage_Interaction_End", subfolder: "Dosage")
     }
 }

@@ -16,6 +16,7 @@ final class ETTScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "ett")
+        takeScreenshot(named: "ETT_Interaction_Start", subfolder: "ETT")
 
         // Enter age = 4 → uncuffed 5.0 (formats as "5"), cuffed 4.5
         let ageField = app.textFields.firstMatch
@@ -36,5 +37,6 @@ final class ETTScreenshots: ScreenshotTestCase {
         // Verify result changes — cuffed size 5.5
         let resultBarAfter = app.staticTexts.matching(NSPredicate(format: "label == '5.5'"))
         XCTAssertTrue(resultBarAfter.firstMatch.waitForExistence(timeout: 3), "Cuffed size 5.5 should appear for age=8")
+        takeScreenshot(named: "ETT_Interaction_End", subfolder: "ETT")
     }
 }

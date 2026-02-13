@@ -16,6 +16,7 @@ final class IVFluidScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "ivfluid")
+        takeScreenshot(named: "IVFluid_Interaction_Start", subfolder: "IVFluid")
 
         // Enter weight = 15 kg → maintenance 1250 mL/day
         let weightField = app.textFields.allElementsBoundByIndex[0]
@@ -37,5 +38,6 @@ final class IVFluidScreenshots: ScreenshotTestCase {
         // Verify result still shows mL (different value)
         let resultBarAfter = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[c] %@", "mL"))
         XCTAssertTrue(resultBarAfter.firstMatch.waitForExistence(timeout: 3), "Result with mL should appear for weight=50")
+        takeScreenshot(named: "IVFluid_Interaction_End", subfolder: "IVFluid")
     }
 }

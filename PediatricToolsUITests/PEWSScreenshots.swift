@@ -14,6 +14,7 @@ final class PEWSScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "pews")
+        takeScreenshot(named: "PEWS_Interaction_Start", subfolder: "PEWS")
 
         // PEWS has 3 criteria (Behavior, Cardiovascular, Respiratory),
         // each with scores 0–3. Initial total should be 0/9.
@@ -41,5 +42,6 @@ final class PEWSScreenshots: ScreenshotTestCase {
         // Reset and verify
         app.navigationBars.buttons["Reset"].tap()
         XCTAssertTrue(app.staticTexts["0/9"].waitForExistence(timeout: 2))
+        takeScreenshot(named: "PEWS_Interaction_End", subfolder: "PEWS")
     }
 }

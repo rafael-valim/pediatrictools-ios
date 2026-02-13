@@ -14,6 +14,7 @@ final class PRAMScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "pram")
+        takeScreenshot(named: "PRAM_Interaction_Start", subfolder: "PRAM")
 
         // PRAM has 5 criteria:
         //   O2 Sat (0–2), Suprasternal (0–2), Scalene (0–2),
@@ -46,5 +47,6 @@ final class PRAMScreenshots: ScreenshotTestCase {
         // Reset and verify
         app.navigationBars.buttons["Reset"].tap()
         XCTAssertTrue(app.staticTexts["0/12"].waitForExistence(timeout: 2))
+        takeScreenshot(named: "PRAM_Interaction_End", subfolder: "PRAM")
     }
 }

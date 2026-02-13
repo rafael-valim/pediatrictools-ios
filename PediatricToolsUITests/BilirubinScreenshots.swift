@@ -14,6 +14,7 @@ final class BilirubinScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "bilirubin")
+        takeScreenshot(named: "Bilirubin_Interaction_Start", subfolder: "Bilirubin")
         let fields = app.textFields.allElementsBoundByIndex
         guard fields.count >= 2 else { XCTFail("Expected at least 2 text fields"); return }
 
@@ -43,5 +44,6 @@ final class BilirubinScreenshots: ScreenshotTestCase {
         // Result bar should reappear
         XCTAssertTrue(resultText.firstMatch.waitForExistence(timeout: 3),
                        "Result bar should reappear with new values")
+        takeScreenshot(named: "Bilirubin_Interaction_End", subfolder: "Bilirubin")
     }
 }

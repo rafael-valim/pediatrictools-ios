@@ -14,6 +14,7 @@ final class BPScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "bp")
+        takeScreenshot(named: "BP_Interaction_Start", subfolder: "BP")
         let fields = app.textFields.allElementsBoundByIndex
         guard fields.count >= 2 else { XCTFail("Expected 2 text fields"); return }
 
@@ -38,5 +39,6 @@ final class BPScreenshots: ScreenshotTestCase {
 
         // Result should still show
         XCTAssertTrue(resultText.firstMatch.waitForExistence(timeout: 2))
+        takeScreenshot(named: "BP_Interaction_End", subfolder: "BP")
     }
 }

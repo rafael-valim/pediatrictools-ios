@@ -14,6 +14,7 @@ final class PECARNScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "pecarn")
+        takeScreenshot(named: "PECARN_Interaction_Start", subfolder: "PECARN")
 
         // Default: no criteria selected → Very Low Risk
         let veryLowPredicate = NSPredicate(format: "label CONTAINS[c] 'Very Low'")
@@ -34,5 +35,6 @@ final class PECARNScreenshots: ScreenshotTestCase {
         app.navigationBars.buttons["Reset"].tap()
         XCTAssertTrue(app.staticTexts.matching(veryLowPredicate).firstMatch.waitForExistence(timeout: 3),
                        "After reset should return to Very Low Risk")
+        takeScreenshot(named: "PECARN_Interaction_End", subfolder: "PECARN")
     }
 }

@@ -20,6 +20,7 @@ final class GrowthScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "growth")
+        takeScreenshot(named: "Growth_Interaction_Start", subfolder: "Growth")
 
         let fields = app.textFields.allElementsBoundByIndex
 
@@ -52,5 +53,6 @@ final class GrowthScreenshots: ScreenshotTestCase {
         let hasResultAfter = resultAfter.firstMatch.waitForExistence(timeout: 3)
             || resultAfterPercentile.firstMatch.waitForExistence(timeout: 1)
         XCTAssertTrue(hasResultAfter, "Result with % or percentile should appear for age=12, value=10")
+        takeScreenshot(named: "Growth_Interaction_End", subfolder: "Growth")
     }
 }

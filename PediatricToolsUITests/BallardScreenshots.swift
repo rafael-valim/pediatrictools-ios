@@ -16,6 +16,7 @@ final class BallardScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "ballard")
+        takeScreenshot(named: "Ballard_Interaction_Start", subfolder: "Ballard")
 
         // Default state: all scores 0, total = 0 → GA ≈ 24 weeks
         // The result bar shows "24" for gestational age
@@ -49,5 +50,6 @@ final class BallardScreenshots: ScreenshotTestCase {
         let ga24After = app.staticTexts.matching(NSPredicate(format: "label CONTAINS '24'"))
         XCTAssertTrue(ga24After.firstMatch.waitForExistence(timeout: 2),
                        "After reset, GA should return to ~24 weeks")
+        takeScreenshot(named: "Ballard_Interaction_End", subfolder: "Ballard")
     }
 }

@@ -14,6 +14,7 @@ final class QTcScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "qtc")
+        takeScreenshot(named: "QTc_Interaction_Start", subfolder: "QTc")
         let fields = app.textFields.allElementsBoundByIndex
         guard fields.count >= 2 else { XCTFail("Expected 2 text fields"); return }
 
@@ -38,5 +39,6 @@ final class QTcScreenshots: ScreenshotTestCase {
 
         // Result should still show
         XCTAssertTrue(resultText.firstMatch.waitForExistence(timeout: 2))
+        takeScreenshot(named: "QTc_Interaction_End", subfolder: "QTc")
     }
 }

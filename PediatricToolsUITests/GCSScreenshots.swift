@@ -14,6 +14,7 @@ final class GCSScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "gcs")
+        takeScreenshot(named: "GCS_Interaction_Start", subfolder: "GCS")
 
         // GCS has 3 criteria: Eye (1–4), Verbal (1–5), Motor (1–6)
         // Default scores are the minimum values (1, 1, 1) = total 3/15
@@ -62,5 +63,6 @@ final class GCSScreenshots: ScreenshotTestCase {
         // After switching age group, verbal score resets to min (1),
         // so total should still be 3/15 (1 + 1 + 1)
         XCTAssertTrue(app.staticTexts["3/15"].waitForExistence(timeout: 2))
+        takeScreenshot(named: "GCS_Interaction_End", subfolder: "GCS")
     }
 }

@@ -24,6 +24,7 @@ final class FENaScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "fena")
+        takeScreenshot(named: "FENa_Interaction_Start", subfolder: "FENa")
         let fields = app.textFields.allElementsBoundByIndex
         guard fields.count >= 4 else { XCTFail("Expected 4 text fields"); return }
 
@@ -56,5 +57,6 @@ final class FENaScreenshots: ScreenshotTestCase {
 
         // Result should still show
         XCTAssertTrue(resultText.firstMatch.waitForExistence(timeout: 2))
+        takeScreenshot(named: "FENa_Interaction_End", subfolder: "FENa")
     }
 }

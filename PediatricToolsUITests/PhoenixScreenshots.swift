@@ -14,6 +14,7 @@ final class PhoenixScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "phoenix")
+        takeScreenshot(named: "Phoenix_Interaction_Start", subfolder: "Phoenix")
 
         // Initial state: total 0/13
         XCTAssertTrue(app.staticTexts["0/13"].waitForExistence(timeout: 3), "Initial total should be 0/13")
@@ -44,5 +45,6 @@ final class PhoenixScreenshots: ScreenshotTestCase {
         // Should go back to 0/13
         XCTAssertTrue(app.staticTexts["0/13"].waitForExistence(timeout: 3),
                        "After reset total should be 0/13")
+        takeScreenshot(named: "Phoenix_Interaction_End", subfolder: "Phoenix")
     }
 }

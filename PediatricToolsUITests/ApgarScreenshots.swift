@@ -14,6 +14,7 @@ final class ApgarScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "apgar")
+        takeScreenshot(named: "Apgar_Interaction_Start", subfolder: "Apgar")
 
         // Apgar has 5 criteria, each with scores 0, 1, 2
         // Initial total should be 0/10
@@ -36,5 +37,6 @@ final class ApgarScreenshots: ScreenshotTestCase {
 
         // Score should be back to 0/10
         XCTAssertTrue(app.staticTexts["0/10"].waitForExistence(timeout: 2))
+        takeScreenshot(named: "Apgar_Interaction_End", subfolder: "Apgar")
     }
 }

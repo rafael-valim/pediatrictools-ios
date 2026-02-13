@@ -14,6 +14,7 @@ final class FLACCScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "flacc")
+        takeScreenshot(named: "FLACC_Interaction_Start", subfolder: "FLACC")
 
         // FLACC has 5 criteria (Face, Legs, Activity, Cry, Consolability),
         // each with scores 0–2. Initial total should be 0/10.
@@ -43,5 +44,6 @@ final class FLACCScreenshots: ScreenshotTestCase {
         // Reset and verify
         app.navigationBars.buttons["Reset"].tap()
         XCTAssertTrue(app.staticTexts["0/10"].waitForExistence(timeout: 2))
+        takeScreenshot(named: "FLACC_Interaction_End", subfolder: "FLACC")
     }
 }

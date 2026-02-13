@@ -8,6 +8,7 @@ final class CorrectedAgeScreenshots: ScreenshotTestCase {
 
     func testInteraction() {
         navigateToTool(id: "corrected")
+        takeScreenshot(named: "CorrectedAge_Interaction_Start", subfolder: "CorrectedAge")
 
         // CorrectedAge uses DatePicker and Pickers which are difficult to manipulate in XCUITest.
         // The default state (birth date = today, GA = 28w 0d) always shows results since
@@ -34,5 +35,6 @@ final class CorrectedAgeScreenshots: ScreenshotTestCase {
         let chronoText = app.staticTexts["0w 0d"]
         XCTAssertTrue(chronoText.waitForExistence(timeout: 2),
                        "Birth date of today should show chronological age of 0w 0d")
+        takeScreenshot(named: "CorrectedAge_Interaction_End", subfolder: "CorrectedAge")
     }
 }
