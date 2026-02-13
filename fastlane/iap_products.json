@@ -1,0 +1,74 @@
+[
+  {
+    "productId": "com.pediatrictools.app.tip.small",
+    "referenceName": "Small Tip",
+    "type": "NON_CONSUMABLE",
+    "price": "0.99",
+    "localizations": {
+      "en-US": {
+        "name": "Small Tip",
+        "description": "A small tip to support development."
+      },
+      "pt-BR": {
+        "name": "Gorjeta Pequena",
+        "description": "Uma pequena gorjeta para apoiar o desenvolvimento."
+      },
+      "es-MX": {
+        "name": "Propina Peque\u00f1a",
+        "description": "Una peque\u00f1a propina para apoyar el desarrollo."
+      },
+      "fr-FR": {
+        "name": "Petit Pourboire",
+        "description": "Un petit pourboire pour soutenir le d\u00e9veloppement."
+      }
+    }
+  },
+  {
+    "productId": "com.pediatrictools.app.tip.medium",
+    "referenceName": "Medium Tip",
+    "type": "NON_CONSUMABLE",
+    "price": "1.99",
+    "localizations": {
+      "en-US": {
+        "name": "Medium Tip",
+        "description": "A medium tip to support development."
+      },
+      "pt-BR": {
+        "name": "Gorjeta M\u00e9dia",
+        "description": "Uma gorjeta m\u00e9dia para apoiar o desenvolvimento."
+      },
+      "es-MX": {
+        "name": "Propina Mediana",
+        "description": "Una propina mediana para apoyar el desarrollo."
+      },
+      "fr-FR": {
+        "name": "Pourboire Moyen",
+        "description": "Un pourboire moyen pour soutenir le d\u00e9veloppement."
+      }
+    }
+  },
+  {
+    "productId": "com.pediatrictools.app.tip.large",
+    "referenceName": "Large Tip",
+    "type": "NON_CONSUMABLE",
+    "price": "4.99",
+    "localizations": {
+      "en-US": {
+        "name": "Large Tip",
+        "description": "A large tip to support development."
+      },
+      "pt-BR": {
+        "name": "Gorjeta Grande",
+        "description": "Uma gorjeta grande para apoiar o desenvolvimento."
+      },
+      "es-MX": {
+        "name": "Propina Grande",
+        "description": "Una gran propina para apoyar el desarrollo."
+      },
+      "fr-FR": {
+        "name": "Gros Pourboire",
+        "description": "Un gros pourboire pour soutenir le d\u00e9veloppement."
+      }
+    }
+  }
+]

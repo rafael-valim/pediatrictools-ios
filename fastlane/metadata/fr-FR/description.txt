@@ -1,0 +1,36 @@
+Pediatric Tools est une suite complète de plus de 20 calculatrices cliniques basées sur des preuves, conçues pour les professionnels de santé pédiatrique. Tous les outils fonctionnent hors ligne, ne nécessitent pas de compte et ne collectent aucune donnée.
+
+OUTILS D'ÉVALUATION
+- Score de Ballard : Évaluation de l'âge gestationnel du nouveau-né
+- Score d'Apgar : Évaluation rapide du nouveau-né à 1 et 5 minutes
+- PEWS (Score Pédiatrique d'Alerte Précoce) : Détection précoce de la détérioration clinique
+- Score FLACC : Évaluation de la douleur chez les patients préverbaux et non verbaux
+- Échelle de Coma de Glasgow (GCS) : Évaluation du niveau de conscience
+- Score PRAM : Évaluation de la sévérité de l'asthme
+- Règle PECARN : Aide à la décision pour le scanner en traumatisme crânien pédiatrique
+- Score Phoenix Sepsis : Évaluation des critères de sepsis pédiatrique
+
+CALCULATRICES
+- Dosage Médicamenteux : Posologie basée sur le poids avec médicaments pédiatriques courants
+- Calculatrice de Perfusion IV : Méthode Holliday-Segar pour les débits d'entretien
+- Surface Corporelle (BSA) : Calcul par formule de Mosteller
+- Âge Corrigé : Âge ajusté pour les prématurés
+- Percentile de Croissance : Courbes de croissance de l'OMS
+- Évaluation de la Déshydratation : Estimation de la sévérité clinique avec calcul du déficit hydrique
+- Calculatrice de FENa : Fraction d'Excrétion du Sodium
+- Calculatrice de Sonde ETT : Dimensionnement du tube endotrachéal par âge
+- DFG de Schwartz : Débit de filtration glomérulaire estimé pour les enfants
+- Calculatrice de QTc : Intervalle QT corrigé (formule de Bazett)
+- Percentile de Pression Artérielle : Évaluation par âge, sexe et taille
+- Évaluation de la Bilirubine : Seuils de photothérapie pour l'ictère néonatal
+
+CARACTÉRISTIQUES PRINCIPALES
+- Plus de 20 outils cliniques validés dans une seule app
+- Fonctionne entièrement hors ligne
+- Disponible en Français, Anglais, Portugais et Espagnol
+- Interface propre et intuitive optimisée pour le flux de travail clinique
+- App universelle pour iPhone et iPad
+- Aucun compte requis, aucune collecte de données
+- Support du mode sombre
+
+IMPORTANT : Cette app est destinée comme outil de référence pour les professionnels de santé. Elle ne remplace pas le jugement clinique. Vérifiez toujours les calculs et consultez les recommandations cliniques actuelles.

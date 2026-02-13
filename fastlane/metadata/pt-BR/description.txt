@@ -1,0 +1,36 @@
+Pediatric Tools é um conjunto abrangente de mais de 20 calculadoras clínicas baseadas em evidências, projetadas para profissionais de saúde pediátrica. Todas as ferramentas funcionam offline, não exigem conta e não coletam dados.
+
+FERRAMENTAS DE AVALIAÇÃO
+- Escore de Ballard: Avaliação da idade gestacional do recém-nascido
+- Escore de Apgar: Avaliação rápida do recém-nascido em 1 e 5 minutos
+- PEWS (Escore Pediátrico de Alerta Precoce): Detecção precoce de deterioração clínica
+- Escore FLACC: Avaliação de dor em pacientes pré-verbais e não verbais
+- Escala de Coma de Glasgow (GCS): Avaliação do nível de consciência
+- Escore PRAM: Avaliação da gravidade da asma
+- Regra PECARN: Suporte à decisão de TC para trauma craniano pediátrico
+- Escore Phoenix Sepsis: Avaliação de critérios de sepse pediátrica
+
+CALCULADORAS
+- Dosagem de Medicamentos: Dosagem baseada no peso com medicamentos pediátricos comuns
+- Calculadora de Fluidos IV: Método Holliday-Segar para taxas de manutenção
+- Superfície Corporal (BSA): Cálculo pela fórmula de Mosteller
+- Idade Corrigida: Idade ajustada para prematuros
+- Percentil de Crescimento: Curvas de crescimento da OMS
+- Avaliação de Desidratação: Estimativa de gravidade clínica com cálculo de déficit hídrico
+- Calculadora de FENa: Fração de Excreção de Sódio
+- Calculadora de TOT: Dimensionamento do tubo endotraqueal por idade
+- TFG de Schwartz: Taxa de filtração glomerular estimada para crianças
+- Calculadora de QTc: Intervalo QT corrigido (fórmula de Bazett)
+- Percentil de Pressão Arterial: Avaliação por idade, sexo e altura
+- Avaliação de Bilirrubina: Limiares de fototerapia para icterícia neonatal
+
+RECURSOS PRINCIPAIS
+- Mais de 20 ferramentas clínicas validadas em um só app
+- Funciona completamente offline
+- Disponível em Português, Inglês, Espanhol e Francês
+- Interface limpa e intuitiva otimizada para o fluxo de trabalho clínico
+- App universal para iPhone e iPad
+- Sem necessidade de conta, sem coleta de dados
+- Suporte a modo escuro
+
+IMPORTANTE: Este app é destinado como ferramenta de referência para profissionais de saúde. Não substitui o julgamento clínico. Sempre verifique os cálculos e consulte as diretrizes clínicas atuais.

@@ -1,0 +1,36 @@
+Pediatric Tools is a comprehensive suite of 20+ evidence-based clinical calculators designed for pediatric healthcare professionals. All tools work offline, require no account, and collect no data.
+
+SCORING & ASSESSMENT TOOLS
+- Ballard Score: Gestational age assessment for newborns
+- Apgar Score: Rapid newborn condition evaluation at 1 and 5 minutes
+- PEWS (Pediatric Early Warning Score): Early detection of clinical deterioration
+- FLACC Score: Pain assessment for pre-verbal and non-verbal patients
+- Glasgow Coma Scale (GCS): Consciousness level assessment
+- PRAM Score: Preschool Respiratory Assessment Measure for asthma severity
+- PECARN Head Injury Rule: CT decision support for pediatric head trauma
+- Phoenix Sepsis Score: Pediatric sepsis criteria assessment
+
+CALCULATORS
+- Pediatric Drug Dosage: Weight-based medication dosing with common pediatric drugs
+- IV Fluid Calculator: Holliday-Segar method for maintenance fluid rates
+- Body Surface Area (BSA): Mosteller formula calculation
+- Corrected Age: Adjusted age for premature infants
+- Growth Percentile: WHO growth charts for weight, height, and head circumference
+- Dehydration Assessment: Clinical severity estimation with fluid deficit calculation
+- FENa Calculator: Fractional Excretion of Sodium for renal assessment
+- ETT Size Calculator: Endotracheal tube sizing by age
+- Schwartz GFR: Estimated glomerular filtration rate for children
+- QTc Calculator: Corrected QT interval (Bazett formula)
+- Blood Pressure Percentile: Age, sex, and height-based BP evaluation
+- Bilirubin Risk Assessment: Neonatal jaundice phototherapy thresholds
+
+KEY FEATURES
+- 20+ validated clinical tools in one app
+- Works completely offline
+- Available in English, Portuguese, Spanish, and French
+- Clean, intuitive interface optimized for clinical workflow
+- Universal app for iPhone and iPad
+- No account required, no data collection
+- Dark mode support
+
+IMPORTANT: This app is intended as a reference tool for healthcare professionals. It is not a substitute for clinical judgment. Always verify calculations and consult current clinical guidelines.

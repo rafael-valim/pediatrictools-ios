@@ -1,0 +1,32 @@
+# Deliverfile — configuration for `fastlane deliver`
+
+# App metadata
+app_identifier("com.pediatrictools.app")
+team_id("CJXZNY36RV")
+
+# Metadata and screenshots paths
+metadata_path("./fastlane/metadata")
+screenshots_path("./fastlane/screenshots")
+
+# Submission options
+submit_for_review(false)
+automatic_release(false)
+phased_release(true)
+
+# Skip binary upload when only updating metadata
+# (override with --skip_binary_upload false)
+skip_binary_upload(true)
+
+# Price tier (free app)
+price_tier(0)
+
+# App category
+primary_category("MedicalReference")
+
+# App rating — no objectionable content
+app_rating_config_path("./fastlane/rating_config.json")
+
+# Copyright
+copyright("2025 Pediatric Tools")
+
+# Trade representative contact information is not needed for individual developers

@@ -1,0 +1,1 @@
+pediátrico,calculadora,médico,apgar,dosagem,PEWS,GCS,crescimento,neonatal

@@ -1,0 +1,36 @@
+Pediatric Tools es un conjunto completo de más de 20 calculadoras clínicas basadas en evidencia, diseñadas para profesionales de salud pediátrica. Todas las herramientas funcionan sin conexión, no requieren cuenta y no recopilan datos.
+
+HERRAMIENTAS DE EVALUACIÓN
+- Puntuación de Ballard: Evaluación de la edad gestacional del recién nacido
+- Puntuación de Apgar: Evaluación rápida del recién nacido al minuto 1 y 5
+- PEWS (Puntuación Pediátrica de Alerta Temprana): Detección temprana de deterioro clínico
+- Puntuación FLACC: Evaluación del dolor en pacientes preverbales y no verbales
+- Escala de Coma de Glasgow (GCS): Evaluación del nivel de consciencia
+- Puntuación PRAM: Evaluación de la gravedad del asma
+- Regla PECARN: Soporte de decisión para TC en trauma craneal pediátrico
+- Puntuación Phoenix Sepsis: Evaluación de criterios de sepsis pediátrica
+
+CALCULADORAS
+- Dosificación de Medicamentos: Dosificación basada en peso con medicamentos pediátricos comunes
+- Calculadora de Líquidos IV: Método Holliday-Segar para tasas de mantenimiento
+- Superficie Corporal (BSA): Cálculo con fórmula de Mosteller
+- Edad Corregida: Edad ajustada para prematuros
+- Percentil de Crecimiento: Curvas de crecimiento de la OMS
+- Evaluación de Deshidratación: Estimación de gravedad clínica con cálculo de déficit hídrico
+- Calculadora de FENa: Fracción de Excreción de Sodio
+- Calculadora de TET: Dimensionamiento del tubo endotraqueal por edad
+- TFG de Schwartz: Tasa de filtración glomerular estimada para niños
+- Calculadora de QTc: Intervalo QT corregido (fórmula de Bazett)
+- Percentil de Presión Arterial: Evaluación por edad, sexo y altura
+- Evaluación de Bilirrubina: Umbrales de fototerapia para ictericia neonatal
+
+CARACTERÍSTICAS PRINCIPALES
+- Más de 20 herramientas clínicas validadas en una sola app
+- Funciona completamente sin conexión
+- Disponible en Español, Inglés, Portugués y Francés
+- Interfaz limpia e intuitiva optimizada para el flujo de trabajo clínico
+- App universal para iPhone y iPad
+- Sin necesidad de cuenta, sin recopilación de datos
+- Soporte para modo oscuro
+
+IMPORTANTE: Esta app está destinada como herramienta de referencia para profesionales de la salud. No sustituye el juicio clínico. Siempre verifique los cálculos y consulte las guías clínicas actuales.
