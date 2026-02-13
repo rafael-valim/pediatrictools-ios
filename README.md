@@ -2,15 +2,29 @@
 
 A native iOS app providing essential pediatric clinical calculators for healthcare professionals. Built entirely with SwiftUI, localized in four languages, with zero external dependencies.
 
+**[Privacy Policy](https://rafael-valim.github.io/pediatrictools-ios/privacy-policy)** | **[Support](https://rafael-valim.github.io/pediatrictools-ios/support)**
+
 ## Features
 
-The app includes 11 evidence-based clinical tools:
+The app includes 20 evidence-based clinical tools:
+
+### Scoring & Assessment Tools
 
 | Tool | Description |
 |------|-------------|
 | **New Ballard Score** | Estimates neonatal gestational age (20-44 weeks) from 12 neuromuscular and physical maturity criteria |
 | **APGAR Score** | Evaluates newborn vitality at birth across 5 criteria (appearance, pulse, grimace, activity, respiration) |
 | **PEWS Score** | Pediatric Early Warning Score assessing behavior, cardiovascular, and respiratory status |
+| **FLACC Score** | Pain assessment for pre-verbal and non-verbal patients (Faces, Legs, Activity, Cry, Consolability) |
+| **Glasgow Coma Scale** | Consciousness level assessment adapted for pediatric patients |
+| **PRAM Score** | Preschool Respiratory Assessment Measure for asthma severity |
+| **PECARN Head Injury** | CT decision support for pediatric head trauma |
+| **Phoenix Sepsis** | Pediatric sepsis organ dysfunction criteria |
+
+### Calculators
+
+| Tool | Description |
+|------|-------------|
 | **Dosage Calculator** | Weight-based pediatric dosing for 9 common medications with multiple concentrations |
 | **IV Fluid (Holliday-Segar)** | Maintenance IV fluid calculation with electrolyte recommendations |
 | **BSA Calculator** | Body surface area via the Mosteller formula |
@@ -19,6 +33,10 @@ The app includes 11 evidence-based clinical tools:
 | **Dehydration** | Fluid deficit and 24h replacement plan based on weight and dehydration severity |
 | **FENa Calculator** | Fractional Excretion of Sodium to differentiate prerenal vs intrinsic renal failure |
 | **ETT Size** | Endotracheal tube sizing by age or neonatal weight, with depth and suction catheter |
+| **Schwartz GFR** | Estimated glomerular filtration rate for children |
+| **QTc Calculator** | Corrected QT interval using Bazett formula |
+| **Blood Pressure Percentile** | Age, sex, and height-based BP evaluation |
+| **Bilirubin Risk** | Neonatal jaundice phototherapy threshold assessment |
 
 ## App Settings
 
@@ -38,7 +56,7 @@ The Settings screen includes a **Tip Jar** powered by StoreKit 2 (configured in 
 
 ### About Screen
 
-Displays the app icon, version, build number, and an optional Supporter badge. Includes a **References** section listing the evidence-based source for each of the 11 clinical tools.
+Displays the app icon, version, build number, and an optional Supporter badge. Includes a **References** section listing the evidence-based source for each of the 20 clinical tools.
 
 ## Requirements
 
@@ -51,18 +69,28 @@ Displays the app icon, version, build number, and an optional Supporter badge. I
 ```
 PediatricTools/
 ├── PediatricToolsApp.swift          # App entry point
+├── AppDelegate.swift                # Orientation lock management
 ├── Models/                          # Pure calculation logic (no UI dependencies)
 │   ├── ApgarScore.swift
 │   ├── BallardScore.swift
+│   ├── BilirubinCalculator.swift
+│   ├── BPPercentile.swift
 │   ├── BSACalculator.swift
 │   ├── CorrectedAgeCalculator.swift
 │   ├── DehydrationCalculator.swift
 │   ├── ETTCalculator.swift
 │   ├── FENaCalculator.swift
+│   ├── FLACCScore.swift
+│   ├── GlasgowComaScale.swift
 │   ├── GrowthPercentile.swift
 │   ├── HollidaySegar.swift
+│   ├── PECARNRule.swift
 │   ├── PediatricDosage.swift
 │   ├── PEWSScore.swift
+│   ├── PhoenixSepsis.swift
+│   ├── PRAMScore.swift
+│   ├── QTcCalculator.swift
+│   ├── SchwartzGFR.swift
 │   └── TipJarManager.swift         # StoreKit 2 in-app purchase manager (@Observable)
 ├── Views/
 │   ├── HomeView.swift               # Main navigation list
@@ -72,26 +100,60 @@ PediatricTools/
 │   │   └── ScoreSelectorRow.swift   # Score picker for criteria-based tools
 │   ├── Apgar/
 │   ├── Ballard/
+│   ├── Bilirubin/
+│   ├── BP/
 │   ├── BSA/
 │   ├── CorrectedAge/
 │   ├── Dehydration/
 │   ├── Dosage/
 │   ├── ETT/
 │   ├── FENa/
+│   ├── FLACC/
+│   ├── GCS/
+│   ├── GFR/
 │   ├── Growth/
 │   ├── IVFluid/
+│   ├── PECARN/
 │   ├── PEWS/
+│   ├── Phoenix/
+│   ├── PRAM/
+│   ├── QTc/
 │   └── Settings/
-│       ├── SettingsView.swift     # Appearance, language, portrait lock
-│       ├── AboutView.swift        # App info, supporter badge, clinical references
-│       └── TipJarView.swift       # StoreKit 2 tip jar UI
+│       ├── SettingsView.swift       # Appearance, language, portrait lock
+│       ├── AboutView.swift          # App info, supporter badge, clinical references
+│       └── TipJarView.swift         # StoreKit 2 tip jar UI
 └── Resources/
     ├── Assets.xcassets
     ├── Localizable.xcstrings        # String catalog (EN, PT-BR, ES, FR)
+    ├── PrivacyInfo.xcprivacy        # Apple privacy manifest
     └── TipJar.storekit             # StoreKit 2 configuration for testing
 
-PediatricToolsTests/                 # Unit tests for all 11 calculators
+PediatricToolsTests/                 # Unit tests for all 20 calculators
 PediatricToolsUITests/               # UI screenshot tests for every tool
+
+docs/                                # GitHub Pages (live at rafael-valim.github.io/pediatrictools-ios)
+├── index.html                       # Landing page
+├── privacy-policy.html              # Privacy policy
+└── support.html                     # Support page with FAQ
+
+fastlane/                            # App Store submission automation
+├── Appfile                          # App identifier + team ID
+├── Fastfile                         # Lanes: screenshots, build, setup_iap, release
+├── Deliverfile                      # deliver configuration
+├── iap_products.json                # IAP product definitions with localizations
+├── rating_config.json               # App content rating
+└── metadata/                        # App Store metadata (4 locales)
+    ├── en-US/                       # name, subtitle, description, keywords, etc.
+    ├── pt-BR/
+    ├── es-MX/
+    ├── fr-FR/
+    └── review_information/          # Notes for Apple reviewers
+
+scripts/
+├── take-screenshots.sh              # UI test screenshots (single device)
+└── take-appstore-screenshots.sh     # App Store screenshots (iPhone + iPad)
+
+Gemfile                              # Fastlane dependency
 ```
 
 ## Architecture
@@ -143,7 +205,7 @@ To add a new language:
 
 ### Unit Tests
 
-The `PediatricToolsTests` target contains 11 test files — one per calculator model. Tests verify formulas, edge cases, clamping behavior, and interpretation logic.
+The `PediatricToolsTests` target contains 20+ test files — one per calculator model. Tests verify formulas, edge cases, clamping behavior, and interpretation logic.
 
 ```bash
 xcodebuild test \
@@ -174,6 +236,101 @@ The script only removes screenshots for the targeted device before each run, so 
 Screenshots are saved to `Screenshots/` organized by tool name, with the device name appended to each file (e.g., `Screenshots/Ballard/Ballard_Empty_iPhone_17_Pro.png`). This directory is gitignored.
 
 > **AI Agents:** Whenever a code change modifies any view under `Views/`, run `./scripts/take-screenshots.sh` (no flags needed — defaults to iPhone 17 Pro) to regenerate screenshots. Run it only once, on the default device.
+
+## App Store Submission
+
+The project includes a fully automated App Store submission pipeline powered by [Fastlane](https://fastlane.tools/).
+
+### Prerequisites
+
+1. **Install Fastlane:**
+   ```bash
+   bundle install
+   ```
+
+2. **Create an App Store Connect API key:**
+   - Go to [App Store Connect](https://appstoreconnect.apple.com/) > Users and Access > Integrations > App Store Connect API
+   - Generate a key with **Admin** or **App Manager** role
+   - Download the `.p8` file and note the **Key ID** and **Issuer ID**
+   - Set environment variables:
+     ```bash
+     export APP_STORE_CONNECT_API_KEY_KEY_ID="your-key-id"
+     export APP_STORE_CONNECT_API_KEY_ISSUER_ID="your-issuer-id"
+     export APP_STORE_CONNECT_API_KEY_KEY="$(cat path/to/AuthKey.p8)"
+     ```
+   - Alternatively, place the `.p8` file in `fastlane/` (gitignored automatically)
+
+3. **Register the app in App Store Connect** (if not already done):
+   ```bash
+   bundle exec fastlane produce
+   ```
+
+### App Store Metadata
+
+Metadata for all 4 locales lives in `fastlane/metadata/`:
+
+```
+fastlane/metadata/
+├── en-US/          # English
+├── pt-BR/          # Portuguese (Brazil)
+├── es-MX/          # Spanish (Mexico)
+├── fr-FR/          # French
+│   ├── name.txt
+│   ├── subtitle.txt
+│   ├── description.txt
+│   ├── keywords.txt          # Comma-separated, max 100 characters
+│   ├── release_notes.txt
+│   ├── privacy_url.txt
+│   └── support_url.txt
+└── review_information/
+    └── notes.txt             # Instructions for Apple reviewers
+```
+
+To update metadata, edit the text files directly. Fastlane's `deliver` reads them automatically during upload.
+
+### App Store Screenshots
+
+Generate screenshots for both required device sizes (iPhone 6.9" and iPad 13"):
+
+```bash
+./scripts/take-appstore-screenshots.sh
+```
+
+This script:
+1. Runs the existing UI test suite on **iPhone 17 Pro Max** and **iPad Pro 13-inch (M5)**
+2. Organizes results into `fastlane/screenshots/en-US/` with sequential naming
+3. The same screenshots are used for all locales (the app handles localization internally)
+
+### In-App Purchases
+
+IAP product definitions are in `fastlane/iap_products.json` (3 tip jar products with localizations in all 4 languages). To create them in App Store Connect:
+
+```bash
+bundle exec fastlane setup_iap
+```
+
+### Submission Workflow
+
+```bash
+# Full pipeline (screenshots → build → upload → submit):
+bundle exec fastlane release
+
+# Or step by step:
+bundle exec fastlane screenshots       # Generate App Store screenshots
+bundle exec fastlane build             # Archive .ipa for App Store
+bundle exec fastlane deliver           # Upload metadata + screenshots + binary
+```
+
+### Privacy
+
+The app includes `PrivacyInfo.xcprivacy` (Apple's required privacy manifest since 2024) declaring:
+- **UserDefaults** access (reason: `CA92.1` — app preferences)
+- **No tracking**
+- **No data collection**
+
+The privacy policy and support pages are hosted via GitHub Pages:
+- Privacy: https://rafael-valim.github.io/pediatrictools-ios/privacy-policy
+- Support: https://rafael-valim.github.io/pediatrictools-ios/support
 
 ## CI/CD
 

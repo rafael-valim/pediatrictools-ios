@@ -19,6 +19,15 @@ xcodebuild test -scheme PediatricTools -destination 'platform=iOS Simulator,name
 
 # Regenerate screenshots (run after ANY view change)
 ./scripts/take-screenshots.sh
+
+# Generate App Store screenshots (iPhone 17 Pro Max + iPad Pro 13")
+./scripts/take-appstore-screenshots.sh
+
+# Fastlane lanes
+bundle exec fastlane screenshots       # App Store screenshots
+bundle exec fastlane build             # Archive .ipa
+bundle exec fastlane setup_iap         # Create IAP products in App Store Connect
+bundle exec fastlane release           # Full pipeline: screenshots → build → upload → submit
 ```
 
 ## Architecture
@@ -44,6 +53,9 @@ Four `@AppStorage` preferences: `"appearance"` (system/light/dark), `"language"`
 ### Tip Jar (StoreKit 2)
 `TipJarManager` uses `@Observable` (the only exception to the @State-only pattern). Three product IDs: `com.pediatrictools.app.tip.{small,medium,large}`. Supporter status is persisted in `UserDefaults`. The StoreKit config file is `Resources/TipJar.storekit`.
 
+### Privacy Manifest
+`Resources/PrivacyInfo.xcprivacy` declares UserDefaults access (CA92.1), no tracking, no data collection. Required by Apple since 2024.
+
 ### Localization
 Four languages: **en** (source), **pt-BR**, **es**, **fr**. All strings go through `Localizable.xcstrings` (Xcode String Catalog). Use `LocalizedStringKey` (not `String(localized:)`) so SwiftUI text views react to in-app locale changes via `.environment(\.locale)`. Keys use snake_case: `"apgar_title"`, `"ballard_posture_0"`. Language is applied at the root view via a `LocaleModifier` that sets `.environment(\.locale)`.
 
@@ -68,6 +80,28 @@ Four languages: **en** (source), **pt-BR**, **es**, **fr**. All strings go throu
 - App launches with `-UITesting -disclaimerAccepted 1` to skip the disclaimer and disable orientation lock
 
 Each screenshot test captures **empty** and **filled** states.
+
+## App Store Submission
+
+The project uses Fastlane for App Store automation. Key files:
+
+- **`Gemfile`** — Fastlane dependency (`bundle install` to set up)
+- **`fastlane/Appfile`** — app identifier (`com.pediatrictools.app`) + team ID (`CJXZNY36RV`)
+- **`fastlane/Fastfile`** — lanes: `screenshots`, `build`, `setup_iap`, `release`
+- **`fastlane/Deliverfile`** — deliver configuration (category, pricing, metadata paths)
+- **`fastlane/iap_products.json`** — 3 IAP products with localizations in 4 languages
+- **`fastlane/metadata/{en-US,pt-BR,es-MX,fr-FR}/`** — App Store metadata text files
+- **`fastlane/metadata/review_information/notes.txt`** — notes for Apple reviewers
+- **`scripts/take-appstore-screenshots.sh`** — generates screenshots on iPhone 17 Pro Max + iPad Pro 13"
+
+App Store Connect API credentials are read from environment variables (never hardcoded):
+- `APP_STORE_CONNECT_API_KEY_KEY_ID`
+- `APP_STORE_CONNECT_API_KEY_ISSUER_ID`
+- `APP_STORE_CONNECT_API_KEY_KEY`
+
+GitHub Pages (privacy policy + support) are served from `docs/` at:
+- https://rafael-valim.github.io/pediatrictools-ios/privacy-policy
+- https://rafael-valim.github.io/pediatrictools-ios/support
 
 ## Git Workflow
 
