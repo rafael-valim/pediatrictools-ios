@@ -128,4 +128,4 @@ GitHub Pages (privacy policy + support) are served from `docs/` at:
 
 - Commit frequently with small, focused commits (not one big commit)
 - Split large features: preparation/refactoring → models → views → wiring → tests
-- After any view change, run `./scripts/take-screenshots.sh` and commit updated screenshots
+- After any view change, run `./scripts/take-screenshots.sh` to regenerate local screenshots

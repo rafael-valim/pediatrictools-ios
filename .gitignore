@@ -69,3 +69,9 @@ build/
 
 # macOS
 .DS_Store
+
+# Screenshots (regenerated locally, not tracked)
+Screenshots/
+
+# Claude Code local settings
+.claude/
