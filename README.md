@@ -91,13 +91,17 @@ PediatricTools/
 │   ├── PRAMScore.swift
 │   ├── QTcCalculator.swift
 │   ├── SchwartzGFR.swift
-│   └── TipJarManager.swift         # StoreKit 2 in-app purchase manager (@Observable)
+│   ├── TipJarManager.swift         # StoreKit 2 in-app purchase manager (@Observable)
+│   └── ToolInfo.swift              # Data model for tool info views (references, parameters)
 ├── Views/
 │   ├── HomeView.swift               # Main navigation list
 │   ├── Shared/                      # Reusable UI components
+│   │   ├── KeyboardDoneButton.swift # Done button toolbar for numeric keyboards
 │   │   ├── NumberInputRow.swift     # Numeric input with unit label and range validation
 │   │   ├── ResultBar.swift          # Bottom result display bar
-│   │   └── ScoreSelectorRow.swift   # Score picker for criteria-based tools
+│   │   ├── ScoreSelectorRow.swift   # Score picker for criteria-based tools
+│   │   ├── ToolInfoToolbar.swift    # Info button toolbar item for tool views
+│   │   └── ToolInfoView.swift       # Sheet displaying tool references and parameters
 │   ├── Apgar/
 │   ├── Ballard/
 │   ├── Bilirubin/
