@@ -26,7 +26,8 @@ xcodebuild test -scheme PediatricTools -destination 'platform=iOS Simulator,name
 # Bump build number (required before every App Store Connect submission)
 cd PediatricTools.xcodeproj/.. && agvtool next-version -all
 
-# Fastlane lanes
+# Fastlane lanes (MUST use Homebrew Ruby — system Ruby 2.6 is too old)
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 bundle exec fastlane screenshots       # App Store screenshots
 bundle exec fastlane build             # Archive .ipa
 bundle exec fastlane upload_metadata   # Push metadata to App Store Connect
