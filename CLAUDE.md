@@ -100,7 +100,7 @@ Each screenshot test captures **empty** and **filled** states.
 The project uses Fastlane for App Store automation. Key files:
 
 - **`Gemfile`** — Fastlane dependency (`bundle install` to set up)
-- **`fastlane/Appfile`** — app identifier (`com.RV.pediatrictools.app`) + team ID (`CJXZNY36RV`)
+- **`fastlane/Appfile`** — app identifier and team ID
 - **`fastlane/Fastfile`** — lanes: `screenshots`, `build`, `upload_metadata`, `upload_screenshots`, `upload_binary`, `build_and_upload`, `release`
 - **`fastlane/Deliverfile`** — deliver configuration (category, pricing, metadata paths)
 - **`fastlane/iap_products.json`** — 3 IAP products with localizations in 4 languages
@@ -118,7 +118,7 @@ This stores Key ID, Issuer ID, and P8 key content under the Keychain service `pe
 - `APP_STORE_CONNECT_API_KEY_ISSUER_ID`
 - `APP_STORE_CONNECT_API_KEY_KEY`
 
-**On a new machine**, credentials can be restored from a separate private credentials repository. If Keychain entries are missing and the user needs to set up credentials, ask them for guidance on locating the credentials repo — do not guess or hardcode its location.
+**On a new machine**, credentials and project-specific notes are stored in a private companion repository (`secure-items`) cloned alongside this repo at `../secure-items/`. Run its `restore.sh` to populate Keychain. See the companion repo's CLAUDE.md for full architecture details and per-project sensitive notes.
 
 GitHub Pages (privacy policy + support) are served from `docs/` at:
 - https://rafael-valim.github.io/pediatrictools-ios/privacy-policy
