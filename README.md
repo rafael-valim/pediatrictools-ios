@@ -447,4 +447,4 @@ When working on this codebase, follow these conventions:
 
 ## License
 
-All rights reserved.
+This project is licensed under the [MIT License](LICENSE).
