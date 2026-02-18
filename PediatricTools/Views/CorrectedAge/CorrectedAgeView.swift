@@ -72,7 +72,6 @@ struct CorrectedAgeView: View {
         }
         .navigationTitle("corrected_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "corrected"))
     }
 
     private func row(_ key: String, @ViewBuilder value: () -> Text) -> some View {

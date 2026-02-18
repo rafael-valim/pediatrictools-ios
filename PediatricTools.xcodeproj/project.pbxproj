@@ -31,7 +31,6 @@
 		AA200003 /* ResultBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200003 /* ResultBar.swift */; };
 		AA200004 /* KeyboardDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200004 /* KeyboardDoneButton.swift */; };
 		AA200005 /* ToolInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200005 /* ToolInfoView.swift */; };
-		AA200006 /* ToolInfoToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200006 /* ToolInfoToolbar.swift */; };
 		AA200007 /* ToolInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB200007 /* ToolInfoSection.swift */; };
 		AA300001 /* DosageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300001 /* DosageView.swift */; };
 		AA300002 /* IVFluidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB300002 /* IVFluidView.swift */; };
@@ -156,7 +155,6 @@
 		AB200003 /* ResultBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBar.swift; sourceTree = "<group>"; };
 		AB200004 /* KeyboardDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardDoneButton.swift; sourceTree = "<group>"; };
 		AB200005 /* ToolInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfoView.swift; sourceTree = "<group>"; };
-		AB200006 /* ToolInfoToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfoToolbar.swift; sourceTree = "<group>"; };
 		AB200007 /* ToolInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfoSection.swift; sourceTree = "<group>"; };
 		AB300001 /* DosageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DosageView.swift; sourceTree = "<group>"; };
 		AB300002 /* IVFluidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IVFluidView.swift; sourceTree = "<group>"; };
@@ -387,7 +385,6 @@
 				AB200003 /* ResultBar.swift */,
 				AB200004 /* KeyboardDoneButton.swift */,
 				AB200005 /* ToolInfoView.swift */,
-				AB200006 /* ToolInfoToolbar.swift */,
 				AB200007 /* ToolInfoSection.swift */,
 			);
 			path = Shared;
@@ -769,7 +766,6 @@
 				AA200003 /* ResultBar.swift in Sources */,
 				AA200004 /* KeyboardDoneButton.swift in Sources */,
 				AA200005 /* ToolInfoView.swift in Sources */,
-				AA200006 /* ToolInfoToolbar.swift in Sources */,
 				AA200007 /* ToolInfoSection.swift in Sources */,
 				AA300001 /* DosageView.swift in Sources */,
 				AA300002 /* IVFluidView.swift in Sources */,

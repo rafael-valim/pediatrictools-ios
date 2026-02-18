@@ -104,7 +104,6 @@ struct ETTView: View {
         }
         .navigationTitle("ett_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "ett"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

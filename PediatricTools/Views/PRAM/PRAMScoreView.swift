@@ -45,7 +45,6 @@ struct PRAMScoreView: View {
         }
         .navigationTitle("pram_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "pram"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { scores = [:] }

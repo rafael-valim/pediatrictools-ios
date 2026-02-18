@@ -100,7 +100,7 @@ PediatricTools/
 │   │   ├── NumberInputRow.swift     # Numeric input with unit label and range validation
 │   │   ├── ResultBar.swift          # Bottom result display bar
 │   │   ├── ScoreSelectorRow.swift   # Score picker for criteria-based tools
-│   │   ├── ToolInfoToolbar.swift    # Info button toolbar item for tool views
+│   │   ├── ToolInfoSection.swift    # Literature & references section for tool views
 │   │   └── ToolInfoView.swift       # Sheet displaying tool references and parameters
 │   ├── Apgar/
 │   ├── Ballard/

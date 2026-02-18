@@ -79,7 +79,6 @@ struct DehydrationView: View {
         }
         .navigationTitle("dehydration_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "dehydration"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

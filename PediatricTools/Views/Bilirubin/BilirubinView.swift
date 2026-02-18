@@ -81,7 +81,6 @@ struct BilirubinView: View {
         }
         .navigationTitle("bili_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "bilirubin"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

@@ -64,7 +64,6 @@ struct QTcView: View {
         }
         .navigationTitle("qtc_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "qtc"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

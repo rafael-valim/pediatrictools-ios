@@ -69,7 +69,6 @@ struct BallardScoreView: View {
         }
         .navigationTitle("ballard_score_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "ballard"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

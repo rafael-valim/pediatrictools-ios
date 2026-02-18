@@ -145,7 +145,6 @@ struct PhoenixSepsisView: View {
         }
         .navigationTitle("phoenix_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "phoenix"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") { reset() }

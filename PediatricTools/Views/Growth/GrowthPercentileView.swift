@@ -89,7 +89,6 @@ struct GrowthPercentileView: View {
         }
         .navigationTitle("growth_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "growth"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

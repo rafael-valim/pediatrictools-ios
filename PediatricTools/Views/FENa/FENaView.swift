@@ -69,7 +69,6 @@ struct FENaView: View {
         }
         .navigationTitle("fena_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "fena"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {

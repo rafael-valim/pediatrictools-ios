@@ -51,7 +51,6 @@ struct GFRView: View {
         }
         .navigationTitle("gfr_title")
         .navigationBarTitleDisplayMode(.inline)
-        .modifier(ToolInfoToolbar(toolID: "gfr"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button("reset_button") {
