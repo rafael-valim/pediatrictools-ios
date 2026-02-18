@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("appearance") private var appearance = "system"
     @AppStorage("language") private var language = "system"
+    @AppStorage("fontSize") private var fontSize = "system"
     @AppStorage("portraitLock") private var portraitLock = false
     @Environment(TipJarManager.self) private var tipJarManager
 
@@ -29,6 +30,21 @@ struct SettingsView: View {
                 }
             } header: {
                 Text("settings_language_section")
+            }
+
+            Section {
+                Picker("settings_font_size", selection: $fontSize) {
+                    Text("font_size_system").tag("system")
+                    Text("font_size_xsmall").tag("xSmall")
+                    Text("font_size_small").tag("small")
+                    Text("font_size_medium").tag("medium")
+                    Text("font_size_large").tag("large")
+                    Text("font_size_xlarge").tag("xLarge")
+                    Text("font_size_xxlarge").tag("xxLarge")
+                    Text("font_size_xxxlarge").tag("xxxLarge")
+                }
+            } header: {
+                Text("settings_font_size_section")
             }
 
             Section {

@@ -25,7 +25,7 @@ struct ScoreSelectorRow: View {
 
                             if let descKey = descriptions[score] {
                                 Text(LocalizedStringKey(descKey))
-                                    .font(.system(size: 9))
+                                    .font(.caption2)
                                     .multilineTextAlignment(.center)
                                     .lineLimit(3)
                             }

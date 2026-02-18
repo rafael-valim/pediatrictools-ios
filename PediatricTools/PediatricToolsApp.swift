@@ -5,6 +5,7 @@ struct PediatricToolsApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @AppStorage("appearance") private var appearance = "system"
     @AppStorage("language") private var language = "system"
+    @AppStorage("fontSize") private var fontSize = "system"
     @AppStorage("disclaimerAccepted") private var disclaimerAccepted = false
     @AppStorage("portraitLock") private var portraitLock = false
     @State private var showDisclaimer = false
@@ -14,6 +15,19 @@ struct PediatricToolsApp: App {
         switch appearance {
         case "light": return .light
         case "dark": return .dark
+        default: return nil
+        }
+    }
+
+    private var dynamicTypeSize: DynamicTypeSize? {
+        switch fontSize {
+        case "xSmall": return .xSmall
+        case "small": return .small
+        case "medium": return .medium
+        case "large": return .large
+        case "xLarge": return .xLarge
+        case "xxLarge": return .xxLarge
+        case "xxxLarge": return .xxxLarge
         default: return nil
         }
     }
@@ -33,6 +47,7 @@ struct PediatricToolsApp: App {
             HomeView()
                 .environment(tipJarManager)
                 .preferredColorScheme(colorScheme)
+                .modifier(DynamicTypeSizeModifier(size: dynamicTypeSize))
                 .modifier(LocaleModifier(locale: locale))
                 .alert("disclaimer_title", isPresented: $showDisclaimer) {
                     Button("disclaimer_accept") {
@@ -60,6 +75,18 @@ struct PediatricToolsApp: App {
         windowScene.windows.first?.rootViewController?.setNeedsUpdateOfSupportedInterfaceOrientations()
         if locked {
             windowScene.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
+        }
+    }
+}
+
+private struct DynamicTypeSizeModifier: ViewModifier {
+    let size: DynamicTypeSize?
+
+    func body(content: Content) -> some View {
+        if let size {
+            content.dynamicTypeSize(size)
+        } else {
+            content
         }
     }
 }
