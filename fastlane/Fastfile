@@ -108,7 +108,8 @@ platform :ios do
       submit_for_review: true,
       automatic_release: false,
       submission_information: {
-        add_id_info_uses_idfa: false
+        add_id_info_uses_idfa: false,
+        export_compliance_uses_encryption: false
       },
       precheck_include_in_app_purchases: false
     )
@@ -127,7 +128,8 @@ platform :ios do
       submit_for_review: true,
       automatic_release: false,
       submission_information: {
-        add_id_info_uses_idfa: false
+        add_id_info_uses_idfa: false,
+        export_compliance_uses_encryption: false
       },
       precheck_include_in_app_purchases: false
     )
