@@ -18984,6 +18984,35 @@
         }
       }
     },
+    "info_dosage_link_pubmed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pan et al. (2016) — PubMed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pan et al. (2016) — PubMed"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pan et al. (2016) — PubMed"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pan et al. (2016) — PubMed"
+          }
+        }
+      }
+    },
     "info_ivfluid_overview": {
       "extractionState": "manual",
       "localizations": {
@@ -19506,6 +19535,64 @@
         }
       }
     },
+    "info_corrected_link_pubmed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AAP Age Terminology (2004) — PubMed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AAP Terminología de Edad (2004) — PubMed"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AAP Terminologie d'Âge (2004) — PubMed"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AAP Terminologia de Idade (2004) — PubMed"
+          }
+        }
+      }
+    },
+    "info_corrected_link_wiki": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preterm Birth — Wikipedia"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parto Prematuro — Wikipedia"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Naissance Prématurée — Wikipédia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parto Prematuro — Wikipédia"
+          }
+        }
+      }
+    },
     "info_growth_overview": {
       "extractionState": "manual",
       "localizations": {
@@ -19995,6 +20082,64 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leve (3–5%), Moderada (6–9%) ou Grave (10–15%). Você também pode inserir uma porcentagem personalizada."
+          }
+        }
+      }
+    },
+    "info_dehydration_link_pubmed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gorelick et al. (1997) — PubMed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gorelick et al. (1997) — PubMed"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gorelick et al. (1997) — PubMed"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gorelick et al. (1997) — PubMed"
+          }
+        }
+      }
+    },
+    "info_dehydration_link_who": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WHO Treatment of Diarrhoea"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OMS Tratamiento de la Diarrea"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OMS Traitement de la Diarrhée"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OMS Tratamento da Diarreia"
           }
         }
       }
@@ -20546,6 +20691,64 @@
           "stringUnit": {
             "state": "translated",
             "value": "Peso neonatal em quilogramas (para dimensionamento por peso)."
+          }
+        }
+      }
+    },
+    "info_ett_link_pubmed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khine et al. (1997) — PubMed"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khine et al. (1997) — PubMed"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khine et al. (1997) — PubMed"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Khine et al. (1997) — PubMed"
+          }
+        }
+      }
+    },
+    "info_ett_link_wiki": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tracheal Intubation — Wikipedia"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intubación Traqueal — Wikipedia"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intubation Trachéale — Wikipédia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Intubação Traqueal — Wikipédia"
           }
         }
       }

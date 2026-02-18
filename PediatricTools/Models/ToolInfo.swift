@@ -174,7 +174,9 @@ enum ToolInfoCatalog {
                 ToolInfoParameter(id: "dosage_conc", nameKey: "info_dosage_param_concentration", descriptionKey: "info_dosage_param_concentration_desc"),
             ],
             referenceKeys: ["about_ref_dosage"],
-            links: []
+            links: [
+                ToolInfoLink(id: "dosage_pubmed", titleKey: "info_dosage_link_pubmed", url: URL(string: "https://pubmed.ncbi.nlm.nih.gov/27110105/")!),
+            ]
         ),
 
         // MARK: - IV Fluid
@@ -216,7 +218,10 @@ enum ToolInfoCatalog {
                 ToolInfoParameter(id: "corrected_ga", nameKey: "info_corrected_param_ga", descriptionKey: "info_corrected_param_ga_desc"),
             ],
             referenceKeys: ["about_ref_corrected"],
-            links: []
+            links: [
+                ToolInfoLink(id: "corrected_pubmed", titleKey: "info_corrected_link_pubmed", url: URL(string: "https://pubmed.ncbi.nlm.nih.gov/15520122/")!),
+                ToolInfoLink(id: "corrected_wiki", titleKey: "info_corrected_link_wiki", url: URL(string: "https://en.wikipedia.org/wiki/Preterm_birth")!),
+            ]
         ),
 
         // MARK: - Growth
@@ -246,7 +251,10 @@ enum ToolInfoCatalog {
                 ToolInfoParameter(id: "dehydration_severity", nameKey: "info_dehydration_param_severity", descriptionKey: "info_dehydration_param_severity_desc"),
             ],
             referenceKeys: ["about_ref_dehydration"],
-            links: []
+            links: [
+                ToolInfoLink(id: "dehydration_pubmed", titleKey: "info_dehydration_link_pubmed", url: URL(string: "https://pubmed.ncbi.nlm.nih.gov/9113963/")!),
+                ToolInfoLink(id: "dehydration_who", titleKey: "info_dehydration_link_who", url: URL(string: "https://www.who.int/publications/i/item/9241593180")!),
+            ]
         ),
 
         // MARK: - FENa
@@ -277,7 +285,10 @@ enum ToolInfoCatalog {
                 ToolInfoParameter(id: "ett_weight", nameKey: "info_ett_param_weight", descriptionKey: "info_ett_param_weight_desc"),
             ],
             referenceKeys: ["about_ref_ett"],
-            links: []
+            links: [
+                ToolInfoLink(id: "ett_pubmed", titleKey: "info_ett_link_pubmed", url: URL(string: "https://pubmed.ncbi.nlm.nih.gov/9066329/")!),
+                ToolInfoLink(id: "ett_wiki", titleKey: "info_ett_link_wiki", url: URL(string: "https://en.wikipedia.org/wiki/Tracheal_intubation")!),
+            ]
         ),
 
         // MARK: - Schwartz GFR
