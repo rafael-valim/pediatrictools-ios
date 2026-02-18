@@ -14,6 +14,19 @@ final class IVFluidScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "IVFluid_Filled", subfolder: "IVFluid")
     }
 
+    func testIVFluidDetails() {
+        navigateToTool(id: "ivfluid")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<3 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "IVFluid_Details", subfolder: "IVFluid")
+    }
+
     func testInteraction() {
         navigateToTool(id: "ivfluid")
         takeScreenshot(named: "IVFluid_Interaction_Start", subfolder: "IVFluid")

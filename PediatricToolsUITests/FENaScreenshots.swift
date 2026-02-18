@@ -22,6 +22,19 @@ final class FENaScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "FENa_Filled", subfolder: "FENa")
     }
 
+    func testFENaDetails() {
+        navigateToTool(id: "fena")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "FENa_Details", subfolder: "FENa")
+    }
+
     func testInteraction() {
         navigateToTool(id: "fena")
         takeScreenshot(named: "FENa_Interaction_Start", subfolder: "FENa")

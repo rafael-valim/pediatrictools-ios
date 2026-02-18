@@ -12,6 +12,19 @@ final class GCSScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "GCS_Filled", subfolder: "GCS")
     }
 
+    func testGCSDetails() {
+        navigateToTool(id: "gcs")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "GCS_Details", subfolder: "GCS")
+    }
+
     func testInteraction() {
         navigateToTool(id: "gcs")
         takeScreenshot(named: "GCS_Interaction_Start", subfolder: "GCS")

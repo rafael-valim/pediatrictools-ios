@@ -12,6 +12,19 @@ final class PRAMScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "PRAM_Filled", subfolder: "PRAM")
     }
 
+    func testPRAMDetails() {
+        navigateToTool(id: "pram")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<7 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "PRAM_Details", subfolder: "PRAM")
+    }
+
     func testInteraction() {
         navigateToTool(id: "pram")
         takeScreenshot(named: "PRAM_Interaction_Start", subfolder: "PRAM")

@@ -18,6 +18,19 @@ final class BSAScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "BSA_Filled", subfolder: "BSA")
     }
 
+    func testBSADetails() {
+        navigateToTool(id: "bsa")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<3 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "BSA_Details", subfolder: "BSA")
+    }
+
     func testInteraction() {
         navigateToTool(id: "bsa")
         takeScreenshot(named: "BSA_Interaction_Start", subfolder: "BSA")

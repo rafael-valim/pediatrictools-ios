@@ -12,6 +12,19 @@ final class BPScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "BP_Filled", subfolder: "BP")
     }
 
+    func testBPDetails() {
+        navigateToTool(id: "bp")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "BP_Details", subfolder: "BP")
+    }
+
     func testInteraction() {
         navigateToTool(id: "bp")
         takeScreenshot(named: "BP_Interaction_Start", subfolder: "BP")

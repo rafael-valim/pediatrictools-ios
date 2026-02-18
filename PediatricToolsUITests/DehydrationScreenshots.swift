@@ -14,6 +14,19 @@ final class DehydrationScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "Dehydration_Filled", subfolder: "Dehydration")
     }
 
+    func testDehydrationDetails() {
+        navigateToTool(id: "dehydration")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "Dehydration_Details", subfolder: "Dehydration")
+    }
+
     func testInteraction() {
         navigateToTool(id: "dehydration")
         takeScreenshot(named: "Dehydration_Interaction_Start", subfolder: "Dehydration")

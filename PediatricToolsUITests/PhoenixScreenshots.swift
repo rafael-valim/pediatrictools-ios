@@ -12,6 +12,19 @@ final class PhoenixScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "Phoenix_Filled", subfolder: "Phoenix")
     }
 
+    func testPhoenixDetails() {
+        navigateToTool(id: "phoenix")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<8 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "Phoenix_Details", subfolder: "Phoenix")
+    }
+
     func testInteraction() {
         navigateToTool(id: "phoenix")
         takeScreenshot(named: "Phoenix_Interaction_Start", subfolder: "Phoenix")

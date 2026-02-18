@@ -16,6 +16,19 @@ final class DosageScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "Dosage_Filled", subfolder: "Dosage")
     }
 
+    func testDosageDetails() {
+        navigateToTool(id: "dosage")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<6 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "Dosage_Details", subfolder: "Dosage")
+    }
+
     func testInteraction() {
         navigateToTool(id: "dosage")
         takeScreenshot(named: "Dosage_Interaction_Start", subfolder: "Dosage")

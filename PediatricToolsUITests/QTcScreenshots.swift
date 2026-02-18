@@ -12,6 +12,19 @@ final class QTcScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "QTc_Filled", subfolder: "QTc")
     }
 
+    func testQTcDetails() {
+        navigateToTool(id: "qtc")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<3 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "QTc_Details", subfolder: "QTc")
+    }
+
     func testInteraction() {
         navigateToTool(id: "qtc")
         takeScreenshot(named: "QTc_Interaction_Start", subfolder: "QTc")

@@ -12,6 +12,19 @@ final class PEWSScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "PEWS_Filled", subfolder: "PEWS")
     }
 
+    func testPEWSDetails() {
+        navigateToTool(id: "pews")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<6 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "PEWS_Details", subfolder: "PEWS")
+    }
+
     func testInteraction() {
         navigateToTool(id: "pews")
         takeScreenshot(named: "PEWS_Interaction_Start", subfolder: "PEWS")

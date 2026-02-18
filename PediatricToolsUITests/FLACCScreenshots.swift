@@ -12,6 +12,19 @@ final class FLACCScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "FLACC_Filled", subfolder: "FLACC")
     }
 
+    func testFLACCDetails() {
+        navigateToTool(id: "flacc")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<7 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "FLACC_Details", subfolder: "FLACC")
+    }
+
     func testInteraction() {
         navigateToTool(id: "flacc")
         takeScreenshot(named: "FLACC_Interaction_Start", subfolder: "FLACC")

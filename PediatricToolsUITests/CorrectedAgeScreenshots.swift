@@ -6,6 +6,19 @@ final class CorrectedAgeScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "CorrectedAge_Default", subfolder: "CorrectedAge")
     }
 
+    func testCorrectedAgeDetails() {
+        navigateToTool(id: "corrected")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<3 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "CorrectedAge_Details", subfolder: "CorrectedAge")
+    }
+
     func testInteraction() {
         navigateToTool(id: "corrected")
         takeScreenshot(named: "CorrectedAge_Interaction_Start", subfolder: "CorrectedAge")

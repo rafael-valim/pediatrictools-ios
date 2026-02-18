@@ -18,6 +18,19 @@ final class GrowthScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "Growth_Filled", subfolder: "Growth")
     }
 
+    func testGrowthDetails() {
+        navigateToTool(id: "growth")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "Growth_Details", subfolder: "Growth")
+    }
+
     func testInteraction() {
         navigateToTool(id: "growth")
         takeScreenshot(named: "Growth_Interaction_Start", subfolder: "Growth")

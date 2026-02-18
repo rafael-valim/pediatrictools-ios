@@ -12,6 +12,19 @@ final class GFRScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "GFR_Filled", subfolder: "GFR")
     }
 
+    func testGFRDetails() {
+        navigateToTool(id: "gfr")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<3 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "GFR_Details", subfolder: "GFR")
+    }
+
     func testInteraction() {
         navigateToTool(id: "gfr")
         takeScreenshot(named: "GFR_Interaction_Start", subfolder: "GFR")

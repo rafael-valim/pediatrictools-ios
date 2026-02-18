@@ -14,6 +14,19 @@ final class ETTScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "ETT_Filled", subfolder: "ETT")
     }
 
+    func testETTDetails() {
+        navigateToTool(id: "ett")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "ETT_Details", subfolder: "ETT")
+    }
+
     func testInteraction() {
         navigateToTool(id: "ett")
         takeScreenshot(named: "ETT_Interaction_Start", subfolder: "ETT")

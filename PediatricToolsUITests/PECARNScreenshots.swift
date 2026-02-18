@@ -12,6 +12,19 @@ final class PECARNScreenshots: ScreenshotTestCase {
         takeScreenshot(named: "PECARN_Filled", subfolder: "PECARN")
     }
 
+    func testPECARNDetails() {
+        navigateToTool(id: "pecarn")
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<5 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "PECARN_Details", subfolder: "PECARN")
+    }
+
     func testInteraction() {
         navigateToTool(id: "pecarn")
         takeScreenshot(named: "PECARN_Interaction_Start", subfolder: "PECARN")

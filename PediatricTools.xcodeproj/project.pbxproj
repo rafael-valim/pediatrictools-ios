@@ -101,6 +101,7 @@
 		CC000019 /* BilirubinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000019 /* BilirubinTests.swift */; };
 		CC000020 /* PECARNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000020 /* PECARNTests.swift */; };
 		CC000021 /* PhoenixSepsisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000021 /* PhoenixSepsisTests.swift */; };
+		CC000022 /* ToolInfoCatalogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD000022 /* ToolInfoCatalogTests.swift */; };
 		DC000015 /* FLACCScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000015 /* FLACCScreenshots.swift */; };
 		DC000016 /* GCSScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000016 /* GCSScreenshots.swift */; };
 		DC000017 /* GFRScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000017 /* GFRScreenshots.swift */; };
@@ -229,6 +230,7 @@
 		CD000019 /* BilirubinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinTests.swift; sourceTree = "<group>"; };
 		CD000020 /* PECARNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNTests.swift; sourceTree = "<group>"; };
 		CD000021 /* PhoenixSepsisTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixSepsisTests.swift; sourceTree = "<group>"; };
+		CD000022 /* ToolInfoCatalogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolInfoCatalogTests.swift; sourceTree = "<group>"; };
 		DD000015 /* FLACCScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FLACCScreenshots.swift; sourceTree = "<group>"; };
 		DD000016 /* GCSScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCSScreenshots.swift; sourceTree = "<group>"; };
 		DD000017 /* GFRScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRScreenshots.swift; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				CD000019 /* BilirubinTests.swift */,
 				CD000020 /* PECARNTests.swift */,
 				CD000021 /* PhoenixSepsisTests.swift */,
+				CD000022 /* ToolInfoCatalogTests.swift */,
 			);
 			path = PediatricToolsTests;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 				CC000019 /* BilirubinTests.swift in Sources */,
 				CC000020 /* PECARNTests.swift in Sources */,
 				CC000021 /* PhoenixSepsisTests.swift in Sources */,
+				CC000022 /* ToolInfoCatalogTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
