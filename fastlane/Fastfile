@@ -65,7 +65,7 @@ platform :ios do
     )
   end
 
-  desc "Upload screenshots to App Store Connect"
+  desc "Upload screenshots to App Store Connect (deletes existing ones first)"
   lane :upload_screenshots do
     api_key = load_api_key
 
@@ -75,6 +75,7 @@ platform :ios do
       skip_screenshots: false,
       skip_metadata: true,
       overwrite_screenshots: true,
+      sync_screenshots: true,
       force: true,
       precheck_include_in_app_purchases: false
     )
