@@ -21,6 +21,8 @@ struct PEWSScoreView: View {
             } header: {
                 Text("pews_criteria")
             }
+
+            ToolInfoSection(toolID: "pews")
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {

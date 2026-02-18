@@ -21,6 +21,8 @@ struct ApgarScoreView: View {
             } header: {
                 Text("apgar_criteria")
             }
+
+            ToolInfoSection(toolID: "apgar")
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {

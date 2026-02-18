@@ -45,6 +45,8 @@ struct PECARNView: View {
             } header: {
                 Text("pecarn_criteria")
             }
+
+            ToolInfoSection(toolID: "pecarn")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

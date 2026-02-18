@@ -70,6 +70,8 @@ struct DosageView: View {
                     Text("dosage_concentration")
                 }
             }
+
+            ToolInfoSection(toolID: "dosage")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

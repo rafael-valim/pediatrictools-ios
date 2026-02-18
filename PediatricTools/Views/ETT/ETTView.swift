@@ -64,6 +64,8 @@ struct ETTView: View {
                     Text("ett_results")
                 }
             }
+
+            ToolInfoSection(toolID: "ett")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

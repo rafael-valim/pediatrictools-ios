@@ -42,6 +42,8 @@ struct FENaView: View {
             } header: {
                 Text("fena_formula")
             }
+
+            ToolInfoSection(toolID: "fena")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

@@ -42,6 +42,8 @@ struct GCSView: View {
             } header: {
                 Text("gcs_criteria")
             }
+
+            ToolInfoSection(toolID: "gcs")
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {

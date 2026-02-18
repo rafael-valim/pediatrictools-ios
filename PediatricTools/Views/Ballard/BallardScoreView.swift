@@ -56,6 +56,8 @@ struct BallardScoreView: View {
             } header: {
                 Text("section_physical")
             }
+
+            ToolInfoSection(toolID: "ballard")
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {

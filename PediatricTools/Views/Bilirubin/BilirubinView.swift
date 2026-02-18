@@ -45,6 +45,8 @@ struct BilirubinView: View {
             } header: {
                 Text("bili_risk_section")
             }
+
+            ToolInfoSection(toolID: "bilirubin")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

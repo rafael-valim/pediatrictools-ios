@@ -21,6 +21,8 @@ struct PRAMScoreView: View {
             } header: {
                 Text("pram_criteria")
             }
+
+            ToolInfoSection(toolID: "pram")
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {

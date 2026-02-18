@@ -47,6 +47,8 @@ struct DehydrationView: View {
                     Text("dehydration_plan")
                 }
             }
+
+            ToolInfoSection(toolID: "dehydration")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

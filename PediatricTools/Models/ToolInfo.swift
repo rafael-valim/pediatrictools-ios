@@ -91,7 +91,7 @@ enum ToolInfoCatalog {
             ],
             referenceKeys: ["about_ref_flacc"],
             links: [
-                ToolInfoLink(id: "flacc_pubmed", titleKey: "info_flacc_link_pubmed", url: URL(string: "https://pubmed.ncbi.nlm.nih.gov/9palcr/")!),
+                ToolInfoLink(id: "flacc_pubmed", titleKey: "info_flacc_link_pubmed", url: URL(string: "https://pubmed.ncbi.nlm.nih.gov/9220806/")!),
             ]
         ),
 

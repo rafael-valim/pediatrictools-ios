@@ -42,42 +42,41 @@ struct AboutView: View {
                 .padding(.vertical, 8)
             }
 
-            Section {
-                ForEach(references) { ref in
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(LocalizedStringKey(ref.toolKey))
-                            .font(.subheadline.weight(.medium))
-                        Text(LocalizedStringKey(ref.referenceKey))
+            ForEach(ToolInfoCatalog.all) { tool in
+                Section {
+                    ForEach(tool.referenceKeys, id: \.self) { key in
+                        Text(LocalizedStringKey(key))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
-                    .padding(.vertical, 2)
+
+                    ForEach(tool.links) { link in
+                        Link(destination: link.url) {
+                            HStack {
+                                Text(LocalizedStringKey(link.titleKey))
+                                    .font(.subheadline)
+                                Spacer()
+                                Image(systemName: "arrow.up.right.square")
+                                    .font(.caption)
+                                    .foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                } header: {
+                    Text(LocalizedStringKey(toolTitleKey(for: tool.id)))
                 }
-            } header: {
-                Text("about_references")
             }
         }
         .navigationTitle("about_title")
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    private struct ToolReference: Identifiable {
-        let id: String
-        let toolKey: String
-        let referenceKey: String
+    private func toolTitleKey(for id: String) -> String {
+        switch id {
+        case "ballard": return "ballard_score_title"
+        case "bilirubin": return "bili_title"
+        case "phoenix": return "phoenix_title"
+        default: return "\(id)_title"
+        }
     }
-
-    private let references: [ToolReference] = [
-        ToolReference(id: "ballard", toolKey: "ballard_score_title", referenceKey: "about_ref_ballard"),
-        ToolReference(id: "apgar", toolKey: "apgar_title", referenceKey: "about_ref_apgar"),
-        ToolReference(id: "pews", toolKey: "pews_title", referenceKey: "about_ref_pews"),
-        ToolReference(id: "dosage", toolKey: "dosage_title", referenceKey: "about_ref_dosage"),
-        ToolReference(id: "ivfluid", toolKey: "ivfluid_title", referenceKey: "about_ref_ivfluid"),
-        ToolReference(id: "bsa", toolKey: "bsa_title", referenceKey: "about_ref_bsa"),
-        ToolReference(id: "corrected", toolKey: "corrected_title", referenceKey: "about_ref_corrected"),
-        ToolReference(id: "growth", toolKey: "growth_title", referenceKey: "about_ref_growth"),
-        ToolReference(id: "dehydration", toolKey: "dehydration_title", referenceKey: "about_ref_dehydration"),
-        ToolReference(id: "fena", toolKey: "fena_title", referenceKey: "about_ref_fena"),
-        ToolReference(id: "ett", toolKey: "ett_title", referenceKey: "about_ref_ett"),
-    ]
 }

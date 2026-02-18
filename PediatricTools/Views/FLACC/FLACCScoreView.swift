@@ -21,6 +21,8 @@ struct FLACCScoreView: View {
             } header: {
                 Text("flacc_criteria")
             }
+
+            ToolInfoSection(toolID: "flacc")
         }
         .scrollDismissesKeyboard(.interactively)
         .safeAreaInset(edge: .bottom) {

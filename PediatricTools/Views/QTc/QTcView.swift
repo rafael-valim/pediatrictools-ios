@@ -37,6 +37,8 @@ struct QTcView: View {
             } header: {
                 Text("qtc_formula")
             }
+
+            ToolInfoSection(toolID: "qtc")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

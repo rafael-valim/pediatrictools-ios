@@ -26,6 +26,8 @@ struct BSAView: View {
             } header: {
                 Text("bsa_formula")
             }
+
+            ToolInfoSection(toolID: "bsa")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

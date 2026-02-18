@@ -52,6 +52,8 @@ struct CorrectedAgeView: View {
             } header: {
                 Text("corrected_results")
             }
+
+            ToolInfoSection(toolID: "corrected")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

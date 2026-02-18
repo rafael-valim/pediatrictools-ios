@@ -24,6 +24,8 @@ struct GFRView: View {
             } header: {
                 Text("gfr_formula")
             }
+
+            ToolInfoSection(toolID: "gfr")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

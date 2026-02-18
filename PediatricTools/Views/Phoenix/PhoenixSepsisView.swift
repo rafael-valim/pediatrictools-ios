@@ -120,6 +120,8 @@ struct PhoenixSepsisView: View {
                         .foregroundStyle(.secondary)
                 }
             }
+
+            ToolInfoSection(toolID: "phoenix")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

@@ -57,6 +57,8 @@ struct GrowthPercentileView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
+
+            ToolInfoSection(toolID: "growth")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

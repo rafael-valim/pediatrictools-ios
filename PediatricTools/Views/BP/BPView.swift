@@ -50,6 +50,8 @@ struct BPView: View {
                 NumberInputRow(labelKey: "bp_systolic", unitKey: "unit_mmhg", value: $systolicText, range: 40...250)
                 NumberInputRow(labelKey: "bp_diastolic", unitKey: "unit_mmhg", value: $diastolicText, range: 20...200)
             }
+
+            ToolInfoSection(toolID: "bp")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())

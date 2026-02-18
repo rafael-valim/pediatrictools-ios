@@ -41,6 +41,8 @@ struct IVFluidView: View {
                     Text("ivfluid_electrolytes")
                 }
             }
+
+            ToolInfoSection(toolID: "ivfluid")
         }
         .scrollDismissesKeyboard(.interactively)
         .modifier(KeyboardDoneButton())
