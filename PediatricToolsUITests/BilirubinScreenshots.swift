@@ -1,6 +1,18 @@
 import XCTest
 
 final class BilirubinScreenshots: ScreenshotTestCase {
+    /// Wait for at least 2 text fields and return them, or fail.
+    private func waitForTextFields() -> [XCUIElement]? {
+        // On iPad, form layout may delay field availability — wait and retry
+        for _ in 0..<5 {
+            let fields = app.textFields.allElementsBoundByIndex
+            if fields.count >= 2 { return fields }
+            sleep(1)
+        }
+        XCTFail("Expected at least 2 text fields")
+        return nil
+    }
+
     func testBilirubinEmpty() {
         navigateToTool(id: "bilirubin")
         takeScreenshot(named: "Bilirubin_Empty", subfolder: "Bilirubin")
@@ -8,8 +20,7 @@ final class BilirubinScreenshots: ScreenshotTestCase {
 
     func testBilirubinFilled() {
         navigateToTool(id: "bilirubin")
-        let fields = app.textFields.allElementsBoundByIndex
-        guard fields.count >= 2 else { XCTFail("Expected at least 2 text fields"); return }
+        guard let fields = waitForTextFields() else { return }
 
         // Enter TSB = 15, postnatal age = 48 hours
         fields[0].tap(); fields[0].typeText("15")
@@ -36,8 +47,7 @@ final class BilirubinScreenshots: ScreenshotTestCase {
     func testInteraction() {
         navigateToTool(id: "bilirubin")
         takeScreenshot(named: "Bilirubin_Interaction_Start", subfolder: "Bilirubin")
-        let fields = app.textFields.allElementsBoundByIndex
-        guard fields.count >= 2 else { XCTFail("Expected at least 2 text fields"); return }
+        guard let fields = waitForTextFields() else { return }
 
         fields[0].tap(); fields[0].typeText("15")
         fields[1].tap(); fields[1].typeText("48")
