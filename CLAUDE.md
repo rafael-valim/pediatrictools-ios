@@ -95,7 +95,7 @@ Each screenshot test captures **empty** and **filled** states.
 
 **Before every build submission:** bump the build number with `agvtool next-version -all`, then commit.
 
-**App Store screenshots** show 10 screens per device (Home + Settings + 8 features in filled state): Apgar, Bilirubin, Dosage, Growth, BP, GCS, PEWS, PECARN. Regenerate with `./scripts/take-appstore-screenshots.sh` after any view change.
+**App Store screenshots** show 8 screens per device: Home, About, and 3 calculators (Apgar, Ballard, Bilirubin) each with filled state + ToolInfoView details modal. Regenerate with `./scripts/take-appstore-screenshots.sh` after any view change.
 
 The project uses Fastlane for App Store automation. Key files:
 

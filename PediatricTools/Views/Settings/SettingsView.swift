@@ -75,6 +75,7 @@ struct SettingsView: View {
                 } label: {
                     Label("settings_about", systemImage: "info.circle")
                 }
+                .accessibilityIdentifier("settings_about")
             }
         }
         .navigationTitle("settings_title")

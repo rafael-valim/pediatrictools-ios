@@ -110,6 +110,7 @@
 		DC000021 /* BilirubinScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000021 /* BilirubinScreenshots.swift */; };
 		DC000022 /* PECARNScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000022 /* PECARNScreenshots.swift */; };
 		DC000023 /* PhoenixScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000023 /* PhoenixScreenshots.swift */; };
+		DC000024 /* AboutScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD000024 /* AboutScreenshots.swift */; };
 		AA600001 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AB600001 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -237,6 +238,7 @@
 		DD000021 /* BilirubinScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilirubinScreenshots.swift; sourceTree = "<group>"; };
 		DD000022 /* PECARNScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PECARNScreenshots.swift; sourceTree = "<group>"; };
 		DD000023 /* PhoenixScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoenixScreenshots.swift; sourceTree = "<group>"; };
+		DD000024 /* AboutScreenshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreenshots.swift; sourceTree = "<group>"; };
 		AB600001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -606,6 +608,7 @@
 				DD000021 /* BilirubinScreenshots.swift */,
 				DD000022 /* PECARNScreenshots.swift */,
 				DD000023 /* PhoenixScreenshots.swift */,
+				DD000024 /* AboutScreenshots.swift */,
 			);
 			path = PediatricToolsUITests;
 			sourceTree = "<group>";
@@ -858,6 +861,7 @@
 				DC000021 /* BilirubinScreenshots.swift in Sources */,
 				DC000022 /* PECARNScreenshots.swift in Sources */,
 				DC000023 /* PhoenixScreenshots.swift in Sources */,
+				DC000024 /* AboutScreenshots.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

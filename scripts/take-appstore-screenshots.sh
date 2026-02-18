@@ -31,33 +31,26 @@ size_label_for() {
     esac
 }
 
-# ─── App Store screenshot selection (max 10 per device) ──────────────────────
-# Home + Settings + 8 features: Apgar, Bilirubin, Dosage, Growth, BP, GCS, PEWS, PECARN
+# ─── App Store screenshot selection (8 per device) ──────────────────────────
+# Home + About + 3 calculators (Apgar, Ballard, Bilirubin) × (Filled + Details)
 APP_STORE_TESTS=(
     "PediatricToolsUITests/HomeScreenshots"
-    "PediatricToolsUITests/SettingsScreenshots"
+    "PediatricToolsUITests/AboutScreenshots"
     "PediatricToolsUITests/ApgarScreenshots"
+    "PediatricToolsUITests/BallardScreenshots"
     "PediatricToolsUITests/BilirubinScreenshots"
-    "PediatricToolsUITests/DosageScreenshots"
-    "PediatricToolsUITests/GrowthScreenshots"
-    "PediatricToolsUITests/BPScreenshots"
-    "PediatricToolsUITests/GCSScreenshots"
-    "PediatricToolsUITests/PEWSScreenshots"
-    "PediatricToolsUITests/PECARNScreenshots"
 )
 
-# Screenshots to keep for the store (Filled state for tools, Default for Home/Settings)
+# Screenshots to keep for the store (8 total)
 APP_STORE_FILES=(
     "Home/Home_Default"
-    "Settings/Settings_Default"
+    "About/About_Default"
     "Apgar/Apgar_Filled"
+    "Apgar/Apgar_Details"
+    "Ballard/Ballard_Filled"
+    "Ballard/Ballard_Details"
     "Bilirubin/Bilirubin_Filled"
-    "Dosage/Dosage_Filled"
-    "Growth/Growth_Filled"
-    "BP/BP_Filled"
-    "GCS/GCS_Filled"
-    "PEWS/PEWS_Filled"
-    "PECARN/PECARN_Filled"
+    "Bilirubin/Bilirubin_Details"
 )
 
 FASTLANE_SCREENSHOTS_DIR="$PROJECT_DIR/fastlane/screenshots/en-US"
@@ -67,7 +60,7 @@ SCREENSHOTS_DIR="$PROJECT_DIR/Screenshots"
 echo -e "${BOLD}${CYAN}📸 App Store Screenshot Generator${RESET}"
 echo -e "${CYAN}Devices:    ${RESET}${DEVICES[*]}"
 echo -e "${CYAN}Output:     ${RESET}${FASTLANE_SCREENSHOTS_DIR}"
-echo -e "${CYAN}Limit:      ${RESET}10 screenshots per device"
+echo -e "${CYAN}Limit:      ${RESET}8 screenshots per device"
 echo ""
 
 # Build the -only-testing arguments
@@ -84,7 +77,7 @@ for DEVICE in "${DEVICES[@]}"; do
 done
 
 # ─── Organize into Fastlane structure ─────────────────────────────────────────
-echo -e "${YELLOW}Organizing screenshots for Fastlane (10 per device)...${RESET}"
+echo -e "${YELLOW}Organizing screenshots for Fastlane (8 per device)...${RESET}"
 mkdir -p "$FASTLANE_SCREENSHOTS_DIR"
 
 # Clear old Fastlane screenshots

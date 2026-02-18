@@ -8,20 +8,33 @@ final class ApgarScreenshots: ScreenshotTestCase {
 
     func testApgarFilled() {
         navigateToTool(id: "apgar")
-        sleep(1)
+
+        // Tap all five "2" buttons for a perfect 10/10 score
+        let twoButtons = app.buttons.matching(NSPredicate(format: "label BEGINSWITH '2'"))
+        for i in 0..<min(twoButtons.count, 5) {
+            twoButtons.element(boundBy: i).tap()
+        }
+        XCTAssertTrue(app.staticTexts["10/10"].waitForExistence(timeout: 2))
+
         takeScreenshot(named: "Apgar_Filled", subfolder: "Apgar")
+    }
+
+    func testApgarDetails() {
+        navigateToTool(id: "apgar")
+        app.swipeUp()
+        let infoButton = app.buttons["tool_info_section"]
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "Apgar_Details", subfolder: "Apgar")
     }
 
     func testInteraction() {
         navigateToTool(id: "apgar")
         takeScreenshot(named: "Apgar_Interaction_Start", subfolder: "Apgar")
 
-        // Apgar has 5 criteria, each with scores 0, 1, 2
-        // Initial total should be 0/10
         XCTAssertTrue(app.staticTexts["0/10"].exists)
 
-        // Tap score "2" buttons — there should be one per criterion
-        // Button labels begin with the score digit followed by description text
         let twoButtons = app.buttons.matching(NSPredicate(format: "label BEGINSWITH '2'"))
         if twoButtons.count >= 3 {
             twoButtons.element(boundBy: 0).tap()
@@ -29,13 +42,10 @@ final class ApgarScreenshots: ScreenshotTestCase {
             twoButtons.element(boundBy: 2).tap()
         }
 
-        // After tapping three "2" buttons the total should be 6/10
         XCTAssertTrue(app.staticTexts["6/10"].waitForExistence(timeout: 2))
 
-        // Tap Reset to return to default
         app.navigationBars.buttons["Reset"].tap()
 
-        // Score should be back to 0/10
         XCTAssertTrue(app.staticTexts["0/10"].waitForExistence(timeout: 2))
         takeScreenshot(named: "Apgar_Interaction_End", subfolder: "Apgar")
     }

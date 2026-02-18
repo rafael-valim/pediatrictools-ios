@@ -23,6 +23,7 @@ struct ToolInfoSection: View {
                             .foregroundStyle(.accent)
                     }
                 }
+                .accessibilityIdentifier("tool_info_section")
                 .sheet(isPresented: $showingInfo) {
                     ToolInfoView(info: info)
                 }

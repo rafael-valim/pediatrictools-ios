@@ -8,43 +8,53 @@ final class BallardScreenshots: ScreenshotTestCase {
 
     func testBallardFilled() {
         navigateToTool(id: "ballard")
-        // Tap some score buttons to fill the form
-        // Ballard uses stepper-like controls, just screenshot after navigating
-        sleep(1)
-        takeScreenshot(named: "Ballard_Filled", subfolder: "Ballard")
-    }
 
-    func testInteraction() {
-        navigateToTool(id: "ballard")
-        takeScreenshot(named: "Ballard_Interaction_Start", subfolder: "Ballard")
-
-        // Default state: all scores 0, total = 0 → GA ≈ 24 weeks
-        // The result bar shows "24" for gestational age
-        let ga24 = app.staticTexts.matching(NSPredicate(format: "label CONTAINS '24'"))
-        XCTAssertTrue(ga24.firstMatch.waitForExistence(timeout: 2),
-                       "Default all-zero scores should show GA ~24 weeks")
-
-        // Tap some higher-score buttons to increase the total.
-        // Each criterion row has buttons for score values (-1, 0, 1, 2, 3, 4).
-        // Tapping buttons labeled "4" will select score 4 for those criteria.
-        // There are 6 neuromuscular criteria + 6 physical criteria = 12 total.
+        // Tap "4" buttons for the first 3 criteria to get a non-default GA
         let fourButtons = app.buttons.matching(NSPredicate(format: "label BEGINSWITH '4'"))
-
-        // Tap "4" for the first 3 neuromuscular criteria (posture, square window, arm recoil)
-        // This adds 4*3 = 12 to the score (from default 0)
-        // Total = 12 → GA = 20 + (12+10)/5 * 2 = 20 + 8.8 = 28.8 ≈ 28 weeks
         if fourButtons.count >= 3 {
             fourButtons.element(boundBy: 0).tap()
             fourButtons.element(boundBy: 1).tap()
             fourButtons.element(boundBy: 2).tap()
         }
 
-        // GA should now be around 28-29 weeks (higher than 24)
+        sleep(1)
+        takeScreenshot(named: "Ballard_Filled", subfolder: "Ballard")
+    }
+
+    func testBallardDetails() {
+        navigateToTool(id: "ballard")
+        // Ballard has 12 criteria sections — need multiple swipes to reach ToolInfoSection
+        let infoButton = app.buttons["tool_info_section"]
+        for _ in 0..<10 {
+            if infoButton.exists && infoButton.isHittable { break }
+            app.swipeUp()
+        }
+        XCTAssertTrue(infoButton.waitForExistence(timeout: 3), "ToolInfoSection button not found")
+        infoButton.tap()
+        sleep(1)
+        takeScreenshot(named: "Ballard_Details", subfolder: "Ballard")
+    }
+
+    func testInteraction() {
+        navigateToTool(id: "ballard")
+        takeScreenshot(named: "Ballard_Interaction_Start", subfolder: "Ballard")
+
+        let ga24 = app.staticTexts.matching(NSPredicate(format: "label CONTAINS '24'"))
+        XCTAssertTrue(ga24.firstMatch.waitForExistence(timeout: 2),
+                       "Default all-zero scores should show GA ~24 weeks")
+
+        let fourButtons = app.buttons.matching(NSPredicate(format: "label BEGINSWITH '4'"))
+
+        if fourButtons.count >= 3 {
+            fourButtons.element(boundBy: 0).tap()
+            fourButtons.element(boundBy: 1).tap()
+            fourButtons.element(boundBy: 2).tap()
+        }
+
         let ga28 = app.staticTexts.matching(NSPredicate(format: "label CONTAINS '28'"))
         XCTAssertTrue(ga28.firstMatch.waitForExistence(timeout: 2),
                        "After selecting score 4 for 3 criteria, GA should be ~28 weeks")
 
-        // Tap Reset — should go back to default (all 0, GA ~24)
         app.navigationBars.buttons["Reset"].tap()
 
         let ga24After = app.staticTexts.matching(NSPredicate(format: "label CONTAINS '24'"))
